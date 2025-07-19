@@ -1,0 +1,6 @@
+This would be an image of the Mary Rose ship.
+
+To add the actual image:
+1. Save your image file as mary-rose.jpg
+2. Place it in this same directory
+3. Delete this placeholder file
