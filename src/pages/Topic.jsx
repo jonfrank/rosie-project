@@ -20,7 +20,8 @@ const Topic = () => {
     const fetchContent = async () => {
       try {
         setLoading(true)
-        const response = await fetch(`/topics/${slug}/${type}.md`)
+        const basePath = process.env.NODE_ENV === 'production' ? '/rosie-project' : ''
+        const response = await fetch(`${basePath}/topics/${slug}/${type}.md`)
         if (!response.ok) {
           throw new Error(`Failed to load ${type} content`)
         }
@@ -103,16 +104,18 @@ const Topic = () => {
             components={{
               // Custom components for handling images and links relative to topic folder
               img: ({node, ...props}) => {
+                const basePath = process.env.NODE_ENV === 'production' ? '/rosie-project' : ''
                 const src = props.src?.startsWith('http') 
                   ? props.src 
-                  : `/topics/${slug}/${props.src}`
+                  : `${basePath}/topics/${slug}/${props.src}`
                 return <img {...props} src={src} className="rounded-lg shadow-sm" />
               },
               a: ({node, ...props}) => {
                 if (props.href?.endsWith('.pdf') || props.href?.endsWith('.mp4') || props.href?.endsWith('.mp3')) {
+                  const basePath = process.env.NODE_ENV === 'production' ? '/rosie-project' : ''
                   const href = props.href?.startsWith('http') 
                     ? props.href 
-                    : `/topics/${slug}/${props.href}`
+                    : `${basePath}/topics/${slug}/${props.href}`
                   return <a {...props} href={href} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline" />
                 }
                 return <a {...props} className="text-blue-600 hover:text-blue-800 underline" />
