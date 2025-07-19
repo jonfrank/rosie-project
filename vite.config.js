@@ -18,5 +18,5 @@ export default defineConfig({
       }
     }
   },
-  base: '/rosie-project/'
+  base: process.env.NODE_ENV === 'production' ? '/rosie-project/' : '/'
 })

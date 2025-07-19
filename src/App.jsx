@@ -7,8 +7,10 @@ import NotFound from './pages/NotFound'
 import Topic from './pages/Topic'
 
 function App() {
+  const basename = process.env.NODE_ENV === 'production' ? '/rosie-project' : ''
+  
   return (
-    <Router basename="/rosie-project" future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+    <Router basename={basename} future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
