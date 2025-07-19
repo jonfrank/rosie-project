@@ -18,5 +18,5 @@ export default defineConfig({
       }
     }
   },
-  base: './' // Important for S3 hosting
+  base: process.env.NODE_ENV === 'production' ? '/rosie-project/' : './'
 })
