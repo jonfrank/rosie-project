@@ -83,7 +83,7 @@ const Topic = () => {
       {type === 'resources' && (
         <div className="mb-8">
           <a
-            href={`/topic/${slug}/classroom`}
+            href={`${process.env.NODE_ENV === 'production' ? '/rosie-project' : ''}/topic/${slug}/classroom`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors"
