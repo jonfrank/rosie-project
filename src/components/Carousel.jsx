@@ -3,13 +3,20 @@ import "./Carousel.css" // You may want to customize styles here
 
 const Carousel = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const nextItem = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
+    setIsExpanded(false); // Collapse when moving to next item
   };
 
   const prevItem = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length);
+    setIsExpanded(false); // Collapse when moving to previous item
+  };
+
+  const toggleExpanded = () => {
+    setIsExpanded(!isExpanded);
   };
 
   return (
@@ -17,8 +24,15 @@ const Carousel = ({ items }) => {
       <div className="carousel-content">
         <img src={items[currentIndex].image} alt={items[currentIndex].title} />
         <div className="description">
-          <h3>{items[currentIndex].title}</h3>
-          <p>{items[currentIndex].description}</p>
+          <div className="description-header">
+            <h3>{items[currentIndex].title}</h3>
+            <button onClick={toggleExpanded} className="expand-button">
+              {isExpanded ? '− Show Less' : '+ Show More'}
+            </button>
+          </div>
+          <div className={`description-content ${isExpanded ? 'expanded' : 'collapsed'}`}>
+            <p>{items[currentIndex].description}</p>
+          </div>
         </div>
       </div>
       <button onClick={prevItem} className="carousel-button prev">←</button>
