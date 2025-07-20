@@ -20,10 +20,43 @@ const Carousel = ({ items }) => {
     setIsExpanded(!isExpanded);
   };
 
+  // Determine if current item is a video
+  const isVideo = (url) => {
+    const videoExtensions = ['.mp4', '.mov', '.webm', '.ogg', '.avi', '.mkv'];
+    return videoExtensions.some(ext => url.toLowerCase().includes(ext));
+  };
+
+  // Render media (image or video)
+  const renderMedia = () => {
+    const currentItem = items[currentIndex];
+    const mediaUrl = currentItem.image || currentItem.video || currentItem.media;
+    
+    if (isVideo(mediaUrl)) {
+      return (
+        <video 
+          src={mediaUrl} 
+          alt={currentItem.title}
+          controls
+          className="carousel-media"
+        >
+          Your browser does not support the video tag.
+        </video>
+      );
+    } else {
+      return (
+        <img 
+          src={mediaUrl} 
+          alt={currentItem.title}
+          className="carousel-media"
+        />
+      );
+    }
+  };
+
   return (
     <div className="carousel">
       <div className="carousel-content">
-        <img src={items[currentIndex].image} alt={items[currentIndex].title} />
+        {renderMedia()}
         <div className="description">
           <div className="description-header">
             <h3>{items[currentIndex].title}</h3>
