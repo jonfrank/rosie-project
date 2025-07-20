@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import Carousel from '../components/Carousel'
 
 const Topic = () => {
   const { slug, type } = useParams() // type is either 'classroom' or 'resources'
@@ -11,10 +12,24 @@ const Topic = () => {
 
   // Topic metadata
   const topicTitles = {
-    'mary-rose': 'The Mary Rose',
-    'king-henry-viii': 'King Henry VIII',
-    'princess-di': 'Princess Diana'
+    'scouts': 'Scouts Movement',
+    'womens-land-army': 'Women\'s Land Army',
+    'junior-salvage-stewards': 'Junior Salvage Stewards'
   }
+
+  // Carousel data for Junior Salvage Stewards
+  const juniorSalvageCarouselItems = [
+    {
+      image: 'Anti-Gas Respirator MKII.jpg',
+      title: 'Anti-Gas Respirator MKII',
+      description: 'This is a standard Adult Mark II anti-gas respirator used during World War II. These masks were distributed to civilians as protection against potential chemical attacks. The Junior Salvage Stewards would have been familiar with these masks as they were part of everyday wartime life. Rubber from old masks and equipment was often collected by children as part of their salvage efforts - every piece of rubber was valuable for the war effort and could be recycled into new equipment, vehicle tires, or other essential items.'
+    },
+    {
+      image: 'Anti-Gas Respirator Small Child.jpg',
+      title: 'Anti-Gas Respirator for Small Children',
+      description: 'This specially designed gas mask was created for young children during World War II. Notice how it\'s designed to look less frightening than adult masks - it was sometimes called a "Mickey Mouse" mask because of its distinctive shape and colorful design. Children as young as those who would become Junior Salvage Stewards had to carry these masks everywhere during the war. The bright colors and child-friendly design helped reduce fear and encouraged children to wear them properly during air raid drills.'
+    }
+  ]
 
   useEffect(() => {
     const fetchContent = async () => {
@@ -126,6 +141,19 @@ const Topic = () => {
           </ReactMarkdown>
         </div>
       </div>
+
+      {/* Carousel for Junior Salvage Stewards classroom page */}
+      {slug === 'junior-salvage-stewards' && type === 'classroom' && (
+        <div className="mt-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Artifact Gallery</h2>
+          <Carousel 
+            items={juniorSalvageCarouselItems.map(item => ({
+              ...item,
+              image: `${import.meta.env.PROD ? '/rosie-project' : ''}/topics/${slug}/${item.image}`
+            }))}
+          />
+        </div>
+      )}
 
       {/* Back to topic navigation */}
       <div className="mt-8 text-center">
