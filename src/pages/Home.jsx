@@ -3,31 +3,31 @@ import { Link } from 'react-router-dom'
 // Topics data for classroom resources
 const topics = [
   {
-    id: 1,
-    slug: 'mary-rose',
-    title: 'The Mary Rose',
-    description: 'Explore the famous Tudor warship of Henry VIII, its sinking, and remarkable recovery.',
-    period: 'Tudor Period (1510-1545)',
-    keyStage: 'KS2-KS3',
-    subjects: ['History', 'Geography', 'Science']
-  },
-  {
-    id: 2,
-    slug: 'king-henry-viii',
-    title: 'King Henry VIII',
-    description: 'Discover the life and reign of England\'s most famous Tudor monarch and the English Reformation.',
-    period: 'Tudor Period (1509-1547)',
+    id: 4,
+    slug: 'scouts',
+    title: 'Scouts Movement',
+    description: 'Discover the history and impact of the Scout movement on young people and communities.',
+    period: 'Modern History (1907-present)',
     keyStage: 'KS2-KS4',
-    subjects: ['History', 'Religious Studies']
+    subjects: ['History', 'Citizenship', 'PSHE']
   },
   {
-    id: 3,
-    slug: 'princess-di',
-    title: 'Princess Diana',
-    description: 'Learn about the People\'s Princess and her impact on modern British society and charity work.',
-    period: 'Modern History (1961-1997)',
-    keyStage: 'KS3-KS4',
-    subjects: ['History', 'Citizenship', 'PSHE']
+    id: 5,
+    slug: 'womens-land-army',
+    title: 'Women\'s Land Army',
+    description: 'Explore the vital role of Land Girls in feeding Britain during World War II.',
+    period: 'World War II (1939-1945)',
+    keyStage: 'KS2-KS4',
+    subjects: ['History', 'Geography', 'Citizenship']
+  },
+  {
+    id: 6,
+    slug: 'junior-salvage-stewards',
+    title: 'Junior Salvage Stewards',
+    description: 'Learn how children contributed to the war effort through recycling and salvage collection.',
+    period: 'World War II (1940-1945)',
+    keyStage: 'KS1-KS3',
+    subjects: ['History', 'Geography', 'Science']
   }
 ]
 
