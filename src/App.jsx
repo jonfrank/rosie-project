@@ -7,7 +7,7 @@ import NotFound from './pages/NotFound'
 import Topic from './pages/Topic'
 
 function App() {
-  const basename = process.env.NODE_ENV === 'production' ? '/rosie-project' : ''
+  const basename = import.meta.env.PROD ? '/rosie-project' : ''
   
   return (
     <Router basename={basename} future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>

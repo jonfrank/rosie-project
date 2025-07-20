@@ -20,7 +20,7 @@ const Topic = () => {
     const fetchContent = async () => {
       try {
         setLoading(true)
-        const basePath = process.env.NODE_ENV === 'production' ? '/rosie-project' : ''
+        const basePath = import.meta.env.PROD ? '/rosie-project' : ''
         const response = await fetch(`${basePath}/topics/${slug}/${type}.md`)
         if (!response.ok) {
           throw new Error(`Failed to load ${type} content`)
@@ -83,7 +83,7 @@ const Topic = () => {
       {type === 'resources' && (
         <div className="mb-8">
           <a
-            href={`${process.env.NODE_ENV === 'production' ? '/rosie-project' : ''}/topic/${slug}/classroom`}
+            href={`${import.meta.env.PROD ? '/rosie-project' : ''}/topic/${slug}/classroom`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors"
@@ -104,7 +104,7 @@ const Topic = () => {
             components={{
               // Custom components for handling images and links relative to topic folder
               img: ({node, ...props}) => {
-                const basePath = process.env.NODE_ENV === 'production' ? '/rosie-project' : ''
+                const basePath = import.meta.env.PROD ? '/rosie-project' : ''
                 const src = props.src?.startsWith('http') 
                   ? props.src 
                   : `${basePath}/topics/${slug}/${props.src}`
@@ -112,7 +112,7 @@ const Topic = () => {
               },
               a: ({node, ...props}) => {
                 if (props.href?.endsWith('.pdf') || props.href?.endsWith('.mp4') || props.href?.endsWith('.mp3')) {
-                  const basePath = process.env.NODE_ENV === 'production' ? '/rosie-project' : ''
+                  const basePath = import.meta.env.PROD ? '/rosie-project' : ''
                   const href = props.href?.startsWith('http') 
                     ? props.href 
                     : `${basePath}/topics/${slug}/${props.href}`
