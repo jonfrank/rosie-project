@@ -18,55 +18,93 @@ const Topic = () => {
     'junior-salvage-stewards': 'Junior Salvage Stewards'
   }
 
-  // Carousel data for Junior Salvage Stewards
-  const juniorSalvageCarouselItems = [
-    {
-      image: 'Anti-Gas Respirator MKII.jpg',
-      title: 'Anti-Gas Respirator MKII',
-      description: 'This is a standard Adult Mark II anti-gas respirator used during World War II. These masks were distributed to civilians as protection against potential chemical attacks. The Junior Salvage Stewards would have been familiar with these masks as they were part of everyday wartime life. Rubber from old masks and equipment was often collected by children as part of their salvage efforts - every piece of rubber was valuable for the war effort and could be recycled into new equipment, vehicle tires, or other essential items.'
-    },
-    {
-      image: 'Anti-Gas Respirator Small Child.jpg',
-      title: 'Anti-Gas Respirator for Small Children',
-      description: 'This specially designed gas mask was created for young children during World War II. Notice how it\'s designed to look less frightening than adult masks - it was sometimes called a "Mickey Mouse" mask because of its distinctive shape and colorful design. Children as young as those who would become Junior Salvage Stewards had to carry these masks everywhere during the war. The bright colors and child-friendly design helped reduce fear and encouraged children to wear them properly during air raid drills.'
+  // Auto-discovered carousel items
+  const [carouselItems, setCarouselItems] = useState([])
+
+  // Auto-discover media files and create carousel items for current topic
+  const discoverMediaFiles = async () => {
+    const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+    const items = []
+    
+    // Topic-specific media files
+    const topicMediaFiles = {
+      'junior-salvage-stewards': [
+        'Anti-Gas Respirator MKII.jpg',
+        'Anti-Gas Respirator Small Child.jpg'
+      ],
+      'scouts': [
+        'BP Fireman Scout Badge.jpeg'
+      ],
+      'womens-land-army': [
+        'IMG_6503.mov'
+      ]
     }
-  ]
+    
+    // Get media files for the current topic only
+    const currentTopicFiles = topicMediaFiles[slug] || []
+    
+    for (const filename of currentTopicFiles) {
+      try {
+        // Check if media file exists
+        const mediaResponse = await fetch(`${basePath}/topics/${slug}/${filename}`, { method: 'HEAD' })
+        if (mediaResponse.ok) {
+          // Try to load corresponding description file
+          const descFileName = filename.replace(/\.[^.]+$/, '.md')
+          let description = 'No description available.'
+          let title = filename.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ')
+          
+          try {
+            const descResponse = await fetch(`${basePath}/topics/${slug}/${descFileName}`)
+            if (descResponse.ok) {
+              const descText = await descResponse.text()
+              const lines = descText.split('\n')
+              // Extract title from first line (remove # symbol)
+              if (lines[0]?.startsWith('#')) {
+                title = lines[0].replace(/^#+\s*/, '').trim()
+              }
+              // Extract content (skip title and empty line)
+              description = lines.slice(2).join('\n').trim()
+            }
+          } catch (err) {
+            console.log(`No description file found for ${filename}`)
+          }
+          
+          items.push({
+            image: filename,
+            title: title,
+            description: description
+          })
+        }
+      } catch (err) {
+        // File doesn't exist, skip it
+        console.log(`Media file ${filename} not found in ${slug}`)
+      }
+    }
+    
+    return items
+  }
 
   useEffect(() => {
     const fetchContent = async () => {
       try {
         setLoading(true)
         const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+        
+        // Load main content
         const response = await fetch(`${basePath}/topics/${slug}/${type}.md`)
         if (!response.ok) {
           throw new Error(`Failed to load ${type} content`)
         }
         const text = await response.text()
         setContent(text)
-        setError(null)
         
-        // Load carousel descriptions for junior salvage stewards
-        if (slug === 'junior-salvage-stewards' && type === 'classroom') {
-          const descriptions = {}
-          const imageFiles = ['Anti-Gas Respirator MKII.md', 'Anti-Gas Respirator Small Child.md']
-          
-          for (const file of imageFiles) {
-            try {
-              const descResponse = await fetch(`${basePath}/topics/${slug}/${file}`)
-              if (descResponse.ok) {
-                const descText = await descResponse.text()
-                // Remove the title line and keep the content
-                const contentWithoutTitle = descText.split('\n').slice(2).join('\n').trim()
-                descriptions[file] = contentWithoutTitle
-              }
-            } catch (err) {
-              console.warn(`Failed to load ${file}:`, err)
-            }
-          }
-          
-          setCarouselDescriptions(descriptions)
+        // Auto-discover carousel items for classroom pages
+        if (type === 'classroom') {
+          const items = await discoverMediaFiles()
+          setCarouselItems(items)
         }
         
+        setError(null)
       } catch (err) {
         setError(err.message)
       } finally {
@@ -166,19 +204,15 @@ const Topic = () => {
         </div>
       </div>
 
-      {/* Carousel for Junior Salvage Stewards classroom page */}
-      {slug === 'junior-salvage-stewards' && type === 'classroom' && (
+      {/* Auto-discovered Carousel */}
+      {carouselItems.length > 0 && (
         <div className="mt-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Artifact Gallery</h2>
           <Carousel 
-            items={juniorSalvageCarouselItems.map(item => {
-              const mdFileName = item.image.replace('.jpg', '.md')
-              return {
-                ...item,
-                image: `${import.meta.env.PROD ? '/rosie-project' : ''}/topics/${slug}/${item.image}`,
-                description: carouselDescriptions[mdFileName] || item.description
-              }
-            })}
+            items={carouselItems.map(item => ({
+              ...item,
+              image: `${import.meta.env.PROD ? '/rosie-project' : ''}/topics/${slug}/${item.image}`
+            }))}
           />
         </div>
       )}
