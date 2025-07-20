@@ -9,6 +9,7 @@ const Topic = () => {
   const [content, setContent] = useState('')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [carouselDescriptions, setCarouselDescriptions] = useState({})
 
   // Topic metadata
   const topicTitles = {
@@ -43,6 +44,29 @@ const Topic = () => {
         const text = await response.text()
         setContent(text)
         setError(null)
+        
+        // Load carousel descriptions for junior salvage stewards
+        if (slug === 'junior-salvage-stewards' && type === 'classroom') {
+          const descriptions = {}
+          const imageFiles = ['Anti-Gas Respirator MKII.md', 'Anti-Gas Respirator Small Child.md']
+          
+          for (const file of imageFiles) {
+            try {
+              const descResponse = await fetch(`${basePath}/topics/${slug}/${file}`)
+              if (descResponse.ok) {
+                const descText = await descResponse.text()
+                // Remove the title line and keep the content
+                const contentWithoutTitle = descText.split('\n').slice(2).join('\n').trim()
+                descriptions[file] = contentWithoutTitle
+              }
+            } catch (err) {
+              console.warn(`Failed to load ${file}:`, err)
+            }
+          }
+          
+          setCarouselDescriptions(descriptions)
+        }
+        
       } catch (err) {
         setError(err.message)
       } finally {
@@ -147,10 +171,14 @@ const Topic = () => {
         <div className="mt-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Artifact Gallery</h2>
           <Carousel 
-            items={juniorSalvageCarouselItems.map(item => ({
-              ...item,
-              image: `${import.meta.env.PROD ? '/rosie-project' : ''}/topics/${slug}/${item.image}`
-            }))}
+            items={juniorSalvageCarouselItems.map(item => {
+              const mdFileName = item.image.replace('.jpg', '.md')
+              return {
+                ...item,
+                image: `${import.meta.env.PROD ? '/rosie-project' : ''}/topics/${slug}/${item.image}`,
+                description: carouselDescriptions[mdFileName] || item.description
+              }
+            })}
           />
         </div>
       )}

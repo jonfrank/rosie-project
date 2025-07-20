@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import "./Carousel.css" // You may want to customize styles here
+import ReactMarkdown from 'react-markdown'
+import "./Carousel.css"
 
 const Carousel = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,7 +32,9 @@ const Carousel = ({ items }) => {
             </button>
           </div>
           <div className={`description-content ${isExpanded ? 'expanded' : 'collapsed'}`}>
-            <p>{items[currentIndex].description}</p>
+            <div className="prose">
+              <ReactMarkdown>{items[currentIndex].description}</ReactMarkdown>
+            </div>
           </div>
         </div>
       </div>

@@ -75,11 +75,18 @@
   opacity: 1;
 }
 
-.description p {
+.description .prose {
   color: #6b7280;
   line-height: 1.6;
   font-size: 1rem;
-  margin: 0;
+}
+
+.description .prose p {
+  margin-bottom: 1rem;
+}
+
+.description .prose p:last-child {
+  margin-bottom: 0;
 }
 
 .carousel-button {
