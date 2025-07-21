@@ -147,9 +147,12 @@ const Carousel = ({ items }) => {
                         </button>
                       )}
                       {revealedQuestions > 0 && revealedQuestions === questions.length && (
-                        <div className="all-questions-revealed">
-                          <span>All questions revealed!</span>
-                        </div>
+                        <button 
+                          onClick={nextItem} 
+                          className="next-source-button"
+                        >
+                          Next Source →
+                        </button>
                       )}
                     </div>
                   </div>

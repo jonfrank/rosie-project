@@ -171,19 +171,27 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.all-questions-revealed {
-  text-align: center;
-  margin-top: 1rem;
-  padding: 0.75rem;
-  background: #ecfdf5;
+.next-source-button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
-  border: 1px solid #a7f3d0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-top: 1rem;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.all-questions-revealed span {
-  color: #065f46;
-  font-weight: 500;
-  font-size: 0.875rem;
+.next-source-button:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Animation for question reveal */
