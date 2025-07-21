@@ -36,7 +36,8 @@ const Topic = () => {
         'BP Fireman Scout Badge.jpeg'
       ],
       'womens-land-army': [
-        'IMG_6503.mov'
+        'IMG_6503.mov',
+        'Women\'s Land Army.jpg'
       ]
     }
     
