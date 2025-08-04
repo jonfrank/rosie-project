@@ -11,11 +11,17 @@ const Topic = () => {
   const [error, setError] = useState(null)
   const [carouselDescriptions, setCarouselDescriptions] = useState({})
 
-  // Topic metadata
+  // Topic metadata - now using Mission numbers for classroom pages
   const topicTitles = {
     'scouts': 'Scouts Movement',
     'womens-land-army': 'Women\'s Land Army',
     'junior-salvage-stewards': 'Junior Salvage Stewards'
+  }
+  
+  const missionTitles = {
+    'junior-salvage-stewards': 'Mission 1',
+    'scouts': 'Mission 2', 
+    'womens-land-army': 'Mission 3'
   }
 
   // Auto-discovered carousel items
@@ -142,7 +148,7 @@ const Topic = () => {
     )
   }
 
-  const topicTitle = topicTitles[slug] || slug
+  const topicTitle = type === 'classroom' ? (missionTitles[slug] || `Mission ${slug}`) : (topicTitles[slug] || slug)
   const pageType = type === 'classroom' ? 'Classroom Materials' : 'Resources'
 
   return (

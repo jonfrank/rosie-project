@@ -1,45 +1,30 @@
-# Princess Diana Classroom
+# Mission 2
 
-## The People's Princess
+## Mystery Artifacts Challenge
 
-![Princess Diana at a banquet wearing the Spencer Tiara](HRH-The-Princess-of-Wales-Princess-Diana-attends-a-banquet-at-Mansion-House-wearing-the-Spencer-Tiara-made-by-Garrard.jpg)
-*Princess Diana at a formal banquet wearing the Spencer Tiara*
+### Your Mission
 
-### Overview
+Welcome, history detectives! Your mission is to examine the artifacts in the gallery below and work together to discover what they represent. These objects tell the story of a youth movement that has shaped millions of young lives around the world.
 
-Diana, Princess of Wales (1961-1997) was a member of the British royal family known for her charity work and compassion.
+### Instructions
 
-![Princess Diana - Life in Pictures](210630020752-01-princess-diana-life-in-pictures.jpg)
-*Princess Diana throughout her life - from young woman to beloved princess*
+1. **Observe carefully** - Look at each artifact in the gallery
+2. **Ask questions** - What do you notice about these objects?
+3. **Make connections** - How might these items be related?
+4. **Work together** - Discuss your observations with your team
+5. **Form theories** - What do you think these objects tell us about the past?
 
-#### Key Points:
+### Investigation Questions
 
-- Born: 1961, Park House, Sandringham
-- Marriage: Prince Charles, 1981
-- Children: Prince William and Prince Harry
-- Died: 1997, Paris car crash
+As you examine the artifacts, consider:
 
-### Her Impact on Society
+- What activities might these objects be connected to?
+- What skills or achievements might they represent?
+- What values or principles might be important to this group?
+- How might young people have earned or used these items?
 
-Princess Diana changed how the royal family connected with the public and brought attention to important causes.
+### Ready to Begin?
 
-#### Major Causes She Supported:
-- Landmine clearance campaigns
-- HIV/AIDS awareness
-- Homelessness charity work
-- Children's hospitals
-
-### Remembering Diana
-
-![Princess Diana - Remembering her legacy](princess-diana-death-1-567a04a8b1cd4633903e51a774b05194.jpg)
-*The world mourned the loss of the People's Princess in 1997*
-
-### Class Discussion
-
-Watch the [Diana Documentary Clip](diana-documentary.mp4) and discuss:
-
-1. How did Diana change the image of the royal family?
-2. What made her charitable work different from other royals?
-3. How is her legacy remembered today?
+Scroll down to explore the artifact gallery and start your investigation!
 
 ---

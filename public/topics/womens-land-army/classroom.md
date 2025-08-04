@@ -1,45 +1,30 @@
-# Women's Land Army Classroom
+# Mission 3
 
-## Digging for Victory
+## Mystery Artifacts Challenge
 
-![Women's Land Army workers in the fields](womens-land-army-workers.jpg)
-*Women's Land Army members working in the fields during World War II*
+### Your Mission
 
-### Overview
+Welcome, history detectives! Your mission is to examine the artifacts in the gallery below and work together to discover what they represent. These objects tell the story of a group of women who took on vital work during World War II.
 
-The Women's Land Army (WLA) was a civilian organisation created during World War I and revived during World War II to work in agriculture, replacing men who had gone to fight in the war.
+### Instructions
 
-![Land Girls at work](land-girls-working.jpg)
-*Land Girls performing various agricultural tasks*
+1. **Observe carefully** - Look at each artifact in the gallery
+2. **Ask questions** - What do you notice about these objects?
+3. **Make connections** - How might these items be related?
+4. **Work together** - Discuss your observations with your team
+5. **Form theories** - What do you think these objects tell us about the past?
 
-#### Key Points:
+### Investigation Questions
 
-- Established: 1917 (WWI), Reformed: 1939 (WWII)
-- Peak membership: Over 80,000 women
-- Nickname: "Land Girls"
-- Disbanded: 1950
+As you examine the artifacts, consider:
 
-### Their Important Work
+- What type of work might these objects be connected to?
+- What challenges might the people who used these have faced?
+- How might this work have been important during wartime?
+- What does this tell us about changing roles during the 1940s?
 
-The Women's Land Army played a crucial role in keeping Britain fed during the war years when food imports were severely restricted.
+### Ready to Begin?
 
-#### Main Responsibilities:
-- Farm work: planting, harvesting crops
-- Animal husbandry: caring for livestock
-- Forestry work: timber production
-- Market gardening: growing vegetables
-
-### Life as a Land Girl
-
-![Land Army uniform and badge](land-army-uniform.jpg)
-*The distinctive Women's Land Army uniform and badge*
-
-### Class Discussion
-
-Watch the [Women's Land Army Documentary Clip](wla-documentary.mp4) and discuss:
-
-1. What challenges did the Land Girls face working in agriculture?
-2. How did their work contribute to the war effort?
-3. What does their service tell us about women's roles during wartime?
+Scroll down to explore the artifact gallery and start your investigation!
 
 ---

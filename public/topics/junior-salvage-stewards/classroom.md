@@ -1,46 +1,30 @@
-# Junior Salvage Stewards Classroom
+# Mission 1
 
-## Every Scrap Counts
+## Mystery Artifacts Challenge
 
-![Children collecting salvage materials](children-salvage-collection.jpg)
-*Children collecting scrap metal and other materials for the war effort*
+### Your Mission
 
-### Overview
+Welcome, history detectives! Your mission is to examine the artifacts in the gallery below and work together to discover what they have in common. These objects tell the story of a group of young people who played an important role during World War II.
 
-Junior Salvage Stewards were children and young people organized during World War II to collect and sort waste materials that could be recycled and reused for the war effort.
+### Instructions
 
-![Salvage collection poster](salvage-poster.jpg)
-*Government poster encouraging salvage collection*
+1. **Observe carefully** - Look at each artifact in the gallery
+2. **Ask questions** - What do you notice about these objects?
+3. **Make connections** - How might these items be related?
+4. **Work together** - Discuss your observations with your team
+5. **Form theories** - What do you think these objects tell us about the past?
 
-#### Key Points:
+### Investigation Questions
 
-- Active during: 1940-1945
-- Age range: Typically 8-16 years old
-- Organization: School-based groups and youth clubs
-- Motto: "Make Do and Mend"
+As you examine the artifacts, consider:
 
-### Their Vital Mission
+- What time period might these objects be from?
+- Who might have used these items?
+- What was happening in the world when these were made?
+- What role might young people have played during this time?
 
-Children played a crucial role in the home front war effort by collecting materials that were desperately needed for manufacturing weapons, equipment, and supplies.
+### Ready to Begin?
 
-#### Materials They Collected:
-- Scrap metal: for weapons and ammunition
-- Paper and cardboard: for packaging and communication
-- Rubber: for vehicle tires and equipment
-- Bones: for glue and fertilizer
-- Kitchen waste: for pig food
-
-### Life as a Salvage Steward
-
-![Junior Salvage badge and uniform](salvage-steward-badge.jpg)
-*The Junior Salvage Steward badge and collection activities*
-
-### Class Discussion
-
-Watch the [Salvage Campaign Documentary Clip](salvage-campaign.mp4) and discuss:
-
-1. How did children's salvage work help win the war?
-2. What skills did children learn from this responsibility?
-3. How does wartime recycling compare to modern environmental efforts?
+Scroll down to explore the artifact gallery and start your investigation!
 
 ---
