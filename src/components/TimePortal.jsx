@@ -56,10 +56,13 @@ const TimePortal = ({ onActivated }) => {
       
       if (targetElement) {
         console.log('🎯 Scrolling to target element:', targetElement)
-        targetElement.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'start',
-          inline: 'nearest'
+        // Get the element's position and add some offset to keep it visible
+        const elementTop = targetElement.getBoundingClientRect().top + window.pageYOffset
+        const offset = 20 // Keep 20px from top of viewport
+        
+        window.scrollTo({
+          top: elementTop - offset,
+          behavior: 'smooth'
         })
       } else if (attempt < maxAttempts) {
         // Retry after a longer delay - elements might not be rendered yet
