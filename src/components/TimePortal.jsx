@@ -13,54 +13,72 @@ const TimePortal = ({ onActivated }) => {
 
   // Function to scroll to carousel section
   const scrollToCarousel = () => {
-    // Look specifically for the "Time to Investigate" heading first
-    const selectors = [
-      'h2', // "Time to Investigate" heading
-      '.objects-container',
-      '.objects-materializing', 
-      '[class*="carousel"]',
-    ]
+    console.log('🔍 scrollToCarousel called')
     
-    let targetElement = null
-    for (const selector of selectors) {
-      const elements = document.querySelectorAll(selector)
-      // If it's h2, look for one that might contain "Time to Investigate"
-      if (selector === 'h2' && elements.length > 0) {
-        for (const h2 of elements) {
-          if (h2.textContent.includes('Time to Investigate') || h2.textContent.includes('Investigate')) {
-            targetElement = h2
-            break
+    // Function to attempt scrolling with retries
+    const attemptScroll = (attempt = 1, maxAttempts = 5) => {
+      console.log(`📍 Scroll attempt ${attempt}/${maxAttempts}`)
+      
+      // Look specifically for the "Time to Investigate" heading first
+      const selectors = [
+        'h2', // "Time to Investigate" heading
+        '.objects-container',
+        '.objects-materializing', 
+        '[class*="carousel"]',
+      ]
+      
+      let targetElement = null
+      for (const selector of selectors) {
+        const elements = document.querySelectorAll(selector)
+        console.log(`🔍 Found ${elements.length} elements for selector: ${selector}`)
+        
+        // If it's h2, look for one that might contain "Time to Investigate"
+        if (selector === 'h2' && elements.length > 0) {
+          for (const h2 of elements) {
+            console.log(`📝 H2 text: "${h2.textContent}"`)
+            if (h2.textContent.includes('Time to Investigate') || h2.textContent.includes('Investigate')) {
+              targetElement = h2
+              console.log('✅ Found "Time to Investigate" heading!')
+              break
+            }
           }
+          if (targetElement) break
+          // If no specific "Time to Investigate" found, use the last h2 (likely to be it)
+          targetElement = elements[elements.length - 1]
+          console.log('📍 Using last h2 element as fallback')
+          break
+        } else if (elements.length > 0) {
+          targetElement = elements[0]
+          console.log(`✅ Found target element with selector: ${selector}`)
+          break
         }
-        if (targetElement) break
-        // If no specific "Time to Investigate" found, use the last h2 (likely to be it)
-        targetElement = elements[elements.length - 1]
-        break
-      } else if (elements.length > 0) {
-        targetElement = elements[0]
-        break
       }
-    }
-    
-    if (targetElement) {
-      // Add some delay to ensure the elements are rendered
-      setTimeout(() => {
+      
+      if (targetElement) {
+        console.log('🎯 Scrolling to target element:', targetElement)
         targetElement.scrollIntoView({ 
           behavior: 'smooth', 
-          block: 'start', // This puts the heading at the top of the viewport
+          block: 'start',
           inline: 'nearest'
         })
-      }, 100)
-    } else {
-      // Fallback: scroll to a reasonable position further down
-      setTimeout(() => {
-        const scrollPosition = document.body.scrollHeight * 0.65 // 65% down the page
+      } else if (attempt < maxAttempts) {
+        // Retry after a longer delay - elements might not be rendered yet
+        console.log(`⏳ No target found, retrying in ${attempt * 200}ms...`)
+        setTimeout(() => attemptScroll(attempt + 1, maxAttempts), attempt * 200)
+      } else {
+        // Final fallback: scroll to a position
+        console.log('📍 Using fallback scroll position')
+        const scrollPosition = Math.max(window.innerHeight, document.body.scrollHeight * 0.65)
+        console.log(`📍 Scrolling to position: ${scrollPosition}px`)
         window.scrollTo({
           top: scrollPosition,
           behavior: 'smooth'
         })
-      }, 100)
+      }
     }
+    
+    // Start the first attempt with a small delay
+    setTimeout(() => attemptScroll(), 300) // Increased initial delay
   }
 
   const handleActivate = async () => {
@@ -101,8 +119,10 @@ const TimePortal = ({ onActivated }) => {
           setTimeout(() => {
             setIsWarping(false)
             setIsExploding(true)
+            // Activate portal early so carousel elements are rendered
+            onActivated()
             // Start scrolling to carousel during explosion
-            setTimeout(() => scrollToCarousel(), 200)
+            setTimeout(() => scrollToCarousel(), 400) // More delay for rendering
           }, 11650) // 12450ms - 800ms = 11650ms
           
           // Listen for audio end to complete the effect
@@ -111,7 +131,6 @@ const TimePortal = ({ onActivated }) => {
             setIsExploding(false)
             setIsActivated(true)
             setIsActivating(false)
-            onActivated()
           }
           
           // Fallback in case audio doesn't load or play - start explosion at same time
@@ -119,8 +138,10 @@ const TimePortal = ({ onActivated }) => {
             if (isActivating) {
               setIsWarping(false)
               setIsExploding(true)
+              // Activate portal early so carousel elements are rendered
+              onActivated()
               // Start scrolling to carousel during explosion
-              setTimeout(() => scrollToCarousel(), 200)
+              setTimeout(() => scrollToCarousel(), 400)
             }
           }, 11650) // Same timing as audio version
           
@@ -130,7 +151,6 @@ const TimePortal = ({ onActivated }) => {
               setIsExploding(false)
               setIsActivated(true)
               setIsActivating(false)
-              onActivated()
             }
           }, 12450) // 12.45 second total duration
         } else {
@@ -138,15 +158,16 @@ const TimePortal = ({ onActivated }) => {
           setTimeout(() => {
             setIsWarping(false)
             setIsExploding(true)
+            // Activate portal early so carousel elements are rendered
+            onActivated()
             // Start scrolling to carousel during explosion
-            setTimeout(() => scrollToCarousel(), 200)
+            setTimeout(() => scrollToCarousel(), 400)
           }, 11650) // Start explosion at same time
           
           setTimeout(() => {
             setIsExploding(false)
             setIsActivated(true)
             setIsActivating(false)
-            onActivated()
           }, 12450) // End at same time
         }
       }, 500) // Short delay before warp starts
