@@ -71,6 +71,17 @@ const TimePortal = ({ onActivated }) => {
           }, 12000)
         }
       }, 500) // Short delay before warp starts
+    } else if (inputYear === '0000') {
+      // Teacher skip code - instantly activate without animation
+      setIsActivating(true)
+      setShowError(false)
+      
+      // Instantly activate portal
+      setTimeout(() => {
+        setIsActivated(true)
+        setIsActivating(false)
+        onActivated()
+      }, 200) // Very brief delay for visual feedback
     } else {
       setShowError(true)
       // Clear error after 3 seconds
