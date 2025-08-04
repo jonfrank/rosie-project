@@ -14,6 +14,20 @@ export default defineConfig(({ command }) => {
       minify: 'terser',
       rollupOptions: {
         output: {
+          // Add content-based hashes to all chunks and assets
+          entryFileNames: '[name]-[hash].js',
+          chunkFileNames: '[name]-[hash].js',
+          assetFileNames: (assetInfo) => {
+            const info = assetInfo.name.split('.')
+            const extType = info[info.length - 1]
+            if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+              return `images/[name]-[hash][extname]`
+            }
+            if (/css/i.test(extType)) {
+              return `css/[name]-[hash][extname]`
+            }
+            return `assets/[name]-[hash][extname]`
+          },
           manualChunks: {
             vendor: ['react', 'react-dom'],
             router: ['react-router-dom']
