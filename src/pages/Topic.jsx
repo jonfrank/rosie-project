@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import Carousel from '../components/Carousel'
 import TimePortal from '../components/TimePortal'
+import '../components/TimePortal.css'
 
 const Topic = () => {
   const { slug, type } = useParams() // type is either 'classroom' or 'resources'
@@ -12,6 +13,7 @@ const Topic = () => {
   const [error, setError] = useState(null)
   const [carouselDescriptions, setCarouselDescriptions] = useState({})
   const [portalActivated, setPortalActivated] = useState(false)
+  const [objectsAppearing, setObjectsAppearing] = useState(false)
 
   // Topic metadata - now using Mission numbers for classroom pages
   const topicTitles = {
@@ -216,19 +218,26 @@ const Topic = () => {
 
       {/* Time Portal for classroom pages */}
       {type === 'classroom' && (
-        <TimePortal onActivated={() => setPortalActivated(true)} />
+        <TimePortal onActivated={() => {
+          setPortalActivated(true)
+          // Start object appearing animation after a brief delay
+          setTimeout(() => setObjectsAppearing(true), 500)
+        }} />
       )}
 
       {/* Auto-discovered Carousel - only show when portal is activated for classroom pages */}
       {carouselItems.length > 0 && (type !== 'classroom' || portalActivated) && (
-        <div className="mt-8">
+        <div className={`mt-8 ${objectsAppearing ? 'objects-materializing' : ''}`}>
           <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Artifact Gallery</h2>
-          <Carousel 
-            items={carouselItems.map(item => ({
-              ...item,
-              image: `${import.meta.env.PROD ? '/rosie-project' : ''}/topics/${slug}/${item.image}`
-            }))}
-          />
+          <div className="objects-container">
+            <Carousel 
+              items={carouselItems.map((item, index) => ({
+                ...item,
+                image: `${import.meta.env.PROD ? '/rosie-project' : ''}/topics/${slug}/${item.image}`,
+                animationDelay: index * 0.3 // Stagger the animations
+              }))}
+            />
+          </div>
         </div>
       )}
 

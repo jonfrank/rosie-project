@@ -7,6 +7,7 @@ const TimePortal = ({ onActivated }) => {
   const [showError, setShowError] = useState(false)
   const [isActivating, setIsActivating] = useState(false)
   const [isWarping, setIsWarping] = useState(false)
+  const [warpMessage, setWarpMessage] = useState('')
   const audioRef = useRef(null)
 
   const handleActivate = async () => {
@@ -17,6 +18,24 @@ const TimePortal = ({ onActivated }) => {
       // Start the warp effect
       setTimeout(() => {
         setIsWarping(true)
+        
+        // Dynamic message sequence
+        const messages = [
+          '🔍 CHECKING COORDINATES',
+          '⏰ TRAVELLING BACK IN TIME', 
+          '📦 GATHERING THE OBJECTS',
+          '🏠 RETURNING TO THE PRESENT'
+        ]
+        
+        // Set initial message
+        setWarpMessage(messages[0])
+        
+        // Change messages every 1.25 seconds (5 seconds total / 4 messages)
+        messages.forEach((message, index) => {
+          setTimeout(() => {
+            setWarpMessage(message)
+          }, index * 1250)
+        })
         
         // Play audio if available
         if (audioRef.current) {
@@ -41,15 +60,15 @@ const TimePortal = ({ onActivated }) => {
               setIsActivating(false)
               onActivated()
             }
-          }, 5000) // 5 second fallback
+          }, 6000) // 6 second fallback to allow for messages
         } else {
-          // No audio, just visual effect for 3 seconds
+          // No audio, just visual effect for 5 seconds to show all messages
           setTimeout(() => {
             setIsWarping(false)
             setIsActivated(true)
             setIsActivating(false)
             onActivated()
-          }, 3000)
+          }, 5000)
         }
       }, 500) // Short delay before warp starts
     } else {
@@ -100,7 +119,7 @@ const TimePortal = ({ onActivated }) => {
             <div className="warp-ring warp-ring-5"></div>
             <div className="warp-center">
               <div className="warp-text">
-                🌌 TRAVELING THROUGH TIME 🌌
+                {warpMessage}
               </div>
             </div>
           </div>
