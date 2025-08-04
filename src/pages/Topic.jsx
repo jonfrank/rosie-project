@@ -30,7 +30,8 @@ const Topic = () => {
     const topicMediaFiles = {
       'junior-salvage-stewards': [
         'Anti-Gas Respirator MKII.jpg',
-        'Anti-Gas Respirator Small Child.jpg'
+        'Anti-Gas Respirator Small Child.jpg',
+        'Join the Cogs Art.jpg'
       ],
       'scouts': [
         'BP Fireman Scout Badge.jpeg'
