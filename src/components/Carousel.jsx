@@ -115,8 +115,8 @@ const Carousel = ({ items }) => {
       <div className="carousel-content">
         {renderMedia()}
         <div className="description">
-          <div className="description-header">
-            <button onClick={toggleExpanded} className="expand-button">
+          <div className="description-header text-center">
+            <button onClick={toggleExpanded} className="expand-button bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200">
               {isExpanded ? '− Hide Questions' : 'Investigation Questions'}
             </button>
           </div>
@@ -126,9 +126,6 @@ const Carousel = ({ items }) => {
               if (questions.length > 0) {
                 return (
                   <div className="questions-section">
-                    <div className="questions-header">
-                      <h4>Questions to Consider</h4>
-                    </div>
                     <div className="questions-list">
                       {questions.slice(0, revealedQuestions).map((question, index) => (
                         <div key={index} className="question-item">
