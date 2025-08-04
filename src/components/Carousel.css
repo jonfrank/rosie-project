@@ -1,6 +1,6 @@
 .carousel {
   position: relative;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 2rem auto;
   background: #ffffff;
   border-radius: 12px;
@@ -8,13 +8,24 @@
   overflow: hidden;
 }
 
-.carousel-content {
+.carousel-container {
   display: flex;
   flex-direction: column;
+  transition: all 0.3s ease-in-out;
 }
 
-.carousel-content img,
-.carousel-content video {
+.carousel-container.centered {
+  align-items: center;
+}
+
+.carousel-container.side-by-side {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.carousel-container img,
+.carousel-container video {
   width: 100%;
   max-height: 500px;
   object-fit: contain;
@@ -30,12 +41,64 @@
   background: #f9fafb;
 }
 
+/* Media section styling */
+.media-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.carousel-container.side-by-side .media-section {
+  flex: 0 0 60%;
+  max-width: 60%;
+}
+
+.button-section {
+  padding: 1.5rem;
+  text-align: center;
+  background: #f8fafc;
+}
+
+/* Questions panel styling */
+.questions-panel {
+  flex: 0 0 40%;
+  max-width: 40%;
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-left: 1px solid #e5e7eb;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.questions-panel .questions-header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.close-button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.close-button:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
 /* Video-specific styling */
-.carousel-content video {
+.carousel-container video {
   outline: none;
 }
 
-.carousel-content video::-webkit-media-controls-panel {
+.carousel-container video::-webkit-media-controls-panel {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -241,21 +304,34 @@
 @media (max-width: 768px) {
   .carousel {
     margin: 1rem;
+    max-width: none;
   }
   
-  .carousel-content img,
-  .carousel-content video,
+  .carousel-container.side-by-side {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .carousel-container.side-by-side .media-section,
+  .questions-panel {
+    flex: none;
+    max-width: none;
+  }
+  
+  .questions-panel {
+    border-left: none;
+    border-top: 1px solid #e5e7eb;
+    max-height: none;
+  }
+  
+  .carousel-container img,
+  .carousel-container video,
   .carousel-media {
     max-height: 300px;
   }
   
-  .description {
+  .button-section {
     padding: 1rem;
-  }
-  
-  .description-header {
-    justify-content: center;
-    align-items: center;
   }
   
   .carousel-button {

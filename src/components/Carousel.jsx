@@ -112,16 +112,26 @@ const Carousel = ({ items }) => {
 
   return (
     <div className="carousel">
-      <div className="carousel-content">
-        {renderMedia()}
-        <div className="description">
-          <div className="description-header text-center">
-            <button onClick={toggleExpanded} className="expand-button bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200">
-              {isExpanded ? '− Hide Questions' : 'Investigation Questions'}
-            </button>
-          </div>
-          <div className={`description-content ${isExpanded ? 'expanded' : 'collapsed'}`}>
-            {isExpanded && (() => {
+      <div className={`carousel-container ${isExpanded ? 'side-by-side' : 'centered'}`}>
+        <div className="media-section">
+          {renderMedia()}
+          {!isExpanded && (
+            <div className="button-section">
+              <button onClick={toggleExpanded} className="expand-button bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200">
+                Investigation Questions
+              </button>
+            </div>
+          )}
+        </div>
+        
+        {isExpanded && (
+          <div className="questions-panel">
+            <div className="questions-header">
+              <button onClick={toggleExpanded} className="close-button">
+                × Close Questions
+              </button>
+            </div>
+            {(() => {
               const questions = extractQuestions(items[currentIndex].description);
               if (questions.length > 0) {
                 return (
@@ -156,7 +166,7 @@ const Carousel = ({ items }) => {
               return null;
             })()}
           </div>
-        </div>
+        )}
       </div>
       <button onClick={prevItem} className="carousel-button prev">←</button>
       <button onClick={nextItem} className="carousel-button next">→</button>
