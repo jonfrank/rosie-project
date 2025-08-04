@@ -22,7 +22,9 @@ const Carousel = ({ items }) => {
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
     if (!isExpanded) {
-      setRevealedQuestions(0); // Reset questions when expanding
+      setRevealedQuestions(1); // Show first question immediately when expanding
+    } else {
+      setRevealedQuestions(0); // Reset questions when collapsing
     }
   };
 
@@ -114,15 +116,11 @@ const Carousel = ({ items }) => {
         {renderMedia()}
         <div className="description">
           <div className="description-header">
-            <h3>{items[currentIndex].title}</h3>
             <button onClick={toggleExpanded} className="expand-button">
-              {isExpanded ? '− Show Less' : '+ Show More'}
+              {isExpanded ? '− Hide Questions' : 'Investigation Questions'}
             </button>
           </div>
           <div className={`description-content ${isExpanded ? 'expanded' : 'collapsed'}`}>
-            <div className="prose">
-              <ReactMarkdown>{getMainDescription(items[currentIndex].description)}</ReactMarkdown>
-            </div>
             {isExpanded && (() => {
               const questions = extractQuestions(items[currentIndex].description);
               if (questions.length > 0) {
