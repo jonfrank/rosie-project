@@ -228,7 +228,7 @@ const Topic = () => {
       {/* Auto-discovered Carousel - only show when portal is activated for classroom pages */}
       {carouselItems.length > 0 && (type !== 'classroom' || portalActivated) && (
         <div className={`mt-8 ${objectsAppearing ? 'objects-materializing' : ''}`}>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Artifact Gallery</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Time to Investigate</h2>
           <div className="objects-container">
             <Carousel 
               items={carouselItems.map((item, index) => ({
