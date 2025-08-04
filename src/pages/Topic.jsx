@@ -36,19 +36,19 @@ const Topic = () => {
     const basePath = import.meta.env.PROD ? '/rosie-project' : ''
     const items = []
     
-    // Topic-specific media files
+    // Topic-specific media files (ordered as they should appear in carousel)
     const topicMediaFiles = {
       'junior-salvage-stewards': [
-        'Anti-Gas Respirator MKII.jpg',
-        'Anti-Gas Respirator Small Child.jpg',
-        'Join the Cogs Art.jpg'
+        'Anti-Gas Respirator Small Child.jpg', // First item
+        'Anti-Gas Respirator MKII.jpg',        // Second item
+        'Join the Cogs Art.jpg'                // Third item
       ],
       'scouts': [
         'BP Fireman Scout Badge.jpeg'
       ],
       'womens-land-army': [
-        'IMG_6503.mov',
-        'Women\'s Land Army.jpg'
+        'Women\'s Land Army.jpg',  // First item
+        'IMG_6503.mov'            // Second item
       ]
     }
     
