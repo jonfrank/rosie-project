@@ -11,6 +11,43 @@ const TimePortal = ({ onActivated }) => {
   const [warpMessage, setWarpMessage] = useState('')
   const audioRef = useRef(null)
 
+  // Function to scroll to carousel section
+  const scrollToCarousel = () => {
+    // Try multiple selectors to find the carousel section
+    const selectors = [
+      '.objects-container',
+      '.objects-materializing', 
+      '[class*="carousel"]',
+      'h2', // As fallback, find any h2 (likely "Time to Investigate")
+    ]
+    
+    let carouselSection = null
+    for (const selector of selectors) {
+      carouselSection = document.querySelector(selector)
+      if (carouselSection) break
+    }
+    
+    if (carouselSection) {
+      // Add some delay to ensure the elements are rendered
+      setTimeout(() => {
+        carouselSection.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start',
+          inline: 'nearest'
+        })
+      }, 100)
+    } else {
+      // Fallback: scroll to a reasonable position
+      setTimeout(() => {
+        const scrollPosition = document.body.scrollHeight * 0.6 // 60% down the page
+        window.scrollTo({
+          top: scrollPosition,
+          behavior: 'smooth'
+        })
+      }, 100)
+    }
+  }
+
   const handleActivate = async () => {
     if (inputYear === '1939') {
       setIsActivating(true)
@@ -49,6 +86,8 @@ const TimePortal = ({ onActivated }) => {
           setTimeout(() => {
             setIsWarping(false)
             setIsExploding(true)
+            // Start scrolling to carousel during explosion
+            setTimeout(() => scrollToCarousel(), 200)
           }, 11650) // 12450ms - 800ms = 11650ms
           
           // Listen for audio end to complete the effect
@@ -65,6 +104,8 @@ const TimePortal = ({ onActivated }) => {
             if (isActivating) {
               setIsWarping(false)
               setIsExploding(true)
+              // Start scrolling to carousel during explosion
+              setTimeout(() => scrollToCarousel(), 200)
             }
           }, 11650) // Same timing as audio version
           
@@ -82,6 +123,8 @@ const TimePortal = ({ onActivated }) => {
           setTimeout(() => {
             setIsWarping(false)
             setIsExploding(true)
+            // Start scrolling to carousel during explosion
+            setTimeout(() => scrollToCarousel(), 200)
           }, 11650) // Start explosion at same time
           
           setTimeout(() => {
