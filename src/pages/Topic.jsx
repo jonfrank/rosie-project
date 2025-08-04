@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import Carousel from '../components/Carousel'
+import TimePortal from '../components/TimePortal'
 
 const Topic = () => {
   const { slug, type } = useParams() // type is either 'classroom' or 'resources'
@@ -10,6 +11,7 @@ const Topic = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [carouselDescriptions, setCarouselDescriptions] = useState({})
+  const [portalActivated, setPortalActivated] = useState(false)
 
   // Topic metadata - now using Mission numbers for classroom pages
   const topicTitles = {
@@ -212,8 +214,13 @@ const Topic = () => {
         </div>
       </div>
 
-      {/* Auto-discovered Carousel */}
-      {carouselItems.length > 0 && (
+      {/* Time Portal for classroom pages */}
+      {type === 'classroom' && (
+        <TimePortal onActivated={() => setPortalActivated(true)} />
+      )}
+
+      {/* Auto-discovered Carousel - only show when portal is activated for classroom pages */}
+      {carouselItems.length > 0 && (type !== 'classroom' || portalActivated) && (
         <div className="mt-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Artifact Gallery</h2>
           <Carousel 
