@@ -5,34 +5,45 @@ import "./Carousel.css"
 const Carousel = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [revealedQuestions, setRevealedQuestions] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const nextItem = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
     setIsExpanded(false); // Collapse when moving to next item
-    setRevealedQuestions(0); // Reset questions when changing items
+    setCurrentQuestionIndex(0); // Reset questions when changing items
   };
 
   const prevItem = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length);
     setIsExpanded(false); // Collapse when moving to previous item
-    setRevealedQuestions(0); // Reset questions when changing items
+    setCurrentQuestionIndex(0); // Reset questions when changing items
   };
 
   const toggleExpanded = () => {
-    setIsExpanded(!isExpanded);
     if (!isExpanded) {
-      setRevealedQuestions(1); // Show first question immediately when expanding
+      // Expanding: Start animation, then set expanded state
+      setIsAnimating(true);
+      setCurrentQuestionIndex(0);
+      // Small delay to let the browser capture the current state
+      requestAnimationFrame(() => {
+        setIsExpanded(true);
+      });
+      // Reset animation state after animation completes
+      setTimeout(() => setIsAnimating(false), 800);
     } else {
-      setRevealedQuestions(0); // Reset questions when collapsing
+      // Collapsing: Immediately set states
+      setIsExpanded(false);
+      setIsAnimating(false);
+      setCurrentQuestionIndex(0);
     }
   };
 
   const revealNextQuestion = () => {
     const currentItem = items[currentIndex];
     const questions = extractQuestions(currentItem.description);
-    if (revealedQuestions < questions.length) {
-      setRevealedQuestions(revealedQuestions + 1);
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
 
@@ -112,7 +123,7 @@ const Carousel = ({ items }) => {
 
   return (
     <div className="carousel">
-      <div className={`carousel-container ${isExpanded ? 'side-by-side' : 'centered'}`}>
+      <div className={`carousel-container ${isExpanded ? 'expanded' : 'collapsed'} ${isAnimating ? 'animating' : ''}`}>
         <div className="media-section">
           {renderMedia()}
           {!isExpanded && (
@@ -133,30 +144,29 @@ const Carousel = ({ items }) => {
             </div>
             {(() => {
               const questions = extractQuestions(items[currentIndex].description);
-              if (questions.length > 0) {
+              if (questions.length > 0 && isExpanded) {
+                const currentQuestion = questions[currentQuestionIndex];
                 return (
                   <div className="questions-section">
                     <div className="questions-list">
-                      {questions.slice(0, revealedQuestions).map((question, index) => (
-                        <div key={index} className="question-item">
-                          <span className="question-number">{index + 1}.</span>
-                          <span className="question-text">{question}</span>
-                        </div>
-                      ))}
-                      {revealedQuestions < questions.length && (
+                      <div className="question-item">
+                        <span className="question-number">{currentQuestionIndex + 1}.</span>
+                        <span className="question-text">{currentQuestion}</span>
+                      </div>
+                      {currentQuestionIndex < questions.length - 1 && (
                         <button 
                           onClick={revealNextQuestion} 
                           className="reveal-question-button"
                         >
-                          Reveal Next Question ({revealedQuestions + 1} of {questions.length})
+                          Reveal Next Question ({currentQuestionIndex + 2} of {questions.length})
                         </button>
                       )}
-                      {revealedQuestions > 0 && revealedQuestions === questions.length && (
+                      {currentQuestionIndex === questions.length - 1 && (
                         <button 
                           onClick={nextItem} 
                           className="next-source-button"
                         >
-                          Next Source →
+                          Next Source &rarr;
                         </button>
                       )}
                     </div>
@@ -168,8 +178,8 @@ const Carousel = ({ items }) => {
           </div>
         )}
       </div>
-      <button onClick={prevItem} className="carousel-button prev">←</button>
-      <button onClick={nextItem} className="carousel-button next">→</button>
+      <button onClick={prevItem} className="carousel-button prev">&larr;</button>
+      <button onClick={nextItem} className="carousel-button next">&rarr;</button>
     </div>
   );
 };
