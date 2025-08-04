@@ -30,11 +30,11 @@ const TimePortal = ({ onActivated }) => {
         // Set initial message
         setWarpMessage(messages[0])
         
-        // Change messages every 1.25 seconds (5 seconds total / 4 messages)
+        // Change messages every 3 seconds (12 seconds total / 4 messages)
         messages.forEach((message, index) => {
           setTimeout(() => {
             setWarpMessage(message)
-          }, index * 1250)
+          }, index * 3000)
         })
         
         // Play audio if available
@@ -60,15 +60,15 @@ const TimePortal = ({ onActivated }) => {
               setIsActivating(false)
               onActivated()
             }
-          }, 6000) // 6 second fallback to allow for messages
+          }, 12000) // 12 second fallback to allow for all messages
         } else {
-          // No audio, just visual effect for 5 seconds to show all messages
+          // No audio, just visual effect for 12 seconds to show all messages
           setTimeout(() => {
             setIsWarping(false)
             setIsActivated(true)
             setIsActivating(false)
             onActivated()
-          }, 5000)
+          }, 12000)
         }
       }, 500) // Short delay before warp starts
     } else {
