@@ -13,33 +13,48 @@ const TimePortal = ({ onActivated }) => {
 
   // Function to scroll to carousel section
   const scrollToCarousel = () => {
-    // Try multiple selectors to find the carousel section
+    // Look specifically for the "Time to Investigate" heading first
     const selectors = [
+      'h2', // "Time to Investigate" heading
       '.objects-container',
       '.objects-materializing', 
       '[class*="carousel"]',
-      'h2', // As fallback, find any h2 (likely "Time to Investigate")
     ]
     
-    let carouselSection = null
+    let targetElement = null
     for (const selector of selectors) {
-      carouselSection = document.querySelector(selector)
-      if (carouselSection) break
+      const elements = document.querySelectorAll(selector)
+      // If it's h2, look for one that might contain "Time to Investigate"
+      if (selector === 'h2' && elements.length > 0) {
+        for (const h2 of elements) {
+          if (h2.textContent.includes('Time to Investigate') || h2.textContent.includes('Investigate')) {
+            targetElement = h2
+            break
+          }
+        }
+        if (targetElement) break
+        // If no specific "Time to Investigate" found, use the last h2 (likely to be it)
+        targetElement = elements[elements.length - 1]
+        break
+      } else if (elements.length > 0) {
+        targetElement = elements[0]
+        break
+      }
     }
     
-    if (carouselSection) {
+    if (targetElement) {
       // Add some delay to ensure the elements are rendered
       setTimeout(() => {
-        carouselSection.scrollIntoView({ 
+        targetElement.scrollIntoView({ 
           behavior: 'smooth', 
-          block: 'start',
+          block: 'start', // This puts the heading at the top of the viewport
           inline: 'nearest'
         })
       }, 100)
     } else {
-      // Fallback: scroll to a reasonable position
+      // Fallback: scroll to a reasonable position further down
       setTimeout(() => {
-        const scrollPosition = document.body.scrollHeight * 0.6 // 60% down the page
+        const scrollPosition = document.body.scrollHeight * 0.65 // 65% down the page
         window.scrollTo({
           top: scrollPosition,
           behavior: 'smooth'
