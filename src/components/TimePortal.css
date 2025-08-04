@@ -6,39 +6,99 @@
   overflow: hidden;
 }
 
-.warp-ring {
+.spiral-ring {
   position: absolute;
   top: 50%;
   left: 50%;
-  border: 3px solid;
+  width: 150vw;
+  height: 150vw;
+  border: 4px solid transparent;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  animation: warp-expand 2s linear infinite;
+  animation: vortex-contract 3s linear infinite;
 }
 
-.warp-ring-1 {
-  border-color: #60a5fa;
+.spiral-ring-1 {
+  border-color: rgba(96, 165, 250, 0.5);
   animation-delay: 0s;
 }
 
-.warp-ring-2 {
-  border-color: #a78bfa;
+.spiral-ring-2 {
+  border-color: rgba(167, 139, 250, 0.5);
+  animation-delay: 1s;
+}
+
+.spiral-ring-3 {
+  border-color: rgba(52, 211, 153, 0.5);
+  animation-delay: 2s;
+}
+
+@keyframes vortex-contract {
+  0% {
+    width: 150vw;
+    height: 150vw;
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 0.9;
+  }
+  100% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.explosion-ring-1 {
+  border-color: rgba(96, 165, 250, 0.8);
+  animation: explosion-burst 0.8s ease-out;
+  animation-delay: 0s;
+}
+
+.explosion-ring-2 {
+  border-color: rgba(167, 139, 250, 0.8);
+  animation: explosion-burst 0.8s ease-out;
+  animation-delay: 0.1s;
+}
+
+.explosion-ring-3 {
+  border-color: rgba(52, 211, 153, 0.8);
+  animation: explosion-burst 0.8s ease-out;
+  animation-delay: 0.2s;
+}
+
+.explosion-ring-4 {
+  border-color: rgba(251, 191, 36, 0.8);
+  animation: explosion-burst 0.8s ease-out;
+  animation-delay: 0.3s;
+}
+
+.explosion-ring-5 {
+  border-color: rgba(248, 113, 113, 0.8);
+  animation: explosion-burst 0.8s ease-out;
   animation-delay: 0.4s;
 }
 
-.warp-ring-3 {
-  border-color: #34d399;
-  animation-delay: 0.8s;
-}
-
-.warp-ring-4 {
-  border-color: #fbbf24;
-  animation-delay: 1.2s;
-}
-
-.warp-ring-5 {
-  border-color: #f87171;
-  animation-delay: 1.6s;
+@keyframes explosion-burst {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+    border-width: 6px;
+  }
+  50% {
+    opacity: 0.9;
+    border-width: 3px;
+  }
+  100% {
+    width: 200vw;
+    height: 200vw;
+    opacity: 0;
+    border-width: 1px;
+  }
 }
 
 .warp-center {
@@ -62,25 +122,6 @@
   animation: warp-pulse 1s ease-in-out infinite alternate;
   white-space: nowrap;
   padding: 20px;
-}
-
-@keyframes warp-expand {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 1;
-    border-width: 8px;
-  }
-  50% {
-    opacity: 0.8;
-    border-width: 4px;
-  }
-  100% {
-    width: 200vw;
-    height: 200vw;
-    opacity: 0;
-    border-width: 1px;
-  }
 }
 
 @keyframes warp-pulse {

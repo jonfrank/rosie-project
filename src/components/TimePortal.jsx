@@ -7,6 +7,7 @@ const TimePortal = ({ onActivated }) => {
   const [showError, setShowError] = useState(false)
   const [isActivating, setIsActivating] = useState(false)
   const [isWarping, setIsWarping] = useState(false)
+  const [isExploding, setIsExploding] = useState(false)
   const [warpMessage, setWarpMessage] = useState('')
   const audioRef = useRef(null)
 
@@ -22,19 +23,19 @@ const TimePortal = ({ onActivated }) => {
         // Dynamic message sequence
         const messages = [
           '🔍 CHECKING COORDINATES',
-          '⏰ TRAVELLING BACK IN TIME', 
-          '📦 GATHERING THE OBJECTS',
-          '🏠 RETURNING TO THE PRESENT'
+          '⏰ TRAVELLING THROUGH TIME', 
+          '📦 GATHERING OBJECTS',
+          '🏠 RETURNING TO PRESENT'
         ]
         
         // Set initial message
         setWarpMessage(messages[0])
         
-        // Change messages every 3 seconds (12 seconds total / 4 messages)
+        // Change messages every ~3.1 seconds (12.45 seconds total / 4 messages)
         messages.forEach((message, index) => {
           setTimeout(() => {
             setWarpMessage(message)
-          }, index * 3000)
+          }, index * 3100)
         })
         
         // Play audio if available
@@ -44,31 +45,51 @@ const TimePortal = ({ onActivated }) => {
             console.log('Audio playback failed:', err)
           })
           
+          // Start explosion 800ms before audio ends so they finish together
+          setTimeout(() => {
+            setIsWarping(false)
+            setIsExploding(true)
+          }, 11650) // 12450ms - 800ms = 11650ms
+          
           // Listen for audio end to complete the effect
           audioRef.current.onended = () => {
-            setIsWarping(false)
+            // Audio ends, explosion should also end now
+            setIsExploding(false)
             setIsActivated(true)
             setIsActivating(false)
             onActivated()
           }
           
-          // Fallback in case audio doesn't load or play
+          // Fallback in case audio doesn't load or play - start explosion at same time
           setTimeout(() => {
             if (isActivating) {
               setIsWarping(false)
+              setIsExploding(true)
+            }
+          }, 11650) // Same timing as audio version
+          
+          // Fallback to end explosion after full duration
+          setTimeout(() => {
+            if (isActivating) {
+              setIsExploding(false)
               setIsActivated(true)
               setIsActivating(false)
               onActivated()
             }
-          }, 12000) // 12 second fallback to allow for all messages
+          }, 12450) // 12.45 second total duration
         } else {
-          // No audio, just visual effect for 12 seconds to show all messages
+          // No audio, use same timing as audio version
           setTimeout(() => {
             setIsWarping(false)
+            setIsExploding(true)
+          }, 11650) // Start explosion at same time
+          
+          setTimeout(() => {
+            setIsExploding(false)
             setIsActivated(true)
             setIsActivating(false)
             onActivated()
-          }, 12000)
+          }, 12450) // End at same time
         }
       }, 500) // Short delay before warp starts
     } else if (inputYear === '0000') {
@@ -123,16 +144,27 @@ const TimePortal = ({ onActivated }) => {
       {isWarping && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
           <div className="warp-effect">
-            <div className="warp-ring warp-ring-1"></div>
-            <div className="warp-ring warp-ring-2"></div>
-            <div className="warp-ring warp-ring-3"></div>
-            <div className="warp-ring warp-ring-4"></div>
-            <div className="warp-ring warp-ring-5"></div>
+            <div className="spiral-ring spiral-ring-1"></div>
+            <div className="spiral-ring spiral-ring-2"></div>
+            <div className="spiral-ring spiral-ring-3"></div>
             <div className="warp-center">
               <div className="warp-text">
                 {warpMessage}
               </div>
             </div>
+          </div>
+        </div>
+      )}
+      
+      {/* Explosion Effect Overlay */}
+      {isExploding && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
+          <div className="warp-effect">
+            <div className="spiral-ring explosion-ring-1"></div>
+            <div className="spiral-ring explosion-ring-2"></div>
+            <div className="spiral-ring explosion-ring-3"></div>
+            <div className="spiral-ring explosion-ring-4"></div>
+            <div className="spiral-ring explosion-ring-5"></div>
           </div>
         </div>
       )}
