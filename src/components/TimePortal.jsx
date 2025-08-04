@@ -58,7 +58,7 @@ const TimePortal = ({ onActivated }) => {
         console.log('🎯 Scrolling to target element:', targetElement)
         // Get the element's position and add some offset to keep it visible
         const elementTop = targetElement.getBoundingClientRect().top + window.pageYOffset
-        const offset = 30 // Keep 30px from top of viewport to ensure heading is fully visible
+        const offset = 50 // Keep 50px from top of viewport to ensure heading is fully visible
         
         window.scrollTo({
           top: elementTop - offset,
