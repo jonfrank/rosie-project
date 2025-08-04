@@ -60,7 +60,7 @@
 }
 
 .expand-button {
-  background: #3b82f6;
+  background: #16a34a;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -73,7 +73,7 @@
 }
 
 .expand-button:hover {
-  background: #2563eb;
+  background: #15803d;
   transform: translateY(-1px);
 }
 
