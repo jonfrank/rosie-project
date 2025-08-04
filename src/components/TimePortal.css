@@ -1,0 +1,103 @@
+/* Time Portal Warp Effect */
+.warp-effect {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.warp-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 3px solid;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: warp-expand 2s linear infinite;
+}
+
+.warp-ring-1 {
+  border-color: #60a5fa;
+  animation-delay: 0s;
+}
+
+.warp-ring-2 {
+  border-color: #a78bfa;
+  animation-delay: 0.4s;
+}
+
+.warp-ring-3 {
+  border-color: #34d399;
+  animation-delay: 0.8s;
+}
+
+.warp-ring-4 {
+  border-color: #fbbf24;
+  animation-delay: 1.2s;
+}
+
+.warp-ring-5 {
+  border-color: #f87171;
+  animation-delay: 1.6s;
+}
+
+.warp-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.warp-text {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  animation: warp-pulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes warp-expand {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+    border-width: 8px;
+  }
+  50% {
+    opacity: 0.8;
+    border-width: 4px;
+  }
+  100% {
+    width: 200vw;
+    height: 200vw;
+    opacity: 0;
+    border-width: 1px;
+  }
+}
+
+@keyframes warp-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .warp-text {
+    font-size: 1.5rem;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .warp-text {
+    font-size: 1.2rem;
+  }
+}
