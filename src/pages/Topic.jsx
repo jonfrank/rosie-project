@@ -23,9 +23,9 @@ const Topic = () => {
   }
   
   const missionTitles = {
-    'junior-salvage-stewards': 'Mission 1',
-    'scouts': 'Mission 2', 
-    'womens-land-army': 'Mission 3'
+    'womens-land-army': 'Mission 1',
+    'junior-salvage-stewards': 'Mission 2', 
+    'scouts': 'Mission 3'
   }
 
   // Auto-discovered carousel items

@@ -1,4 +1,4 @@
-# Mission 1
+# Mission 2
 
 ![Rosie](rosie-character.jpg)
 *Meet Rosie, your time-traveling guide*
