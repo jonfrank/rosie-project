@@ -58,7 +58,7 @@ const TimePortal = ({ onActivated }) => {
         console.log('🎯 Scrolling to target element:', targetElement)
         // Get the element's position and add some offset to keep it visible
         const elementTop = targetElement.getBoundingClientRect().top + window.pageYOffset
-        const offset = 50 // Keep 50px from top of viewport to ensure heading is fully visible
+        const offset = 25 // Fine-tuned offset for perfect heading positioning
         
         window.scrollTo({
           top: elementTop - offset,
@@ -125,7 +125,7 @@ const TimePortal = ({ onActivated }) => {
             // Activate portal early so carousel elements are rendered
             onActivated()
             // Start scrolling to carousel during explosion
-            setTimeout(() => scrollToCarousel(), 400) // More delay for rendering
+            setTimeout(() => scrollToCarousel(), 1200) // Much longer delay to allow DOM rendering
           }, 11650) // 12450ms - 800ms = 11650ms
           
           // Listen for audio end to complete the effect
@@ -144,7 +144,7 @@ const TimePortal = ({ onActivated }) => {
               // Activate portal early so carousel elements are rendered
               onActivated()
               // Start scrolling to carousel during explosion
-              setTimeout(() => scrollToCarousel(), 400)
+              setTimeout(() => scrollToCarousel(), 1200) // Match the longer delay
             }
           }, 11650) // Same timing as audio version
           
@@ -164,7 +164,7 @@ const TimePortal = ({ onActivated }) => {
             // Activate portal early so carousel elements are rendered
             onActivated()
             // Start scrolling to carousel during explosion
-            setTimeout(() => scrollToCarousel(), 400)
+            setTimeout(() => scrollToCarousel(), 1200) // Match the longer delay
           }, 11650) // Start explosion at same time
           
           setTimeout(() => {
@@ -184,6 +184,8 @@ const TimePortal = ({ onActivated }) => {
         setIsActivated(true)
         setIsActivating(false)
         onActivated()
+        // Add scroll to carousel for teacher shortcut too
+        setTimeout(() => scrollToCarousel(), 800) // Shorter delay since no animation
       }, 200) // Very brief delay for visual feedback
     } else {
       setShowError(true)
@@ -202,12 +204,9 @@ const TimePortal = ({ onActivated }) => {
     return (
       <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
         <div className="text-center">
-          <div className="text-green-600 text-xl font-bold mb-2">
+          <div className="text-green-600 text-xl font-bold">
             🌟 Time Portal Activated! 🌟
           </div>
-          <p className="text-green-800">
-            Perfect! The coordinates are set. The objects from the past are materializing below...
-          </p>
         </div>
       </div>
     )

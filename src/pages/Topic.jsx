@@ -15,17 +15,17 @@ const Topic = () => {
   const [portalActivated, setPortalActivated] = useState(false)
   const [objectsAppearing, setObjectsAppearing] = useState(false)
 
-  // Topic metadata - now using Mission numbers for classroom pages
+  // Topic metadata - now using Investigation numbers for classroom pages
   const topicTitles = {
     'scouts': 'Scouts Movement',
     'womens-land-army': 'Women\'s Land Army',
     'junior-salvage-stewards': 'Junior Salvage Stewards'
   }
   
-  const missionTitles = {
-    'womens-land-army': 'Mission 1',
-    'junior-salvage-stewards': 'Mission 2', 
-    'scouts': 'Mission 3'
+  const investigationTitles = {
+    'womens-land-army': 'Investigation 1',
+    'junior-salvage-stewards': 'Investigation 2', 
+    'scouts': 'Investigation 3'
   }
 
   // Auto-discovered carousel items
@@ -47,8 +47,11 @@ const Topic = () => {
         'BP Fireman Scout Badge.jpeg'
       ],
       'womens-land-army': [
-        'Women\'s Land Army.jpg',  // First item
-        'IMG_6503.mov'            // Second item
+        'Ration Book.mov',         // First item - Ration Book
+        'WLA Trousers.mov',        // Second item - WLA Trousers
+        'Women\'s Land Army.jpg',  // Third item - WLA Poster
+        'Green WLA Armband.mov',   // Fourth item - Green armband
+        'Red WLA Armband.mov'      // Fifth item - Red armband
       ]
     }
     
@@ -70,12 +73,19 @@ const Topic = () => {
             if (descResponse.ok) {
               const descText = await descResponse.text()
               const lines = descText.split('\n')
-              // Extract title from first line (remove # symbol)
-              if (lines[0]?.startsWith('#')) {
-                title = lines[0].replace(/^#+\s*/, '').trim()
+              
+              // Check if file starts with ## Questions (question-only format)
+              if (lines[0]?.trim().toLowerCase() === '## questions') {
+                // For question-only files, use the filename as title and full content as description
+                description = descText.trim()
+              } else {
+                // Original format: Extract title from first line (remove # symbol)
+                if (lines[0]?.startsWith('#')) {
+                  title = lines[0].replace(/^#+\s*/, '').trim()
+                }
+                // Extract content (skip title and empty line)
+                description = lines.slice(2).join('\n').trim()
               }
-              // Extract content (skip title and empty line)
-              description = lines.slice(2).join('\n').trim()
             }
           } catch (err) {
             console.log(`No description file found for ${filename}`)
@@ -152,7 +162,7 @@ const Topic = () => {
     )
   }
 
-  const topicTitle = type === 'classroom' ? (missionTitles[slug] || `Mission ${slug}`) : (topicTitles[slug] || slug)
+  const topicTitle = type === 'classroom' ? (investigationTitles[slug] || `Investigation ${slug}`) : (topicTitles[slug] || slug)
   const pageType = type === 'classroom' ? 'Classroom Materials' : 'Resources'
 
   return (
@@ -187,33 +197,149 @@ const Topic = () => {
 
       {/* Content */}
       <div className="bg-white rounded-lg shadow-sm p-8">
-        <div className="prose prose-lg max-w-none">
-          <ReactMarkdown 
-            remarkPlugins={[remarkGfm]}
-            components={{
-              // Custom components for handling images and links relative to topic folder
-              img: ({node, ...props}) => {
-                const basePath = import.meta.env.PROD ? '/rosie-project' : ''
-                const src = props.src?.startsWith('http') 
-                  ? props.src 
-                  : `${basePath}/topics/${slug}/${props.src}`
-                return <img {...props} src={src} className="rounded-lg shadow-sm" />
-              },
-              a: ({node, ...props}) => {
-                if (props.href?.endsWith('.pdf') || props.href?.endsWith('.mp4') || props.href?.endsWith('.mp3')) {
-                  const basePath = import.meta.env.PROD ? '/rosie-project' : ''
-                  const href = props.href?.startsWith('http') 
-                    ? props.href 
-                    : `${basePath}/topics/${slug}/${props.href}`
-                  return <a {...props} href={href} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline" />
-                }
-                return <a {...props} className="text-blue-600 hover:text-blue-800 underline" />
+        {type === 'classroom' ? (
+          // Special layout for classroom pages with Grace introduction
+          <div>
+            {/* Parse content to separate Grace intro from rest */}
+            {(() => {
+              const lines = content.split('\n')
+              const graceImageIndex = lines.findIndex(line => line.includes('![Grace]'))
+              const separatorIndex = lines.findIndex(line => line.trim() === '---')
+              
+              if (graceImageIndex !== -1 && separatorIndex !== -1) {
+                // Extract Grace introduction section
+                const graceSection = lines.slice(graceImageIndex, separatorIndex).join('\n')
+                const restContent = lines.slice(separatorIndex + 1).join('\n')
+                
+                // Extract text content (everything after the image line)
+                const graceTextLines = lines.slice(graceImageIndex + 1, separatorIndex)
+                const graceText = graceTextLines.filter(line => line.trim() !== '').join('\n\n')
+                
+                return (
+                  <>
+                    {/* Mission Title */}
+                    <div className="prose prose-lg max-w-none mb-6">
+                      <ReactMarkdown>{lines[0]}</ReactMarkdown>
+                    </div>
+                    
+                    {/* Grace Introduction - Two Column Layout */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                      {/* Left Column - Grace Image */}
+                      <div className="md:col-span-1 flex justify-center">
+                        <img 
+                          src={`${import.meta.env.PROD ? '/rosie-project' : ''}/assets/character-image.png`}
+                          alt="Grace"
+                          className="w-56 h-56 object-cover rounded-full"
+                        />
+                      </div>
+                      
+                      {/* Right Column - Grace Text */}
+                      <div className="md:col-span-2">
+                        <div className="prose prose-lg">
+                          <ReactMarkdown
+                            components={{
+                              p: ({children}) => <p className="text-lg leading-relaxed">{children}</p>
+                            }}
+                          >
+                            {graceText}
+                          </ReactMarkdown>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Rest of content */}
+                    {restContent && (
+                      <div className="prose prose-lg max-w-none">
+                        <ReactMarkdown 
+                          remarkPlugins={[remarkGfm]}
+                          components={{
+                            img: ({node, ...props}) => {
+                              const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+                              const src = props.src?.startsWith('http') 
+                                ? props.src 
+                                : `${basePath}/topics/${slug}/${props.src}`
+                              return <img {...props} src={src} className="rounded-lg shadow-sm" />
+                            },
+                            a: ({node, ...props}) => {
+                              if (props.href?.endsWith('.pdf') || props.href?.endsWith('.mp4') || props.href?.endsWith('.mp3')) {
+                                const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+                                const href = props.href?.startsWith('http') 
+                                  ? props.href 
+                                  : `${basePath}/topics/${slug}/${props.href}`
+                                return <a {...props} href={href} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline" />
+                              }
+                              return <a {...props} className="text-blue-600 hover:text-blue-800 underline" />
+                            }
+                          }}
+                        >
+                          {restContent}
+                        </ReactMarkdown>
+                      </div>
+                    )}
+                  </>
+                )
               }
-            }}
-          >
-            {content}
-          </ReactMarkdown>
-        </div>
+              
+              // Fallback to normal rendering if structure doesn't match
+              return (
+                <div className="prose prose-lg max-w-none">
+                  <ReactMarkdown 
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                      img: ({node, ...props}) => {
+                        const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+                        const src = props.src?.startsWith('http') 
+                          ? props.src 
+                          : `${basePath}/topics/${slug}/${props.src}`
+                        return <img {...props} src={src} className="rounded-lg shadow-sm" />
+                      },
+                      a: ({node, ...props}) => {
+                        if (props.href?.endsWith('.pdf') || props.href?.endsWith('.mp4') || props.href?.endsWith('.mp3')) {
+                          const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+                          const href = props.href?.startsWith('http') 
+                            ? props.href 
+                            : `${basePath}/topics/${slug}/${props.href}`
+                          return <a {...props} href={href} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline" />
+                        }
+                        return <a {...props} className="text-blue-600 hover:text-blue-800 underline" />
+                      }
+                    }}
+                  >
+                    {content}
+                  </ReactMarkdown>
+                </div>
+              )
+            })()}
+          </div>
+        ) : (
+          // Normal layout for non-classroom pages
+          <div className="prose prose-lg max-w-none">
+            <ReactMarkdown 
+              remarkPlugins={[remarkGfm]}
+              components={{
+                img: ({node, ...props}) => {
+                  const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+                  const src = props.src?.startsWith('http') 
+                    ? props.src 
+                    : `${basePath}/topics/${slug}/${props.src}`
+                  return <img {...props} src={src} className="rounded-lg shadow-sm" />
+                },
+                a: ({node, ...props}) => {
+                  if (props.href?.endsWith('.pdf') || props.href?.endsWith('.mp4') || props.href?.endsWith('.mp3')) {
+                    const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+                    const href = props.href?.startsWith('http') 
+                      ? props.href 
+                      : `${basePath}/topics/${slug}/${props.href}`
+                    return <a {...props} href={href} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline" />
+                  }
+                  return <a {...props} className="text-blue-600 hover:text-blue-800 underline" />
+                }
+              }}
+            >
+              {content}
+            </ReactMarkdown>
+          </div>
+        )}
       </div>
 
       {/* Time Portal for classroom pages */}
@@ -241,15 +367,6 @@ const Topic = () => {
         </div>
       )}
 
-      {/* Back to topic navigation */}
-      <div className="mt-8 text-center">
-        <Link 
-          to="/"
-          className="btn btn-secondary"
-        >
-          ← Back to All Topics
-        </Link>
-      </div>
     </div>
   )
 }

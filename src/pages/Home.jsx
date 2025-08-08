@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 
-// Topics data for classroom resources - ordered by mission number
+// Topics data for classroom resources - ordered by investigation number
 const topics = [
   {
     id: 1,
     slug: 'womens-land-army',
-    title: 'Mission 1: Women\'s Land Army',
+    title: 'Investigation 1: Women\'s Land Army',
     description: 'Explore the vital role of Land Girls in feeding Britain during World War II.',
     period: 'World War II (1939-1945)',
     keyStage: 'KS2-KS4',
@@ -14,7 +14,7 @@ const topics = [
   {
     id: 2,
     slug: 'junior-salvage-stewards',
-    title: 'Mission 2: Junior Salvage Stewards',
+    title: 'Investigation 2: Junior Salvage Stewards',
     description: 'Learn how children contributed to the war effort through recycling and salvage collection.',
     period: 'World War II (1940-1945)',
     keyStage: 'KS1-KS3',
@@ -23,7 +23,7 @@ const topics = [
   {
     id: 3,
     slug: 'scouts',
-    title: 'Mission 3: Scouts Movement',
+    title: 'Investigation 3: Scouts Movement',
     description: 'Discover the history and impact of the Scout movement on young people and communities.',
     period: 'Modern History (1907-present)',
     keyStage: 'KS2-KS4',

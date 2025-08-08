@@ -1,9 +1,8 @@
-# Mission 3
+# Investigation 3
 
-![Rosie](rosie-character.jpg)
-*Meet Rosie, your time-traveling guide*
+![Grace](../../assets/character-image.png)
 
-Hi, I'm Rosie. It's great to meet you!
+Hi, I'm Grace. It's great to meet you!
 
 Something incredible happened to me last year: I found a time portal in my attic. If I put in the right coordinates, it brings me objects from the past. Pretty amazing, right?
 
