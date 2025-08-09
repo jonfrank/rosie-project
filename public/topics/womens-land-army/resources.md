@@ -1,35 +1,38 @@
 # Women's Land Army Resources
 
-## Teaching Materials
+## Topic Introduction
 
-### Visual Timeline
-![WLA Timeline](wla-timeline.jpg)
+<!-- Content to be added -->
 
-### Educational Worksheets
-- [Women's War Work Activity](womens-war-work-worksheet.pdf)
-- [Agricultural Britain 1939-1945](agriculture-worksheet.pdf)
-- [Home Front Heroes](home-front-worksheet.pdf)
+## Investigation: Additional Source Information
 
-### Multimedia Resources
-- [Land Girls Testimonies](land-girls-interviews.mp4)
-- [Wartime Agriculture Documentary](wartime-farming.mp4)
-- [Photo Gallery: Women's Land Army](wla-gallery.pdf)
+<!-- Content to be added -->
 
-## Discussion Topics
+## Activity
+Design a propaganda poster encouraging people to join the Women's Land Army.
 
-### Social Impact
-- Women entering traditionally male occupations
-- Rural vs urban life during the war
-- Recognition and commemoration of women's war work
+Encourage students to think about the reasons that propaganda posters were created - in the context of the Land Army posters, they were created for recruitment, but others were created to boost morale and encourage public support of the war effort. 
 
-### Historical Context
-- The role of agriculture in wartime Britain
-- Food rationing and the "Dig for Victory" campaign
-- Women's changing roles during and after WWII
+Students can use what they've learnt about life in the Women's Land Army to consider how they can present it as a positive experience. 
 
-## Activity Ideas
-- Create a "Land Girl" diary entry
-- Compare wartime and modern farming techniques
-- Research local Land Army history in your area
+Your students will have seen one poster during the object investigation, but you could visit these pages to see some more examples:
+
+https://www.nationalarchives.gov.uk/education/resources/home-front-1939-1945-part-two/join-the-womens-land-army/
+
+https://www.womenslandarmy.co.uk/world-war-two/recruitment-and-enrolment/propaganda-posters/
+
+If your students are brimming with ideas, give them a blank sheet of paper and see what they come up with. 
+If they need something to start them off, you can download and print out the worksheet below. 
+
+### Worksheet
+[Women's Land Army Worksheet](wla-worksheet.pdf)
+
+## Further Resources
+
+<!-- Content to be added -->
+
+## Adaptations
+
+<!-- Content to be added -->
 
 ---

@@ -20,4 +20,24 @@
   .btn-secondary {
     @apply bg-gray-200 text-gray-900 hover:bg-gray-300;
   }
+  
+  /* Override prose heading margins */
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    margin-bottom: 0.25rem !important;
+  }
+  
+  /* Add spacing between sections - target elements before headings */
+  .prose *:has(+ h1),
+  .prose *:has(+ h2),
+  .prose *:has(+ h3),
+  .prose *:has(+ h4),
+  .prose *:has(+ h5),
+  .prose *:has(+ h6) {
+    margin-bottom: 2rem !important;
+  }
 }
