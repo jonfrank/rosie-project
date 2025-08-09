@@ -210,7 +210,7 @@ const Carousel = ({ items }) => {
           {renderMedia()}
           {!isExpanded && (
             <div className="button-section">
-              <div className="flex gap-3 justify-center items-center flex-wrap">
+              <div className="flex justify-between items-center px-24">
                 <button 
                   onClick={prevItem} 
                   disabled={currentIndex === 0}

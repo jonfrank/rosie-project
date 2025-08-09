@@ -79,13 +79,15 @@
 }
 
 .button-section {
-  padding: 1.5rem;
-  text-align: center;
-  background: #f8fafc;
-  border-top: 1px solid #ffffff;
   position: relative;
   z-index: 1;
-  width: 100%;
+  background: #f8fafc;
+  border-top: 1px solid #ffffff;
+  padding: 1.5rem;
+  text-align: center;
+  margin: 0 -100px -100px -100px;
+  padding-bottom: calc(1.5rem + 100px);
+  width: calc(100% + 200px);
   box-sizing: border-box;
   transform: translateY(0) scale(0.9);
   opacity: 1;
