@@ -9,7 +9,7 @@
 <!-- Content to be added -->
 
 ## Activity
-Design a propaganda poster encouraging people to join the Women's Land Army.
+**Design a propaganda poster encouraging people to join the Women's Land Army.**
 
 Encourage students to think about the reasons that propaganda posters were created - in the context of the Land Army posters, they were created for recruitment, but others were created to boost morale and encourage public support of the war effort. 
 
