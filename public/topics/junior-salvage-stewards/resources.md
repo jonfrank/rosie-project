@@ -1,23 +1,30 @@
-# Junior Salvage Stewards Resources
+# Junior Salvage Stewards Teacher Guide
 
 ## Topic Introduction
 
 <!-- Content to be added -->
 
-## Investigation: Additional Source Information
+## Using the Investigation Videos
+
+<!-- Content to be added -->
+
+## Key Object Information
 
 <!-- Content to be added -->
 
 ## Activity
 
-<!-- This section will have a downloadable worksheet PDF -->
+<!-- Content to be added -->
+
+## Alternative activity suggestions
+
+<!-- Content to be added -->
+
+## Session Adaptations
+
 <!-- Content to be added -->
 
 ## Further Resources
-
-<!-- Content to be added -->
-
-## Adaptations
 
 <!-- Content to be added -->
 

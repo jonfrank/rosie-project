@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import Carousel from '../components/Carousel'
 import TimePortal from '../components/TimePortal'
+import CollapsibleSection from '../components/CollapsibleSection'
 import '../components/TimePortal.css'
 
 const Topic = () => {
@@ -165,6 +166,39 @@ const Topic = () => {
   const topicTitle = type === 'classroom' ? (investigationTitles[slug] || `Investigation ${slug}`) : (topicTitles[slug] || slug)
   const pageType = type === 'classroom' ? 'Classroom Materials' : 'Resources'
 
+  // Parse content into collapsible sections for resources pages
+  const parseContentSections = (content) => {
+    const lines = content.split('\n')
+    const sections = []
+    let currentSection = null
+    
+    lines.forEach((line, index) => {
+      if (line.startsWith('## ')) {
+        // Save previous section if exists
+        if (currentSection) {
+          sections.push(currentSection)
+        }
+        // Start new section
+        currentSection = {
+          title: line.replace('## ', ''),
+          content: []
+        }
+      } else if (line.startsWith('# ')) {
+        // Skip main title - it will be rendered separately
+        return
+      } else if (currentSection) {
+        currentSection.content.push(line)
+      }
+    })
+    
+    // Add final section
+    if (currentSection) {
+      sections.push(currentSection)
+    }
+    
+    return sections
+  }
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Breadcrumb */}
@@ -179,7 +213,7 @@ const Topic = () => {
       </nav>
 
       {/* Resources page link to classroom */}
-      {type === 'resources' && (
+      {type === 'resources' ? (
         <div className="mb-8">
           <a
             href={`${import.meta.env.PROD ? '/rosie-project' : ''}/topic/${slug}/classroom`}
@@ -193,7 +227,7 @@ const Topic = () => {
             </svg>
           </a>
         </div>
-      )}
+      ) : null}
 
       {/* Content */}
       <div className="bg-white rounded-lg shadow-sm p-8">
@@ -248,7 +282,7 @@ const Topic = () => {
                     </div>
                     
                     {/* Rest of content */}
-                    {restContent && (
+                    {restContent ? (
                       <div className="prose prose-lg max-w-none">
                         <ReactMarkdown 
                           remarkPlugins={[remarkGfm]}
@@ -261,13 +295,21 @@ const Topic = () => {
                               return <img {...props} src={src} className="rounded-lg shadow-sm" />
                             },
                             a: ({node, ...props}) => {
-                              if (props.href?.endsWith('.pdf') || props.href?.endsWith('.mp4') || props.href?.endsWith('.mp3')) {
+                              const isExternal = props.href?.startsWith('http')
+                              const isFile = props.href?.endsWith('.pdf') || props.href?.endsWith('.mp4') || props.href?.endsWith('.mp3')
+                              
+                              if (isFile) {
                                 const basePath = import.meta.env.PROD ? '/rosie-project' : ''
-                                const href = props.href?.startsWith('http') 
+                                const href = isExternal 
                                   ? props.href 
                                   : `${basePath}/topics/${slug}/${props.href}`
                                 return <a {...props} href={href} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline" />
                               }
+                              
+                              if (isExternal) {
+                                return <a {...props} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline" />
+                              }
+                              
                               return <a {...props} className="text-blue-600 hover:text-blue-800 underline" />
                             }
                           }}
@@ -275,7 +317,7 @@ const Topic = () => {
                           {restContent}
                         </ReactMarkdown>
                       </div>
-                    )}
+                    ) : null}
                   </>
                 )
               }
@@ -294,13 +336,21 @@ const Topic = () => {
                         return <img {...props} src={src} className="rounded-lg shadow-sm" />
                       },
                       a: ({node, ...props}) => {
-                        if (props.href?.endsWith('.pdf') || props.href?.endsWith('.mp4') || props.href?.endsWith('.mp3')) {
+                        const isExternal = props.href?.startsWith('http')
+                        const isFile = props.href?.endsWith('.pdf') || props.href?.endsWith('.mp4') || props.href?.endsWith('.mp3')
+                        
+                        if (isFile) {
                           const basePath = import.meta.env.PROD ? '/rosie-project' : ''
-                          const href = props.href?.startsWith('http') 
+                          const href = isExternal 
                             ? props.href 
                             : `${basePath}/topics/${slug}/${props.href}`
                           return <a {...props} href={href} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline" />
                         }
+                        
+                        if (isExternal) {
+                          return <a {...props} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline" />
+                        }
+                        
                         return <a {...props} className="text-blue-600 hover:text-blue-800 underline" />
                       }
                     }}
@@ -312,48 +362,76 @@ const Topic = () => {
             })()}
           </div>
         ) : (
-          // Normal layout for non-classroom pages
-          <div className="prose prose-lg max-w-none">
-            <ReactMarkdown 
-              remarkPlugins={[remarkGfm]}
-              components={{
-                ul: ({node, ...props}) => <ul {...props} style={{marginTop: '0.25rem', marginBottom: '1rem'}} />,
-                img: ({node, ...props}) => {
-                  const basePath = import.meta.env.PROD ? '/rosie-project' : ''
-                  const src = props.src?.startsWith('http') 
-                    ? props.src 
-                    : `${basePath}/topics/${slug}/${props.src}`
-                  return <img {...props} src={src} className="rounded-lg shadow-sm" />
-                },
-                a: ({node, ...props}) => {
-                  if (props.href?.endsWith('.pdf') || props.href?.endsWith('.mp4') || props.href?.endsWith('.mp3')) {
-                    const basePath = import.meta.env.PROD ? '/rosie-project' : ''
-                    const href = props.href?.startsWith('http') 
-                      ? props.href 
-                      : `${basePath}/topics/${slug}/${props.href}`
-                    return <a {...props} href={href} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline" />
-                  }
-                  return <a {...props} className="text-blue-600 hover:text-blue-800 underline" />
-                }
-              }}
-            >
-              {content}
-            </ReactMarkdown>
+          // Resources pages with collapsible sections
+          <div>
+            {/* Extract and render main title */}
+            {(() => {
+              const lines = content.split('\n')
+              const titleLine = lines.find(line => line.startsWith('# '))
+              return titleLine ? (
+                <div className="prose prose-lg max-w-none mb-6">
+                  <ReactMarkdown>{titleLine}</ReactMarkdown>
+                </div>
+              ) : null
+            })()}
+            
+            {/* Render collapsible sections */}
+            {parseContentSections(content).map((section, index) => (
+              <CollapsibleSection 
+                key={index} 
+                title={section.title} 
+                defaultOpen={index === 0} // First section open by default
+              >
+                <ReactMarkdown 
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    ul: ({node, ...props}) => <ul {...props} style={{marginTop: '0.25rem', marginBottom: '1rem'}} />,
+                    img: ({node, ...props}) => {
+                      const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+                      const src = props.src?.startsWith('http') 
+                        ? props.src 
+                        : `${basePath}/topics/${slug}/${props.src}`
+                      return <img {...props} src={src} className="rounded-lg shadow-sm" />
+                    },
+                    a: ({node, ...props}) => {
+                      const isExternal = props.href?.startsWith('http')
+                      const isFile = props.href?.endsWith('.pdf') || props.href?.endsWith('.mp4') || props.href?.endsWith('.mp3')
+                      
+                      if (isFile) {
+                        const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+                        const href = isExternal 
+                          ? props.href 
+                          : `${basePath}/topics/${slug}/${props.href}`
+                        return <a {...props} href={href} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline" />
+                      }
+                      
+                      if (isExternal) {
+                        return <a {...props} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline" />
+                      }
+                      
+                      return <a {...props} className="text-blue-600 hover:text-blue-800 underline" />
+                    }
+                  }}
+                >
+                  {section.content.join('\n')}
+                </ReactMarkdown>
+              </CollapsibleSection>
+            ))}
           </div>
         )}
       </div>
 
       {/* Time Portal for classroom pages */}
-      {type === 'classroom' && (
+      {type === 'classroom' ? (
         <TimePortal onActivated={() => {
           setPortalActivated(true)
           // Start object appearing animation after a brief delay
           setTimeout(() => setObjectsAppearing(true), 500)
         }} />
-      )}
+      ) : null}
 
       {/* Auto-discovered Carousel - only show when portal is activated for classroom pages */}
-      {carouselItems.length > 0 && (type !== 'classroom' || portalActivated) && (
+      {carouselItems.length > 0 && (type !== 'classroom' || portalActivated) ? (
         <div className={`mt-8 ${objectsAppearing ? 'objects-materializing' : ''}`}>
           <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Time to Investigate</h2>
           <div className="objects-container">
@@ -366,7 +444,7 @@ const Topic = () => {
             />
           </div>
         </div>
-      )}
+      ) : null}
 
     </div>
   )

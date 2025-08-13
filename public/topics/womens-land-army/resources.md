@@ -2,7 +2,19 @@
 
 ## Topic Introduction
 
-<!-- Content to be added -->
+In this session, students will learn about the Women’s Land Army (WLA) during World War Two. The WLA was established during World War One, in 1917. Women undertook agricultural work to fill the gaps left by men who had joined up. 
+
+In June 1939, shortly before the outbreak of World War Two, the WLA was re-formed. Britain imported more food than it produced, including sourcing 80% of the country’s fruit and 70% of cheese and sugar from abroad. With war on the horizon, this was a concern, and women were soon called in to agricultural work to take over from the men who had gone off to fight. WLA recruits were known as ‘Land Girls’.
+
+While service was initially voluntary, in December 1941 the British government passed the National Service Act, which allowed women to be conscripted into various roles on the Home Front, including the WLA. By 1943, more than 80,000 women had joined the WLA. 
+
+There were a variety of different tasks in the WLA. These include looking after farm animals including cows, horses, sheep and pigs, collecting and packing eggs, harvesting vegetables, planting trees, preparing fields for planting and driving tractors. Some women trained to milk cows, ‘taking the place of men in the milking sheds’ (Sevenoaks Chronicle and Kentish Advertiser, 20 February 1942). Another role in the WLA was felling and processing timber, as part of a subsection called the Women’s Timber Corps.
+
+Work in the WLA was tough. Working 48 hour weeks in winter, and 50 hours in summer was a huge undertaking, especially when many of those who joined up were used to city life and not farm work. They had to work in all weather conditions, and they would be expected to work all daylight hours during harvest season. However, as one recruit said in October 1939, ‘We’ll manage to stick it out and go through with it’ (West Sussex County Times, 13 October 1939). 
+
+However, there was downtime too, especially for those who were accommodated in hostels rather than family farm houses. Women living in hostels often hosted dances and tea parties, and land army recruits in hostels near RAF and US Air Force bases were invited to attend dances at the bases. Many were given Saturday afternoons and Sundays off. For those working on family farms, this was not the case, and some only had one weekend off each month. 
+
+In November 1950, more than five years after World War Two, the WLA was officially disbanded, although rationing continued until 1954. Women who had served in the WLA were not recognised in the same way as other Home Front volunteers, and it wasn’t until 2008 that they were awarded Veterans’ Badges. There is now a memorial to the Women’s Land Army and Women’s Timber Corps at the National Memorial Arboretum, which was unveiled in 2014.
 
 ## Using the Investigation Videos
 
@@ -16,7 +28,7 @@
 
 Use this printable guide during the object investigation for additional information and prompts. It's likely that you won't cover every point for every object, but the points here should ensure you are equipped to respond to most points that your students raise.
 
-[Download Object Guide](object-guide.pdf)
+[Download Object Guide](wla-object-guide.pdf)
 
 
 ## Activity
@@ -35,14 +47,20 @@ https://www.womenslandarmy.co.uk/world-war-two/recruitment-and-enrolment/propaga
 If your students are brimming with ideas, give them a blank sheet of paper and see what they come up with. 
 If they need something to start them off, you can download and print out the worksheet below. 
 
-### Worksheet
-[Women's Land Army Worksheet](wla-worksheet.pdf)
+[Download Women's Land Army Worksheet](wla-worksheet.pdf)
+
+## Alternative activity suggestions 
+- Create your own armbands: pick up some plain fabric and cut it into strips for students to decorate. You could do this with felt tips or fabric pens, or source colourful felt and buttons (often you can pick up scrap craft supplies cheaply or for free from scrap stores: https://www.reusefuluk.org/directory). This would link nicely into DT lessons, and you could also look into the 'Make Do and Mend' campaign for even more history!
+- Plant your own crops: You could do this in many different ways. If you want to go relatively mess-free you could choose to grow cress in egg boxes and cotton wool, or for a more involved option use plant pots and soil, or even a vegetable patch if your school has one.
+
+## Session Adaptations
+
+To make the session more tactile and sensory friendly, there are several items that you can pick up cheaply:
+- Replica ration books are easy to source online, this is one example: https://rafmuseumshop.com/products/ration-book-march-14 
+- Order a swatch of corduroy from a fabric shop so that students can feel it. You could do this in person at a local fabric shop, or online (see here for one option, a sample is free but there is a small delivery cost https://www.croftmill.co.uk/13-wale-corduroy-dark-brown-cotton-trouser-fabric). A 13 wale cord is a good match to the trousers. 
+- Print out the poster for students to look at and annotate at their tables: [Women's Land Army Poster](https://commons.wikimedia.org/wiki/File:For_a_healthy,_happy_job_join_the_Women's_Land_Army.jpg)
 
 ## Further Resources
-
-<!-- Content to be added -->
-
-## Adaptations
 
 <!-- Content to be added -->
 

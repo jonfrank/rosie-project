@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
+import { useNavigate, useParams } from 'react-router-dom'
 import { X } from 'lucide-react'
 import "./Carousel.css"
 
 const Carousel = ({ items }) => {
+  const navigate = useNavigate()
+  const { slug } = useParams()
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isExpanded, setIsExpanded] = useState(false)
   const [isAnimating, setIsAnimating] = useState(false)
@@ -44,6 +47,18 @@ const Carousel = ({ items }) => {
   const handleNextStep = () => {
     const currentItem = items[currentIndex]
     const { questions, explanations, summary } = extractStructuredContent(currentItem.description)
+    const isLast = isLastItem()
+    
+    // Handle Learn More button - navigate to the learn more page
+    if (isLast && (
+      (currentPhase === 'summary') ||
+      (currentPhase === 'question' && !explanations[currentQuestionIndex] && currentQuestionIndex === questions.length - 1 && !summary) ||
+      (currentPhase === 'explanation' && currentQuestionIndex === questions.length - 1 && !summary)
+    )) {
+      // Navigate to the Learn More page
+      navigate(`/topic/${slug}/learn-more`)
+      return
+    }
     
     if (currentPhase === 'question') {
       if (explanations[currentQuestionIndex]) {
@@ -73,6 +88,25 @@ const Carousel = ({ items }) => {
       }
     } else if (currentPhase === 'summary') {
       nextItem()
+    }
+  }
+
+  const handlePreviousStep = () => {
+    if (currentPhase === 'explanation') {
+      setCurrentPhase('question')
+    } else if (currentPhase === 'question' && currentQuestionIndex > 0) {
+      setCurrentQuestionIndex(currentQuestionIndex - 1)
+      setCurrentPhase('question')
+    } else if (currentPhase === 'summary') {
+      const currentItem = items[currentIndex]
+      const { questions, explanations } = extractStructuredContent(currentItem.description)
+      const lastQuestionIndex = questions.length - 1
+      setCurrentQuestionIndex(lastQuestionIndex)
+      if (explanations[lastQuestionIndex]) {
+        setCurrentPhase('explanation')
+      } else {
+        setCurrentPhase('question')
+      }
     }
   }
 
@@ -188,18 +222,23 @@ const Carousel = ({ items }) => {
     }
   }
 
+  const isLastItem = () => {
+    return currentIndex === items.length - 1
+  }
+
   const getButtonText = () => {
     const currentItem = items[currentIndex]
     const { questions, explanations, summary } = extractStructuredContent(currentItem.description)
+    const isLast = isLastItem()
     
     if (currentPhase === 'question' && explanations[currentQuestionIndex]) return 'Reveal Answer'
     if (currentPhase === 'question' && !explanations[currentQuestionIndex] && currentQuestionIndex < questions.length - 1) return `Next Question (${currentQuestionIndex + 2} of ${questions.length})`
     if (currentPhase === 'question' && !explanations[currentQuestionIndex] && currentQuestionIndex === questions.length - 1 && summary) return 'View Summary'
-    if (currentPhase === 'question' && !explanations[currentQuestionIndex] && currentQuestionIndex === questions.length - 1 && !summary) return 'Next Source'
+    if (currentPhase === 'question' && !explanations[currentQuestionIndex] && currentQuestionIndex === questions.length - 1 && !summary) return isLast ? 'Learn More' : 'Next Source'
     if (currentPhase === 'explanation' && currentQuestionIndex < questions.length - 1) return `Next Question (${currentQuestionIndex + 2} of ${questions.length})`
     if (currentPhase === 'explanation' && currentQuestionIndex === questions.length - 1 && summary) return 'View Summary'
-    if (currentPhase === 'explanation' && currentQuestionIndex === questions.length - 1 && !summary) return 'Next Source'
-    if (currentPhase === 'summary') return 'Next Source'
+    if (currentPhase === 'explanation' && currentQuestionIndex === questions.length - 1 && !summary) return isLast ? 'Learn More' : 'Next Source'
+    if (currentPhase === 'summary') return isLast ? 'Learn More' : 'Next Source'
     return 'Continue'
   }
 
@@ -273,12 +312,25 @@ const Carousel = ({ items }) => {
                         </div>
                       )}
                       
-                      <button 
-                        onClick={handleNextStep} 
-                        className="next-step-button reveal-question-button"
-                      >
-                        {getButtonText()}
-                      </button>
+                      <div className="question-navigation-buttons">
+                        <button 
+                          onClick={handleNextStep} 
+                          className={`next-step-button ${getButtonText() === 'Learn More' ? 'learn-more-button' : 'reveal-question-button'}`}
+                        >
+                          {getButtonText()}
+                        </button>
+                        
+                        {(currentPhase === 'explanation' || 
+                          (currentPhase === 'question' && currentQuestionIndex > 0) ||
+                          currentPhase === 'summary') && (
+                          <button 
+                            onClick={handlePreviousStep}
+                            className="previous-question-button"
+                          >
+                            Previous Question
+                          </button>
+                        )}
+                      </div>
                     </div>
                   </div>
                 )
