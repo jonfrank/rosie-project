@@ -1,5 +1,9 @@
 # Scouts Movement Teacher Guide
 
+## Session aims
+
+<!-- Content to be added -->
+
 ## Topic Introduction
 
 <!-- Content to be added -->

@@ -34,25 +34,6 @@ const HowToUse = () => {
             A comprehensive guide to getting the most out of your Museum in your Classroom experience.
           </p>
 
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
-            <h2 className="text-lg font-semibold text-blue-900 mb-2">Getting Started</h2>
-            <p className="text-blue-800">
-              Museum in your Classroom brings real historical artifacts and interactive learning experiences directly to your students through engaging digital investigations.
-            </p>
-          </div>
-
-          <h2>What's Included</h2>
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-              <h3 className="font-semibold text-purple-900 mb-2">📚 Classroom Materials</h3>
-              <p className="text-purple-800 text-sm">Interactive investigations with Grace, your time-traveling guide, featuring real World War Two artifacts.</p>
-            </div>
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-              <h3 className="font-semibold text-green-900 mb-2">👩‍🏫 Teacher Guides</h3>
-              <p className="text-green-800 text-sm">Comprehensive resources with lesson plans, discussion prompts, and extension activities.</p>
-            </div>
-          </div>
-
           <h2>How It Works</h2>
           <div className="space-y-6 mb-8">
             <div className="flex items-start space-x-4">

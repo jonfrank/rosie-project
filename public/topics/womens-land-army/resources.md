@@ -1,5 +1,11 @@
 # Women's Land Army Teacher Guide
 
+## Session aims
+
+- Students will learn about the Women's Land Army during World War Two through active investigation of primary source materials. 
+- They will use the investigation questions to think in depth about each object before seeing further information, developing their critical thinking skills.
+- Students will bring their learning together by completing the activity at the end of the session.
+
 ## Topic Introduction
 
 In this session, students will learn about the Women’s Land Army (WLA) during World War Two. The WLA was established during World War One, in 1917. Women undertook agricultural work to fill the gaps left by men who had joined up. 
