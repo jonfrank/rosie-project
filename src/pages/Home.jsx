@@ -63,20 +63,30 @@ const Home = () => {
                   {topic.description}
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-3 mt-auto">
-                  <Link 
-                    to={`/topic/${topic.slug}/classroom`}
-                    className="btn btn-primary flex-1 text-center"
-                  >
-                    Classroom Materials
-                  </Link>
-                  <Link 
-                    to={`/topic/${topic.slug}/resources`}
-                    className="btn btn-secondary flex-1 text-center"
-                  >
-                    Teacher<br />Guide
-                  </Link>
-                </div>
+                {topic.id === 1 ? (
+                  <div className="flex flex-col sm:flex-row gap-3 mt-auto">
+                    <Link 
+                      to={`/topic/${topic.slug}/classroom`}
+                      className="btn btn-primary flex-1 text-center"
+                    >
+                      Classroom Materials
+                    </Link>
+                    <Link 
+                      to={`/topic/${topic.slug}/resources`}
+                      className="btn btn-secondary flex-1 text-center"
+                    >
+                      Teacher<br />Guide
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="flex flex-col gap-3 mt-auto">
+                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 text-center">
+                      <p className="text-yellow-700 font-medium text-sm">
+                        🚧 Under Construction
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           ))}
