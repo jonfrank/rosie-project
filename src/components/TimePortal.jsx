@@ -298,9 +298,7 @@ const TimePortal = ({ onActivated }) => {
             {showError && (
               <div className="mt-4 p-3 bg-red-100 border border-red-300 rounded-md">
                 <p className="text-red-800 text-sm">
-                  🤔 Hmm, that doesn't seem right. Try again! 
-                  <br />
-                  <span className="text-xs text-red-600">Hint: Think about when the war started in Europe...</span>
+                  🤔 Hmm, that doesn't seem right. Try again!
                 </p>
               </div>
             )}
