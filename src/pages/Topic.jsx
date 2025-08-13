@@ -317,6 +317,7 @@ const Topic = () => {
             <ReactMarkdown 
               remarkPlugins={[remarkGfm]}
               components={{
+                ul: ({node, ...props}) => <ul {...props} style={{marginTop: '0.25rem', marginBottom: '1rem'}} />,
                 img: ({node, ...props}) => {
                   const basePath = import.meta.env.PROD ? '/rosie-project' : ''
                   const src = props.src?.startsWith('http') 

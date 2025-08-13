@@ -40,4 +40,15 @@
   .prose *:has(+ h6) {
     margin-bottom: 2rem !important;
   }
+  
+  /* Reduce spacing for all lists in prose content */
+  .prose ul {
+    margin-top: 0.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Reduce spacing between any text element and following lists */
+  .prose > *:not(ul) + ul {
+    margin-top: 0.25rem !important;
+  }
 }
