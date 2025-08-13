@@ -1,12 +1,26 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { copyFileSync } from 'fs'
+import { resolve } from 'path'
 
 // https://vite.dev/config/
 export default defineConfig(({ command }) => {
-  const base = command === 'build' ? '/rosie-project/' : '/'
+  // Use root path for custom domain
+  const base = '/'
   
   return {
-    plugins: [react()],
+    plugins: [
+      react(),
+      // Copy CNAME file to dist during build
+      {
+        name: 'copy-cname',
+        writeBundle() {
+          if (command === 'build') {
+            copyFileSync(resolve('CNAME'), resolve('dist/CNAME'))
+          }
+        }
+      }
+    ],
     build: {
       outDir: 'dist',
       assetsDir: 'assets',
