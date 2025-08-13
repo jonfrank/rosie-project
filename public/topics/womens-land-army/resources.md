@@ -55,7 +55,7 @@ If they need something to start them off, you can download and print out the wor
 
 [Download Women's Land Army Worksheet](wla-worksheet.pdf)
 
-## Alternative activity suggestions 
+## Alternative Activity Suggestions
 - Create your own armbands: pick up some plain fabric and cut it into strips for students to decorate. You could do this with felt tips or fabric pens, or source colourful felt and buttons (often you can pick up scrap craft supplies cheaply or for free from scrap stores: https://www.reusefuluk.org/directory). This would link nicely into DT lessons, and you could also look into the 'Make Do and Mend' campaign for even more history!
 - Plant your own crops: You could do this in many different ways. If you want to go relatively mess-free you could choose to grow cress in egg boxes and cotton wool, or for a more involved option use plant pots and soil, or even a vegetable patch if your school has one.
 

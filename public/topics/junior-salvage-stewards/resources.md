@@ -20,7 +20,7 @@
 
 <!-- Content to be added -->
 
-## Alternative activity suggestions
+## Alternative Activity Suggestions
 
 <!-- Content to be added -->
 
