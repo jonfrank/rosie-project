@@ -62,6 +62,22 @@ To make the session more tactile and sensory friendly, there are several items t
 
 ## Further Resources
 
-<!-- Content to be added -->
+- [Women's Land Army](https://www.womenslandarmy.co.uk/) - The national website on the history of the Women's Land Army and Women's Timber Corps. A place to find out everything you ever wanted to know! Also covers the Land Army in World War 1 and post-World War Two.
+
+- [WW2 People’s War - BBC History](https://www.bbc.co.uk/history/ww2peopleswar/categories/c1171/) - An archive of World War Two memories  - written by the public, gathered by the BBC’. This site contains 225 Land Army stories, covering a huge variety of experiences.
+
+- [Soil Sisters: Putting the Women's Land Army on the Map in Suffolk](https://suffolkarchives.shorthandstories.com/soil-sisters/index.html) - This online exhibition was created by Suffolk Archives volunteers and staff and provides a thorough look at life in the Women's Land Army in Suffolk during World War Two.
+
+- [What was the Women’s Land Army? - Imperial War Museums](https://www.iwm.org.uk/history/what-was-the-womens-land-army) - A good introduction containing 10 surprising facts about the work of the Women's Land Army. Each fact links to a digitised object from the museums’s collections, so you can explore more primary source material.
+
+- [In Pictures: The Land Girls of the Women’s Land Army - The National Archives](https://www.nationalarchives.gov.uk/explore-the-collection/explore-by-topic/military-and-war/the-womens-land-army/) - A variety of images relating to the Women's Land Army during World War 1 and World War Two, including posters, photos and a couple of documents.
+
+- [Museum of English Rural Life: The Land Girls](https://merl.reading.ac.uk/explore/online-exhibitions/land-girls-womens-land-army-history/) - An online exhibition containing several personal stories of being in the Women's Land Army, as well as lots of photographs.
+
+- [KS2 History: Rationing in the UK - BBC Bitesize](https://www.bbc.co.uk/teach/class-clips-video/articles/zbgby9q) - A useful video which provides a simple introduction to rationing. It also includes first-hand accounts from people who experienced World War Two rationing.
+
+- [Learning Resources - National Memorial Arboretum](https://www.thenma.org.uk/learn/visiting-for-learning-and-training/self-led-visits/learning-from-home) - Several classroom based sessions covering a variety of themes, including children's lives during World War Two, and a downloadable rationing activity sheet.
+
+- [British Newspaper Archive](https://www.britishnewspaperarchive.co.uk/) - Most articles are behind a paywall, but there are some fascinating insights into life in the Women's Land Army if you have access. Search for key terms such as ‘Land Army’ and filter by specific years or months.
 
 ---
