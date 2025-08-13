@@ -6,6 +6,7 @@ import BlogPost from './pages/BlogPost'
 import NotFound from './pages/NotFound'
 import Topic from './pages/Topic'
 import LearnMore from './pages/LearnMore'
+import HowToUse from './pages/HowToUse'
 
 function App() {
   const basename = import.meta.env.PROD ? '/rosie-project' : ''
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/how-to-use" element={<HowToUse />} />
           <Route path="/topic/:slug/learn-more" element={<LearnMore />} />
           <Route path="/topic/:slug/:type" element={<Topic />} />
           <Route path="*" element={<NotFound />} />
