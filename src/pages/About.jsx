@@ -17,14 +17,8 @@ const About = () => {
 
           
           <p className="text-gray-600 mb-4">
-            Have questions or suggestions? Get in touch here:
+            Have questions or suggestions? Get in touch at <a href="mailto:museuminyourclassroom@gmail.com" className="text-blue-600 hover:text-blue-800 underline font-medium">museuminyourclassroom@gmail.com</a>
           </p>
-          
-          <div>
-            <button className="btn btn-primary">
-              Contact Us
-            </button>
-          </div>
         </div>
       </div>
     </div>
