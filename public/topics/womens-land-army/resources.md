@@ -12,7 +12,7 @@
 - Each object has a series of investigation questions. Some of these are questions followed by additional information, where it is important for students to have additional knowledge before moving on.
 - There is no requirement to cover every question in detail. If one object question sparks a great discussion, stick with it, and if an object is not grabbing your students' interest, feel free to move through the questions at a faster pace.
 
-## Key Source Information
+## Key Object Information
 
 Use this printable guide during the object investigation for additional information and prompts. It's likely that you won't cover every point for every object, but the points here should ensure you are equipped to respond to most points that your students raise.
 
