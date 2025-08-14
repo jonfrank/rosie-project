@@ -55,8 +55,14 @@ const Carousel = ({ items }) => {
       (currentPhase === 'question' && !explanations[currentQuestionIndex] && currentQuestionIndex === questions.length - 1 && !summary) ||
       (currentPhase === 'explanation' && currentQuestionIndex === questions.length - 1 && !summary)
     )) {
-      // Navigate to the Learn More page
+      // Navigate to the Learn More page and scroll to top
       navigate(`/topic/${slug}/learn-more`)
+      // Scroll to top after navigation
+      setTimeout(() => {
+        window.scrollTo(0, 0)
+        document.documentElement.scrollTop = 0
+        document.body.scrollTop = 0
+      }, 0)
       return
     }
     
