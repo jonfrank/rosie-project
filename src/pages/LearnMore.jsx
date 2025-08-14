@@ -1,8 +1,14 @@
 import { useParams, Link } from 'react-router-dom'
+import { useEffect } from 'react'
 import CollapsibleSection from '../components/CollapsibleSection'
 
 const LearnMore = () => {
   const { slug } = useParams()
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   // Topic metadata
   const topicTitles = {
