@@ -14,7 +14,11 @@ const About = () => {
           <p className="text-gray-600 mb-6">
             This project was created as part of the MA in Public History at Royal Holloway, University of London. It aims to be an easy-to-use resource for primary school teachers, equipping non-specialists with everything they need to deliver engaging, content rich history lessons.
           </p>
-
+          
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">About the Objects</h2>
+          <p className="text-gray-600 mb-6">
+            Most of the objects in the investigation videos belong to the Learning and Engagement team at the Imperial War Museum, and have been filmed with their permission. All image attributions, where required, are included alongside the relevant material.
+          </p>
           
           <p className="text-gray-600 mb-4">
             Have questions or suggestions? Get in touch at <a href="mailto:museuminyourclassroom@gmail.com" className="text-blue-600 hover:text-blue-800 underline font-medium">museuminyourclassroom@gmail.com</a>
