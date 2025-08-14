@@ -5,10 +5,24 @@ import CollapsibleSection from '../components/CollapsibleSection'
 const LearnMore = () => {
   const { slug } = useParams()
 
-  // Scroll to top when component mounts
+  // Scroll to top when component mounts or slug changes
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    // Multiple approaches to ensure scroll to top works
+    const scrollToTop = () => {
+      window.scrollTo(0, 0)
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
+    }
+    
+    // Immediate scroll
+    scrollToTop()
+    
+    // Delayed scroll to handle any async rendering
+    const timeoutId = setTimeout(scrollToTop, 0)
+    
+    // Cleanup
+    return () => clearTimeout(timeoutId)
+  }, [slug])
 
   // Topic metadata
   const topicTitles = {
