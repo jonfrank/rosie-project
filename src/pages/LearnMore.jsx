@@ -341,7 +341,7 @@ const LearnMore = () => {
         {isActivityPromptOpen && (
           <div className="px-6 pb-6">
             <div className="bg-white rounded-lg p-4 border border-blue-200">
-              <div className="prose prose-lg max-w-none">
+              <div className="prose prose-lg max-w-none prose-strong:font-bold">
                 <div className="text-gray-900">{activityPrompt}</div>
               </div>
             </div>
