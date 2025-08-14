@@ -9,7 +9,7 @@ import LearnMore from './pages/LearnMore'
 import HowToUse from './pages/HowToUse'
 
 function App() {
-  const basename = import.meta.env.PROD ? '/rosie-project' : ''
+  const basename = '/'
   
   return (
     <Router basename={basename} future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
