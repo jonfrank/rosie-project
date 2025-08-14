@@ -130,10 +130,14 @@ const TimePortal = ({ onActivated }) => {
           
           // Listen for audio end to complete the effect
           audioRef.current.onended = () => {
+            console.log('🎵 Audio ended, completing time portal effect')
             // Audio ends, explosion should also end now
             setIsExploding(false)
             setIsActivated(true)
             setIsActivating(false)
+            // Clear any remaining warp effects
+            setIsWarping(false)
+            setWarpMessage('')
           }
           
           // Fallback in case audio doesn't load or play - start explosion at same time
@@ -150,10 +154,14 @@ const TimePortal = ({ onActivated }) => {
           
           // Fallback to end explosion after full duration
           setTimeout(() => {
+            console.log('⏰ Fallback timer: completing time portal effect')
             if (isActivating) {
               setIsExploding(false)
               setIsActivated(true)
               setIsActivating(false)
+              // Clear any remaining warp effects
+              setIsWarping(false)
+              setWarpMessage('')
             }
           }, 12450) // 12.45 second total duration
         } else {
@@ -168,9 +176,13 @@ const TimePortal = ({ onActivated }) => {
           }, 11650) // Start explosion at same time
           
           setTimeout(() => {
+            console.log('⏰ No audio: completing time portal effect')
             setIsExploding(false)
             setIsActivated(true)
             setIsActivating(false)
+            // Clear any remaining warp effects
+            setIsWarping(false)
+            setWarpMessage('')
           }, 12450) // End at same time
         }
       }, 500) // Short delay before warp starts
@@ -218,7 +230,7 @@ const TimePortal = ({ onActivated }) => {
       <audio 
         ref={audioRef} 
         preload="auto"
-        src={`${import.meta.env.PROD ? '/rosie-project' : ''}/time-portal-warp.mp3`}
+        src="/time-portal-warp.mp3"
       />
       
       {/* Warp Effect Overlay */}
