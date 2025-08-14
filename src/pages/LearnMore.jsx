@@ -42,16 +42,16 @@ const LearnMore = () => {
         <p className="mt-3">Think about:</p>
         <ul className="mt-2 ml-4 list-disc space-y-2">
           <li>why propaganda posters were created during World War Two</li>
-          <li>how you can present a positive image of life in the Land Army</li>
+          <li>how can you present a positive image of life in the Land Army</li>
           <li>what might encourage you to join the Land Army</li>
         </ul>
       </div>
     ),
-    'scouts': 'Activity prompt for Scouts will be added here',
-    'junior-salvage-stewards': 'Activity prompt for Junior Salvage Stewards will be added here'
+    'scouts': <p>Activity prompt for Scouts will be added here</p>,
+    'junior-salvage-stewards': <p>Activity prompt for Junior Salvage Stewards will be added here</p>
   }
 
-  const activityPrompt = activityPrompts[slug] || 'Activity content will be added here...'
+  const activityPrompt = activityPrompts[slug] || <p>Activity content will be added here...</p>
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
