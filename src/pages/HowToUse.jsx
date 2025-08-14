@@ -63,7 +63,7 @@ const HowToUse = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1 mt-0">Choose Your Investigation</h3>
-                <p className="text-gray-600">Select your topic from the avaliable options. The investigations can be done in any order, and all sessions assume basic KS2 knowledge of World War Two.</p>
+                <p className="text-gray-600">Select your topic from the avaliable options. The investigations can be done in any order, and all sessions assume basic KS2 knowledge of World War Two, as well as key terms such as <strong>Home Front</strong>.</p>
               </div>
             </div>
             
