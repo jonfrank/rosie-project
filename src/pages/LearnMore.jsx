@@ -34,6 +34,15 @@ const LearnMore = () => {
 
   const topicTitle = topicTitles[slug] || slug
 
+  // Activity prompts for each topic
+  const activityPrompts = {
+    'womens-land-army': 'Design a propaganda poster encouraging people to join the Women\'s Land Army',
+    'scouts': 'Activity prompt for Scouts will be added here',
+    'junior-salvage-stewards': 'Activity prompt for Junior Salvage Stewards will be added here'
+  }
+
+  const activityPrompt = activityPrompts[slug] || 'Activity content will be added here...'
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Breadcrumb */}
@@ -323,8 +332,7 @@ const LearnMore = () => {
           <div className="px-6 pb-6">
             <div className="bg-white rounded-lg p-4 border border-blue-200">
               <div className="prose prose-lg max-w-none">
-                <p className="text-gray-600 italic mb-4">Activity content will be added here...</p>
-                {/* Placeholder for activity content - you'll add the actual text */}
+                <p className="text-gray-900">{activityPrompt}</p>
               </div>
             </div>
           </div>
