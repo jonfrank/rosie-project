@@ -1,9 +1,10 @@
 import { useParams, Link } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import CollapsibleSection from '../components/CollapsibleSection'
 
 const LearnMore = () => {
   const { slug } = useParams()
+  const [isActivityPromptOpen, setIsActivityPromptOpen] = useState(false)
 
   // Scroll to top when component mounts or slug changes
   useEffect(() => {
@@ -296,6 +297,35 @@ const LearnMore = () => {
               <h1>Learn More About {topicTitle}</h1>
               <p>This page will contain additional information about {topicTitle}.</p>
               <p>Content coming soon...</p>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Activity Prompt Section */}
+      <div className="mt-8 bg-blue-50 rounded-lg border border-blue-200">
+        <button
+          onClick={() => setIsActivityPromptOpen(!isActivityPromptOpen)}
+          className="w-full p-6 text-left flex items-center justify-between hover:bg-blue-100 transition-colors duration-200 rounded-lg"
+        >
+          <h3 className="text-lg font-semibold text-blue-900">Reveal if using suggested activity</h3>
+          <svg 
+            className={`w-5 h-5 text-blue-700 transition-transform duration-200 ${isActivityPromptOpen ? 'rotate-180' : ''}`}
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        
+        {isActivityPromptOpen && (
+          <div className="px-6 pb-6">
+            <div className="bg-white rounded-lg p-4 border border-blue-200">
+              <div className="prose prose-lg max-w-none">
+                <p className="text-gray-600 italic mb-4">Activity content will be added here...</p>
+                {/* Placeholder for activity content - you'll add the actual text */}
+              </div>
             </div>
           </div>
         )}
