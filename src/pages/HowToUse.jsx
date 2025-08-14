@@ -10,7 +10,12 @@ const HowToUse = () => {
     setTimeout(() => {
       const topicsElement = document.getElementById('topics')
       if (topicsElement) {
-        topicsElement.scrollIntoView({ behavior: 'smooth' })
+        const elementTop = topicsElement.offsetTop
+        const offset = 40 // Add 40px margin above the Topics heading
+        window.scrollTo({
+          top: elementTop - offset,
+          behavior: 'smooth'
+        })
       }
     }, 100)
   }
