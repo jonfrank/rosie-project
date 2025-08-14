@@ -36,7 +36,17 @@ const LearnMore = () => {
 
   // Activity prompts for each topic
   const activityPrompts = {
-    'womens-land-army': 'Design a propaganda poster encouraging people to join the Women\'s Land Army',
+    'womens-land-army': (
+      <div>
+        <p>Design a propaganda poster encouraging people to join the Women's Land Army.</p>
+        <p className="mt-3">Think about:</p>
+        <ul className="mt-2 ml-4 list-disc space-y-2">
+          <li>why propaganda posters were created during World War Two</li>
+          <li>how you can present a positive image of life in the Land Army</li>
+          <li>what might encourage you to join the Land Army</li>
+        </ul>
+      </div>
+    ),
     'scouts': 'Activity prompt for Scouts will be added here',
     'junior-salvage-stewards': 'Activity prompt for Junior Salvage Stewards will be added here'
   }
@@ -317,7 +327,7 @@ const LearnMore = () => {
           onClick={() => setIsActivityPromptOpen(!isActivityPromptOpen)}
           className="w-full p-6 text-left flex items-center justify-between hover:bg-blue-100 transition-colors duration-200 rounded-lg"
         >
-          <h3 className="text-lg font-semibold text-blue-900">Reveal if using suggested activity</h3>
+          <h3 className="text-lg font-semibold text-blue-900">Reveal if using the suggested activity</h3>
           <svg 
             className={`w-5 h-5 text-blue-700 transition-transform duration-200 ${isActivityPromptOpen ? 'rotate-180' : ''}`}
             fill="none" 
@@ -332,7 +342,7 @@ const LearnMore = () => {
           <div className="px-6 pb-6">
             <div className="bg-white rounded-lg p-4 border border-blue-200">
               <div className="prose prose-lg max-w-none">
-                <p className="text-gray-900">{activityPrompt}</p>
+                <div className="text-gray-900">{activityPrompt}</div>
               </div>
             </div>
           </div>
