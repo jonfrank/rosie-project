@@ -1,6 +1,19 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const HowToUse = () => {
+  const navigate = useNavigate()
+  
+  const handleGetStarted = (e) => {
+    e.preventDefault()
+    navigate('/')
+    // Small delay to ensure the page has loaded before scrolling
+    setTimeout(() => {
+      const topicsElement = document.getElementById('topics')
+      if (topicsElement) {
+        topicsElement.scrollIntoView({ behavior: 'smooth' })
+      }
+    }, 100)
+  }
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Breadcrumb */}
@@ -148,15 +161,15 @@ const HowToUse = () => {
           </p>
 
           <div className="mt-8 pt-6 border-t border-gray-200 text-center">
-            <Link
-              to="/"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white text-base font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-sm"
+            <button
+              onClick={handleGetStarted}
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white text-base font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-sm cursor-pointer"
             >
               Get Started with Investigations
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
-            </Link>
+            </button>
           </div>
         </div>
       </div>

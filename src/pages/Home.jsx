@@ -55,7 +55,7 @@ const Home = () => {
       </div>
 
       {/* Topics Grid */}
-      <div className="mb-16">
+      <div className="mb-16" id="topics">
         <h2 className="text-3xl font-bold text-gray-900 mb-4">Topics</h2>
         <p className="text-lg text-gray-600 mb-8">Three sessions for Year Six classes, exploring jobs on the Home Front during World War Two</p>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
