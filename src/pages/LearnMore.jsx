@@ -38,7 +38,7 @@ const LearnMore = () => {
   const activityPrompts = {
     'womens-land-army': (
       <div>
-        <p>Design a propaganda poster encouraging people to join the Women's Land Army.</p>
+        <p><strong>Design a propaganda poster encouraging people to join the Women's Land Army.</strong></p>
         <p className="mt-3">Think about:</p>
         <ul className="mt-2 ml-4 list-disc space-y-2">
           <li>why propaganda posters were created during World War Two</li>
