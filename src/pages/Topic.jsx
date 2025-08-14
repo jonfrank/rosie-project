@@ -34,7 +34,7 @@ const Topic = () => {
 
   // Auto-discover media files and create carousel items for current topic
   const discoverMediaFiles = async () => {
-    const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+    const basePath = ''
     const items = []
     
     // Topic-specific media files (ordered as they should appear in carousel)
@@ -111,7 +111,7 @@ const Topic = () => {
     const fetchContent = async () => {
       try {
         setLoading(true)
-        const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+        const basePath = ''
         
         // Load main content
         const response = await fetch(`${basePath}/topics/${slug}/${type}.md`)
@@ -245,7 +245,7 @@ const Topic = () => {
                       {/* Left Column - Grace Image */}
                       <div className="md:col-span-1 flex justify-center">
                         <img 
-                          src={`${import.meta.env.PROD ? '/rosie-project' : ''}/assets/character-image.png`}
+                          src="/assets/character-image.png"
                           alt="Grace"
                           className="w-56 h-56 object-cover rounded-full"
                         />
@@ -272,7 +272,7 @@ const Topic = () => {
                           remarkPlugins={[remarkGfm]}
                           components={{
                             img: ({node, ...props}) => {
-                              const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+                              const basePath = ''
                               const src = props.src?.startsWith('http') 
                                 ? props.src 
                                 : `${basePath}/topics/${slug}/${props.src}`
@@ -283,7 +283,7 @@ const Topic = () => {
                               const isFile = props.href?.endsWith('.pdf') || props.href?.endsWith('.mp4') || props.href?.endsWith('.mp3')
                               
                               if (isFile) {
-                                const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+                                const basePath = ''
                                 const href = isExternal 
                                   ? props.href 
                                   : `${basePath}/topics/${slug}/${props.href}`
@@ -313,7 +313,7 @@ const Topic = () => {
                     remarkPlugins={[remarkGfm]}
                     components={{
                       img: ({node, ...props}) => {
-                        const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+                        const basePath = ''
                         const src = props.src?.startsWith('http') 
                           ? props.src 
                           : `${basePath}/topics/${slug}/${props.src}`
@@ -324,7 +324,7 @@ const Topic = () => {
                         const isFile = props.href?.endsWith('.pdf') || props.href?.endsWith('.mp4') || props.href?.endsWith('.mp3')
                         
                         if (isFile) {
-                          const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+                          const basePath = ''
                           const href = isExternal 
                             ? props.href 
                             : `${basePath}/topics/${slug}/${props.href}`
@@ -371,7 +371,7 @@ const Topic = () => {
                   components={{
                     ul: ({node, ...props}) => <ul {...props} style={{marginTop: '0.25rem', marginBottom: '1rem'}} />,
                     img: ({node, ...props}) => {
-                      const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+                      const basePath = ''
                       const src = props.src?.startsWith('http') 
                         ? props.src 
                         : `${basePath}/topics/${slug}/${props.src}`
@@ -382,7 +382,7 @@ const Topic = () => {
                       const isFile = props.href?.endsWith('.pdf') || props.href?.endsWith('.mp4') || props.href?.endsWith('.mp3')
                       
                       if (isFile) {
-                        const basePath = import.meta.env.PROD ? '/rosie-project' : ''
+                        const basePath = ''
                         const href = isExternal 
                           ? props.href 
                           : `${basePath}/topics/${slug}/${props.href}`
@@ -405,7 +405,7 @@ const Topic = () => {
             {/* Open Classroom Page button - placed at bottom after reading the guide */}
             <div className="mt-8 pt-6 border-t border-gray-200 text-center">
               <a
-                href={`${import.meta.env.PROD ? '/rosie-project' : ''}/topic/${slug}/classroom`}
+                href={`/topic/${slug}/classroom`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 bg-blue-600 text-white text-base font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-sm"
@@ -437,7 +437,7 @@ const Topic = () => {
             <Carousel 
               items={carouselItems.map((item, index) => ({
                 ...item,
-                image: `${import.meta.env.PROD ? '/rosie-project' : ''}/topics/${slug}/${item.image}`,
+                image: `/topics/${slug}/${item.image}`,
                 animationDelay: index * 0.3 // Stagger the animations
               }))}
             />
