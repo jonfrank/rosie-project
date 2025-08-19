@@ -76,7 +76,7 @@ const HowToUse = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1 mt-0">Read the Teacher Guide</h3>
-                <p className="text-gray-600">Look through the Teacher Guide for your chosen investigation. This provides background information to the topic, tips for effective use of the resources, and suggested adaptations to make the session more accessible. You will find further resources for reseach here too.</p>
+                <p className="text-gray-600">Look through the Teacher Guide for your chosen investigation. This provides background information to the topic, tips for effective use of the resources, and suggested adaptations to make the session more accessible. You will find further resources for research here too.</p>
               </div>
             </div>
             
