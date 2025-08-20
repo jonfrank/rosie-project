@@ -48,7 +48,17 @@ const LearnMore = () => {
       </div>
     ),
     'scouts': <p>Activity prompt for Scouts will be added here</p>,
-    'junior-salvage-stewards': <p>Activity prompt for Junior Salvage Stewards will be added here</p>
+    'junior-salvage-stewards': (
+      <div>
+        <p><strong>[YOUR ACTIVITY PROMPT TITLE HERE]</strong></p>
+        <p className="mt-3">Think about:</p>
+        <ul className="mt-2 ml-4 list-disc space-y-2">
+          <li>[YOUR FIRST BULLET POINT]</li>
+          <li>[YOUR SECOND BULLET POINT]</li>
+          <li>[YOUR THIRD BULLET POINT]</li>
+        </ul>
+      </div>
+    )
   }
 
   const activityPrompt = activityPrompts[slug] || <p>Activity content will be added here...</p>
@@ -302,6 +312,174 @@ const LearnMore = () => {
                   </div>
                 </div>
               </CollapsibleSection>
+            </div>
+          </div>
+        ) : slug === 'junior-salvage-stewards' ? (
+          <div>
+            {/* Page Title */}
+            <div className="prose prose-lg max-w-none mb-6">
+              <h1>Learn More About Junior Salvage Stewards</h1>
+            </div>
+            
+            {/* Summary Section - Two Column Layout like Grace introduction */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              {/* Left Column - Grace Image */}
+              <div className="md:col-span-1 flex justify-center">
+                <img 
+                  src="/assets/character-image.png"
+                  alt="Grace"
+                  className="w-56 h-56 object-cover rounded-lg"
+                />
+              </div>
+              
+              {/* Right Column - Summary Text */}
+              <div className="md:col-span-2">
+                <div className="prose prose-lg">
+                  <div className="text-lg leading-relaxed space-y-4">
+                    {/* ADD YOUR INTRO TEXT HERE - Replace the placeholders below */}
+                    <p>We've learnt so much from those objects! Thanks for helping me to investigate 😊.</p>
+                    <p>Have a look through the sections below to learn more about life as a Junior Salvage Steward.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Collapsible Content Sections */}
+            <div className="space-y-6">
+              {/* Becoming a Cog Section */}
+              <CollapsibleSection title="Becoming a Cog" defaultOpen={false}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div className="space-y-6">
+                    {/* ADD YOUR IMAGES HERE */}
+                    <figure>
+                      <img 
+                        src="/topics/junior-salvage-stewards/[YOUR-IMAGE-1].jpg"
+                        alt="[YOUR IMAGE 1 DESCRIPTION]"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">[YOUR IMAGE 1 CAPTION/COPYRIGHT]</figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/junior-salvage-stewards/[YOUR-IMAGE-2].jpg"
+                        alt="[YOUR IMAGE 2 DESCRIPTION]"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">[YOUR IMAGE 2 CAPTION/COPYRIGHT]</figcaption>
+                    </figure>
+                  </div>
+                  <div>
+                    <p>Britain's salvage efforts didn't start with the Cogs. In December 1939, just a few months after the war started, the government launched the National Salvage Scheme. The Women's Voluntary Services (WVS) started a campaign to help, and the Cogs scheme was introduced a year later, at the end of 1940.</p>
+                    
+                    <p>Women from the WVS volunteered to go into schools and give talks on salvage to encourage children to join the scheme and become Junior Salvage Stewards. Lots of children liked the idea of being involved in the war effort, and many of them decided to take part. The Cog nickname came from the idea that children were small cogs in the national salvage machine, reflecting the way they all worked together to have a big impact.</p>
+                    
+                    <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4">
+                      "I am only a very small Cog in a very large wheel ploughing its way towards victory."
+                      <footer className="text-sm mt-2">— WVS Bulletin No. 21, July 1941</footer>
+                    </blockquote>
+                    
+                    <p>Children in the Junior Salvage Stewards were a variety of different ages. Many were aged 10 and 11, but some older children joined because they were still too young to join the military and wanted to be part of the war effort. The Cogs worked both alone and in groups and were often overseen by a local member of the WVS to make sure that everything ran smoothly.</p>
+                    
+                    <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4">
+                      "Are you a 'cog'? This is the question being at present exchanged amongst children of the town, and it is usually answered in the affirmative."
+                      <footer className="text-sm mt-2">— Illustrated Berwick Journal, Thursday 11 February 1943, p. 3</footer>
+                    </blockquote>
+                  </div>
+                </div>
+              </CollapsibleSection>
+
+              {/* Working as a Cog Section */}
+              <CollapsibleSection title="Working as a Cog" defaultOpen={false}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div className="space-y-6">
+                    {/* ADD YOUR IMAGES HERE */}
+                    <figure>
+                      <img 
+                        src="/topics/junior-salvage-stewards/[YOUR-IMAGE-3].jpg"
+                        alt="[YOUR IMAGE 3 DESCRIPTION]"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">[YOUR IMAGE 3 CAPTION/COPYRIGHT]</figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/junior-salvage-stewards/[YOUR-IMAGE-4].jpg"
+                        alt="[YOUR IMAGE 4 DESCRIPTION]"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">[YOUR IMAGE 4 CAPTION/COPYRIGHT]</figcaption>
+                    </figure>
+                  </div>
+                  <div>
+                    <p>Some Cogs worked as Salvage Stewards within their households, helping their mothers to separate their waste. Others collected waste from households on their street or in their local area, and sorted it themselves. Cogs often did their rounds on Saturdays, collecting the waste and taking it to local depots. From there, the salvage would be collected by the local authorities and sold to manufacturers, and the money went to the local community or to charities.</p>
+                    
+                    <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4">
+                      "An eleven-year-old boy is Dinnet's unofficial salvage officer… he and several of his schoolboy friends make regular house-to-house visits in the village and throughout the district."
+                      <footer className="text-sm mt-2">— Aberdeen Press and Journal, Monday 12 January 1942, p. 3</footer>
+                    </blockquote>
+                    
+                    <p>They collected a huge variety of materials, including paper, metal, rubber, fabric, and food scraps. These materials helped to keep the country running. Fabric scraps were particularly in demand: colourful rags were used to dye other fabrics, linen and calico were transformed into charts and paper, and stiff shirts and collars were turned into five pound notes!</p>
+                    
+                    <p>Collecting this salvage gave the Cogs a shared purpose and identity, with the scheme running throughout the country. They even had a song, called 'There'll Always Be A Dustbin'.</p>
+                    
+                    <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4">
+                      "There'll always be a dustbin, To save for victory, So treat it right and let it fight. For home and liberty. We'll win this war together, As easy as can be If dustbins mean as much to you As dustbins mean to me"
+                      <footer className="text-sm mt-2">— Manchester Evening News, Thursday 4 September 1941, 'Dustbin 'Cogs''</footer>
+                    </blockquote>
+                  </div>
+                </div>
+              </CollapsibleSection>
+
+              {/* Rewards for Cogs Section */}
+              <CollapsibleSection title="Rewards for Cogs" defaultOpen={false}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div className="space-y-6">
+                    {/* ADD YOUR IMAGES HERE */}
+                    <figure>
+                      <img 
+                        src="/topics/junior-salvage-stewards/[YOUR-IMAGE-5].jpg"
+                        alt="[YOUR IMAGE 5 DESCRIPTION]"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">[YOUR IMAGE 5 CAPTION/COPYRIGHT]</figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/junior-salvage-stewards/[YOUR-IMAGE-6].jpg"
+                        alt="[YOUR IMAGE 6 DESCRIPTION]"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">[YOUR IMAGE 6 CAPTION/COPYRIGHT]</figcaption>
+                    </figure>
+                  </div>
+                  <div>
+                    <p>After six weeks of working as a Junior Salvage Steward, children were awarded a Cog badge. Over 190,000 of these badges were handed out over the course of the war. Sometimes these badges were presented to children by the local mayor, and the names of those being rewarded for their efforts were often listed in the local newspaper.</p>
+                    
+                    <p>Competitions were held in some towns and cities, and prizes were given to the Cogs who collected the most salvage. In one town in Lancashire, a Cog was awarded a prize for collecting 110 tyres, and in Ashbourne the Cogs in local boroughs competed to collect the most salvage.</p>
+                    
+                    <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4">
+                      "On Thursday last week, the Rev. B. Davis, chairman of the Dover Rural District Council Salvage Committee, presented a cup to Sydney Keeler as being the most conscientious 'Cog' for the Easter term. This cup is to be competed for each term in the future."
+                      <footer className="text-sm mt-2">— Dover Express & East Kent News, Friday 24 April 1942</footer>
+                    </blockquote>
+                    
+                    <p>Cogs weren't just rewarded with badges and trophies. Some WVS volunteers threw parties to thank the children for their efforts, and in Peterborough 1000 Cogs were taken to the cinema to show the city's appreciation.</p>
+                    
+                    <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4">
+                      "Next month I am going to give them a garden party to show my appreciation."
+                      <footer className="text-sm mt-2">— Daily Mirror, Saturday 27 June 1942, p. 2</footer>
+                    </blockquote>
+                    
+                    <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4">
+                      "On Saturday morning 1,000 of the City's Salvage Cogs were entertained to a film show at the Broadway Kinema… in appreciation of their work during the salvage campaign."
+                      <footer className="text-sm mt-2">— Peterborough Standard, Friday 29 May 1942, p.4</footer>
+                    </blockquote>
+                  </div>
+                </div>
+              </CollapsibleSection>
+              
             </div>
           </div>
         ) : (
