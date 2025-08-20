@@ -42,7 +42,7 @@ const LearnMore = () => {
         <p className="mt-3">Think about:</p>
         <ul className="mt-2 ml-4 list-disc space-y-2">
           <li>why propaganda posters were created during World War Two</li>
-          <li>how can you present a positive image of life in the Land Army</li>
+          <li>how you can present a positive image of life in the Land Army</li>
           <li>what might encourage you to join the Land Army</li>
         </ul>
       </div>
@@ -50,12 +50,12 @@ const LearnMore = () => {
     'scouts': <p>Activity prompt for Scouts will be added here</p>,
     'junior-salvage-stewards': (
       <div>
-        <p><strong>[YOUR ACTIVITY PROMPT TITLE HERE]</strong></p>
+        <p><strong>Write a postcard to a friend encouraging them to join the Junior Salvage Stewards.</strong></p>
         <p className="mt-3">Think about:</p>
         <ul className="mt-2 ml-4 list-disc space-y-2">
-          <li>[YOUR FIRST BULLET POINT]</li>
-          <li>[YOUR SECOND BULLET POINT]</li>
-          <li>[YOUR THIRD BULLET POINT]</li>
+          <li>How will they be helping with the war effort?</li>
+          <li>What makes salvage work fun?</li>
+          <li>Are there any rewards for being a Cog?</li>
         </ul>
       </div>
     )
