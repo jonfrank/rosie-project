@@ -40,9 +40,11 @@ const Topic = () => {
     // Topic-specific media files (ordered as they should appear in carousel)
     const topicMediaFiles = {
       'junior-salvage-stewards': [
-        'Anti-Gas Respirator Small Child.jpg', // First item
-        'Anti-Gas Respirator MKII.jpg',        // Second item
-        'Join the Cogs Art.jpg'                // Third item
+        'adult-gas-mask.mov',                  // First item - Adult gas mask video
+        'child-gas-mask.mov',                  // Second item - Child gas mask video
+        'clothing-ration-book.mov',            // Third item - Clothing ration book video
+        'Join the Cogs Art.jpg',               // Fourth item - Join the Cogs poster
+        'shrapnel.mov'                         // Fifth item - Shrapnel video
       ],
       'scouts': [
         'BP Fireman Scout Badge.jpeg'
