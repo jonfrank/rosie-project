@@ -214,7 +214,6 @@ const Topic = () => {
         </div>
       </nav>
 
-
       {/* Content */}
       <div className="bg-white rounded-lg shadow-sm p-8">
         {type === 'classroom' ? (
