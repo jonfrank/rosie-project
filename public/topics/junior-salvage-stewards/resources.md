@@ -77,6 +77,19 @@ To make the session more tactile and sensory friendly, you could source some of 
 
 ## Further Resources
 
-<!-- Content to be added -->
+- [Salvage on the Home Front](https://www.royalvoluntaryservice.org.uk/media/hiqpms3j/salvage_on_the_home_front_2021.pdf) - The most comprehensive source of information about the Junior Salvage Stewards. This article was produced by the Royal Voluntary Service Heritage Collection and is thoroughly researched and supported by primary sources.
 
+- [Clothes Rationing in Britain: Imperial War Museums](https://www.iwm.org.uk/history/8-facts-about-clothes-rationing-in-britain-during-the-second-world-war) - 8 facts about clothes rationing in Britain during World War Two, each supported by an object from IWM’s online collections.
+
+- [WW2 People’s War Archive - BBC: Tony Greenfield’s Story](https://www.bbc.co.uk/history/ww2peopleswar/stories/33/a7889133.shtml) - Tony was signed up to be a salvage steward by his dad just before he turned 12. His experiences of World War Two might be of interest to students who enjoy history.
+
+- [WW2 People’s War Archive - BBC: John Stuart Newcomb](https://www.bbc.co.uk/history/ww2peopleswar/stories/53/a6144653.shtml) - John was a Cog, and also enjoyed plane spotting and listening to foreign radio stations. He describes rationing, air-raids and gas masks, as well as his role as a Junior Salvage Steward.
+
+- [Ten Years’ Work: 1938-1948](https://www.royalvoluntaryservice.org.uk/media/qxfhkf5u/ten_years_work_2021.pdf) - A WVS report published in 1948, looking back on the service’s role in the war effort. This report explains how they kept children interested in the work throughout the war.
+
+- [You Can Help Your Country: English Children’s Work During the Second World War](https://www.jstor.org/stable/j.ctv17ppc3b) - An interesting book explaining many different roles that children held during World War Two, including the Junior Salvage Stewards in Chapter 5: 'Younger children’s work: Doing their bit'.
+
+- [A Look at Salvage and Recycling on the Home Front](https://www.thehistoricalfictioncompany.com/post/there-ll-always-be-a-dustbin-a-look-at-salvage-and-recycling-on-the-home-front-by-susanna-bavin) - An easy-to-read article about the salvage campaigns during World War Two.
+
+- [We Want Everybody’s Salvage!’: Recycling, Voluntarism, and the People’s War](https://eprints.leedsbeckett.ac.uk/id/eprint/5488/1/WeWantEverybodysSalvageAM-IRVING.pdf) - An academic article examining the role of volunteers in the British government’s salvage campaign.
 ---
