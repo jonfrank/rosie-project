@@ -37,7 +37,7 @@ const MainNav = () => {
       title: 'Investigation 2: Junior Salvage Stewards',
       shortTitle: 'Junior Salvage Stewards',
       description: 'Explore children\'s role in wartime recycling',
-      available: false
+      available: true
     },
     {
       id: 'scouts',
