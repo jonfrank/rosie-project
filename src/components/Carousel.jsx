@@ -1,8 +1,40 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useLayoutEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { useNavigate, useParams } from 'react-router-dom'
 import { X } from 'lucide-react'
 import "./Carousel.css"
+
+function useAnimatedHeight(ref, deps) {
+  useLayoutEffect(() => {
+    const outer = ref.current
+    if (!outer) return
+
+    // Respect reduced motion
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      outer.style.height = 'auto'
+      return
+    }
+
+    const prev = outer.getBoundingClientRect().height
+    // Lock current height
+    outer.style.height = prev + 'px'
+
+    requestAnimationFrame(() => {
+      // Measure new natural height after layout changes
+      const next = outer.scrollHeight
+      if (Math.abs(next - prev) < 1) {
+        outer.style.height = 'auto'
+        return
+      }
+      const onEnd = () => {
+        outer.style.height = 'auto'
+        outer.removeEventListener('transitionend', onEnd)
+      }
+      outer.addEventListener('transitionend', onEnd)
+      outer.style.height = next + 'px'
+    })
+  }, deps)
+}
 
 const Carousel = ({ items }) => {
   const navigate = useNavigate()
@@ -12,6 +44,7 @@ const Carousel = ({ items }) => {
   const [isAnimating, setIsAnimating] = useState(false)
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [currentPhase, setCurrentPhase] = useState('question')
+  const outerRef = useRef(null)
 
   const nextItem = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length)
@@ -248,103 +281,110 @@ const Carousel = ({ items }) => {
     return 'Continue'
   }
 
+  // Animate vertical growth/shrink of the carousel wrapper when layout/content changes
+  useAnimatedHeight(outerRef, [isExpanded, currentIndex, currentQuestionIndex, currentPhase])
+
   return (
     <div className="carousel">
-      <div className={`carousel-container ${isExpanded ? 'expanded' : 'collapsed'} ${isAnimating ? 'animating' : ''}`}>
-        <div className="media-section">
-          {renderMedia()}
-          {!isExpanded && (
-            <div className="button-section">
-              <div className="flex justify-between items-center px-4 md:px-24">
-                <button 
-                  onClick={prevItem} 
-                  disabled={currentIndex === 0}
-                  className="previous-object-button bg-gray-600 hover:bg-gray-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-200"
-                >
-                  Previous Object
-                </button>
-                <button onClick={toggleExpanded} className="expand-button bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200">
-                  Investigation Questions
-                </button>
-                <button 
-                  onClick={nextItem}
-                  disabled={currentIndex === items.length - 1}
-                  className="skip-object-button bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-200"
-                >
-                  Skip Object
-                </button>
+      <div className="carousel-outer" ref={outerRef}>
+        <div className={`carousel-container ${isExpanded ? 'expanded' : 'collapsed'} ${isAnimating ? 'animating' : ''}`}>
+          <div className="media-section">
+            {renderMedia()}
+            {!isExpanded && (
+              <div className="button-section">
+                <div className="flex justify-between items-center px-4 md:px-24">
+                  <button 
+                    onClick={prevItem} 
+                    disabled={currentIndex === 0}
+                    className="previous-object-button bg-gray-600 hover:bg-gray-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-200"
+                  >
+                    Previous Object
+                  </button>
+                  <button onClick={toggleExpanded} className="expand-button bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200">
+                    Investigation Questions
+                  </button>
+                  <button 
+                    onClick={nextItem}
+                    disabled={currentIndex === items.length - 1}
+                    className="skip-object-button bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-200"
+                  >
+                    Skip Object
+                  </button>
+                </div>
               </div>
-            </div>
-          )}
-        </div>
-        
-        {isExpanded && (
-          <div className="questions-panel">
-            <button onClick={toggleExpanded} className="close-button">
-              <X size={16} />
-            </button>
-            {(() => {
-              const { questions, explanations, summary } = extractStructuredContent(items[currentIndex].description)
-              if (questions.length > 0 && isExpanded) {
-                return (
-                  <div className="questions-section">
-                    <div className="questions-list">
-                      {currentPhase === 'question' && (
-                        <div className="question-item">
-                          <span className="question-number">{currentQuestionIndex + 1}.</span>
-                          <span className="question-text">{questions[currentQuestionIndex]}</span>
-                        </div>
-                      )}
-                      
-                      {currentPhase === 'explanation' && explanations[currentQuestionIndex] && (
-                        <div className="explanation-item">
-                          <div className="explanation-header">
-                            <span className="explanation-label">Answer:</span>
-                          </div>
-                          <div className="explanation-content">
-                            <ReactMarkdown>{explanations[currentQuestionIndex]}</ReactMarkdown>
-                          </div>
-                        </div>
-                      )}
-                      
-                      {currentPhase === 'summary' && summary && (
-                        <div className="summary-item">
-                          <div className="summary-header">
-                            <span className="summary-label">Summary</span>
-                          </div>
-                          <div className="summary-content">
-                            <ReactMarkdown>{summary}</ReactMarkdown>
-                          </div>
-                        </div>
-                      )}
-                      
-                      <div className="question-navigation-buttons">
-                        <button 
-                          onClick={handleNextStep} 
-                          className={`next-step-button ${getButtonText() === 'Learn More' ? 'learn-more-button' : 'reveal-question-button'}`}
-                        >
-                          {getButtonText()}
-                        </button>
-                        
-                        {(currentPhase === 'explanation' || 
-                          (currentPhase === 'question' && currentQuestionIndex > 0) ||
-                          currentPhase === 'summary') && (
-                          <button 
-                            onClick={handlePreviousStep}
-                            className="previous-question-button"
-                          >
-                            Previous Question
-                          </button>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                )
-              }
-              return null
-            })()}
+            )}
           </div>
-        )}
+
+          <div className="questions-track">
+            {isExpanded && (
+              <div className="questions-inner">
+                <button onClick={toggleExpanded} className="close-button">
+                  <X size={16} />
+                </button>
+                {(() => {
+                  const { questions, explanations, summary } = extractStructuredContent(items[currentIndex].description)
+                  if (questions.length > 0 && isExpanded) {
+                    return (
+                      <div className="questions-section">
+                        <div className="questions-list">
+                          {currentPhase === 'question' && (
+                            <div className="question-item">
+                              <span className="question-number">{currentQuestionIndex + 1}.</span>
+                              <span className="question-text">{questions[currentQuestionIndex]}</span>
+                            </div>
+                          )}
+                          
+                          {currentPhase === 'explanation' && explanations[currentQuestionIndex] && (
+                            <div className="explanation-item">
+                              <div className="explanation-header">
+                                <span className="explanation-label">Answer:</span>
+                              </div>
+                              <div className="explanation-content">
+                                <ReactMarkdown>{explanations[currentQuestionIndex]}</ReactMarkdown>
+                              </div>
+                            </div>
+                          )}
+                          
+                          {currentPhase === 'summary' && summary && (
+                            <div className="summary-item">
+                              <div className="summary-header">
+                                <span className="summary-label">Summary</span>
+                              </div>
+                              <div className="summary-content">
+                                <ReactMarkdown>{summary}</ReactMarkdown>
+                              </div>
+                            </div>
+                          )}
+                          
+                          <div className="question-navigation-buttons">
+                            <button 
+                              onClick={handleNextStep} 
+                              className={`next-step-button ${getButtonText() === 'Learn More' ? 'learn-more-button' : 'reveal-question-button'}`}
+                            >
+                              {getButtonText()}
+                            </button>
+                            
+                            {(currentPhase === 'explanation' || 
+                              (currentPhase === 'question' && currentQuestionIndex > 0) ||
+                              currentPhase === 'summary') && (
+                              <button 
+                                onClick={handlePreviousStep}
+                                className="previous-question-button"
+                              >
+                                Previous Question
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  }
+                  return null
+                })()}
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   )
