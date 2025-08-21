@@ -10,6 +10,8 @@ Gas masks were worn on your head, covering your face. The window lets you see, a
 
 3. Gas masks were carried in boxes with string straps. How would you feel if you had to carry this around everywhere you went?
 
+At first, you might have been excited, scared, worried or even irritated by carrying your gas mask everywhere you went, but after a few months of war, gas masks were just part of everyday life.
+
 ## Summary
 
 This type of gas mask was worn by adults and older children. Children aged 2 to 5 were given a different type of gas mask. Have a look at the next object to see what it looked like.

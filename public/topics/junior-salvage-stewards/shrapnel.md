@@ -2,7 +2,7 @@
 
 1. What material do you think this is?
 
-This is a piece of shrapnel - a bit of metal which has been flung out during a big explosion. Lots of bombs were dropped on Britain during World War Two, mostly in big cities. This meant that there was a lot of shrapnel, which children used to collect.
+This is a piece of metal - a bit of shrapnel which has been flung out during a big explosion. Lots of bombs were dropped on Britain during World War Two, mostly in big cities. This meant that there was a lot of shrapnel, which children used to collect.
 
 2. Metal was one of the materials collected by Cogs. They collected pieces of shrapnel like this, as well as old saucepans and metal railings. What do you think this metal was used for?
 

@@ -1,6 +1,8 @@
 ## Questions
 
-1. How is this different to the adult gas mask?
+1. How is this different to the adult's gas mask?
+
+You probably noticed the brighter colours on the child's mask. The eye sections are a little bit different, and the mask is much smaller than the adult's gas mask. Did you notice any other differences?
 
 2. Why do you think this child's gas mask is different to the adult one?
 

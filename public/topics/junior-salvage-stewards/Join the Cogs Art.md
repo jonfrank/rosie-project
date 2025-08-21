@@ -8,6 +8,8 @@ Salvaging means saving something to be used again. During World War Two, certain
 
 2. Look at the children's expressions. How do you think they feel about being part of the Cogs?
 
+Did you notice the children smiling? Maybe you said they look happy, excited or even proud to be Cogs.
+
 3. How does this poster encourage children to join the Cogs?
 
 This is a propaganda poster created by the British government. Propaganda tries to influence people's beliefs and actions.
