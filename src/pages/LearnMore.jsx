@@ -5,6 +5,7 @@ import CollapsibleSection from '../components/CollapsibleSection'
 const LearnMore = () => {
   const { slug } = useParams()
   const [isActivityPromptOpen, setIsActivityPromptOpen] = useState(false)
+  const [openSection, setOpenSection] = useState(null)
 
   // Scroll to top when component mounts or slug changes
   useEffect(() => {
@@ -62,6 +63,11 @@ const LearnMore = () => {
   }
 
   const activityPrompt = activityPrompts[slug] || <p>Activity content will be added here...</p>
+
+  // Handle section toggling for accordion behavior
+  const handleSectionToggle = (sectionId) => {
+    setOpenSection(openSection === sectionId ? null : sectionId)
+  }
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -124,7 +130,12 @@ const LearnMore = () => {
             {/* Collapsible Content Sections */}
             <div className="space-y-6">
               {/* Uniform Section - Images Left, Text Right */}
-              <CollapsibleSection title="Uniform" defaultOpen={false}>
+              <CollapsibleSection 
+                title="Uniform" 
+                isOpen={openSection === 'uniform'}
+                onToggle={handleSectionToggle}
+                sectionId="uniform"
+              >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-6">
                     <figure>
@@ -175,7 +186,12 @@ const LearnMore = () => {
               </CollapsibleSection>
 
               {/* Work Section - Images Left, Text Right */}
-              <CollapsibleSection title="Work" defaultOpen={false}>
+              <CollapsibleSection 
+                title="Work" 
+                isOpen={openSection === 'work'}
+                onToggle={handleSectionToggle}
+                sectionId="work"
+              >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-6">
                     <figure>
@@ -232,7 +248,12 @@ const LearnMore = () => {
               </CollapsibleSection>
 
               {/* Life Section - Images Left, Text Right */}
-              <CollapsibleSection title="Life" defaultOpen={false}>
+              <CollapsibleSection 
+                title="Life" 
+                isOpen={openSection === 'life'}
+                onToggle={handleSectionToggle}
+                sectionId="life"
+              >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-6">
                     <figure>
@@ -280,7 +301,12 @@ const LearnMore = () => {
               </CollapsibleSection>
 
               {/* After the War Section - Images Left, Text Right */}
-              <CollapsibleSection title="After the War" defaultOpen={false}>
+              <CollapsibleSection 
+                title="After the War" 
+                isOpen={openSection === 'after-war'}
+                onToggle={handleSectionToggle}
+                sectionId="after-war"
+              >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-6">
                     <figure>
@@ -347,7 +373,12 @@ const LearnMore = () => {
             {/* Collapsible Content Sections */}
             <div className="space-y-6">
               {/* Becoming a Cog Section */}
-              <CollapsibleSection title="Becoming a Cog" defaultOpen={false}>
+              <CollapsibleSection 
+                title="Becoming a Cog" 
+                isOpen={openSection === 'becoming-cog'}
+                onToggle={handleSectionToggle}
+                sectionId="becoming-cog"
+              >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-6">
                     {/* ADD YOUR IMAGES HERE */}
@@ -390,7 +421,12 @@ const LearnMore = () => {
               </CollapsibleSection>
 
               {/* Working as a Cog Section */}
-              <CollapsibleSection title="Working as a Cog" defaultOpen={false}>
+              <CollapsibleSection 
+                title="Working as a Cog" 
+                isOpen={openSection === 'working-cog'}
+                onToggle={handleSectionToggle}
+                sectionId="working-cog"
+              >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-6">
                     {/* ADD YOUR IMAGES HERE */}
@@ -425,7 +461,16 @@ const LearnMore = () => {
                     <p>Collecting this salvage gave the Cogs a shared purpose and identity, with the scheme running throughout the country. They even had a song, called 'There'll Always Be A Dustbin'.</p>
                     
                     <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4">
-                      "There'll always be a dustbin, To save for victory, So treat it right and let it fight. For home and liberty. We'll win this war together, As easy as can be If dustbins mean as much to you As dustbins mean to me"
+                      <div className="whitespace-pre-line">
+                        "There'll always be a dustbin,<br />
+To save for victory,<br />
+So treat it right and let it fight.<br />
+For home and liberty.<br />
+We'll win this war together,<br />
+As easy as can be<br />
+If dustbins mean as much to you<br />
+As dustbins mean to me"
+                      </div>
                       <footer className="text-sm mt-2">— Manchester Evening News, Thursday 4 September 1941, 'Dustbin 'Cogs''</footer>
                     </blockquote>
                   </div>
@@ -433,7 +478,12 @@ const LearnMore = () => {
               </CollapsibleSection>
 
               {/* Rewards for Cogs Section */}
-              <CollapsibleSection title="Rewards for Cogs" defaultOpen={false}>
+              <CollapsibleSection 
+                title="Rewards for Cogs" 
+                isOpen={openSection === 'rewards-cogs'}
+                onToggle={handleSectionToggle}
+                sectionId="rewards-cogs"
+              >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-6">
                     {/* ADD YOUR IMAGES HERE */}

@@ -15,6 +15,7 @@ const Topic = () => {
   const [carouselDescriptions, setCarouselDescriptions] = useState({})
   const [portalActivated, setPortalActivated] = useState(false)
   const [objectsAppearing, setObjectsAppearing] = useState(false)
+  const [openSection, setOpenSection] = useState(0) // Default to first section open
 
   // Topic metadata - now using Investigation numbers for classroom pages
   const topicTitles = {
@@ -167,6 +168,11 @@ const Topic = () => {
 
   const topicTitle = type === 'classroom' ? (investigationTitles[slug] || `Investigation ${slug}`) : (topicTitles[slug] || slug)
   const pageType = type === 'classroom' ? 'Classroom Materials' : 'Resources'
+
+  // Handle section toggling for accordion behavior in resources pages
+  const handleSectionToggle = (sectionId) => {
+    setOpenSection(openSection === sectionId ? null : sectionId)
+  }
 
   // Parse content into collapsible sections for resources pages
   const parseContentSections = (content) => {
@@ -365,7 +371,9 @@ const Topic = () => {
               <CollapsibleSection 
                 key={index} 
                 title={section.title} 
-                defaultOpen={index === 0} // First section open by default
+                isOpen={openSection === index}
+                onToggle={handleSectionToggle}
+                sectionId={index}
               >
                 <ReactMarkdown 
                   remarkPlugins={[remarkGfm]}
