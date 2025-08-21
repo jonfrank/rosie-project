@@ -144,7 +144,7 @@ const LearnMore = () => {
                         alt="Women's Land Army uniform breeches"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">© IWM (D 8839)</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">Image: IWM (D 8839)</figcaption>
                     </figure>
                     
                     <figure>
@@ -153,7 +153,7 @@ const LearnMore = () => {
                         alt="Women's Land Army uniform dungarees"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">© IWM (D 8824)</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">Image: IWM (D 8824)</figcaption>
                     </figure>
                     
                     <figure>
@@ -162,7 +162,7 @@ const LearnMore = () => {
                         alt="Women's Land Army uniform coat"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">© IWM (D 11222)</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">Image: IWM (D 11222)</figcaption>
                     </figure>
                   </div>
                   <div>
@@ -200,7 +200,7 @@ const LearnMore = () => {
                         alt="Anne driving a tractor for the Women's Land Army"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">© IWM (D 8823)</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">Image: IWM (D 8823)</figcaption>
                     </figure>
                     
                     <figure>
@@ -209,7 +209,7 @@ const LearnMore = () => {
                         alt="Women's Land Army members harvesting wheat"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">© IWM (HU 36274)</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">Image: IWM (HU 36274)</figcaption>
                     </figure>
                     
                     <figure>
@@ -218,7 +218,7 @@ const LearnMore = () => {
                         alt="Women's Land Army working in the fields"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">© IWM (D 8826)</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">Image: IWM (D 8826)</figcaption>
                     </figure>
                     
                     <figure>
@@ -227,7 +227,7 @@ const LearnMore = () => {
                         alt="Women's Land Army member milking cows"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">© IWM (D 186)</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">Image: IWM (D 186)</figcaption>
                     </figure>
                   </div>
                   <div>
@@ -262,7 +262,7 @@ const LearnMore = () => {
                         alt="Women in the Land Army having a sing-song around a piano"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">© IWM (D 8833)</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">Image: IWM (D 8833)</figcaption>
                     </figure>
                     
                     <figure>
@@ -271,7 +271,7 @@ const LearnMore = () => {
                         alt="Women's Land Army members at a dance"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">© IWM (D 14123)</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">Image: IWM (D 14123)</figcaption>
                     </figure>
                     
                     <figure>
@@ -280,7 +280,7 @@ const LearnMore = () => {
                         alt="Women's Land Army members having tea"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">© IWM (D 8837)</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">Image: IWM (D 8837)</figcaption>
                     </figure>
                   </div>
                   <div>
@@ -381,23 +381,31 @@ const LearnMore = () => {
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-6">
-                    {/* ADD YOUR IMAGES HERE */}
                     <figure>
                       <img 
-                        src="/topics/junior-salvage-stewards/[YOUR-IMAGE-1].jpg"
-                        alt="[YOUR IMAGE 1 DESCRIPTION]"
+                        src="/topics/junior-salvage-stewards/IWM (D 14074).jpg"
+                        alt="Children collecting salvage materials during World War Two"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">[YOUR IMAGE 1 CAPTION/COPYRIGHT]</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">WVS volunteers sorting salvage.<br />Image: IWM (D 14074)</figcaption>
                     </figure>
                     
                     <figure>
                       <img 
-                        src="/topics/junior-salvage-stewards/[YOUR-IMAGE-2].jpg"
-                        alt="[YOUR IMAGE 2 DESCRIPTION]"
+                        src="/topics/junior-salvage-stewards/Cogs-in-machine.jpg"
+                        alt="Illustration showing children as cogs in the salvage machine"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">[YOUR IMAGE 2 CAPTION/COPYRIGHT]</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">Cogs work together to make a machine work - if one cog is missing the whole machine stops working.</figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/junior-salvage-stewards/IWM (D 14019).jpg"
+                        alt="Junior Salvage Stewards at work collecting materials"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">Cogs working with a WVS volunteer to collect salvage.<br />Image: IWM (D 14019)</figcaption>
                     </figure>
                   </div>
                   <div>
@@ -429,23 +437,40 @@ const LearnMore = () => {
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-6">
-                    {/* ADD YOUR IMAGES HERE */}
                     <figure>
                       <img 
-                        src="/topics/junior-salvage-stewards/[YOUR-IMAGE-3].jpg"
-                        alt="[YOUR IMAGE 3 DESCRIPTION]"
+                        src="/topics/junior-salvage-stewards/IWM (D 7560).jpg"
+                        alt="Junior Salvage Stewards collecting materials"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">[YOUR IMAGE 3 CAPTION/COPYRIGHT]</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">A woman putting her salvage out. Cogs helped their mothers with this job.<br />Image: IWM (D 7560)</figcaption>
                     </figure>
                     
                     <figure>
                       <img 
-                        src="/topics/junior-salvage-stewards/[YOUR-IMAGE-4].jpg"
-                        alt="[YOUR IMAGE 4 DESCRIPTION]"
+                        src="/topics/junior-salvage-stewards/IWM (D 21562).jpg"
+                        alt="Junior Salvage Stewards at work"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">[YOUR IMAGE 4 CAPTION/COPYRIGHT]</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">Junior Salvage Stewards loading a horse-drawn cart with salvage to be taken to the depot.<br />Image: IWM (D 21562)</figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/junior-salvage-stewards/IWM (HU 36212).jpg"
+                        alt="Cogs collecting salvage materials"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">A group of teenage Cogs carrying paper salvage.<br />Image: IWM (HU 36212)</figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/junior-salvage-stewards/IWM (D 14061).jpg"
+                        alt="Junior Salvage Stewards working with salvage"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">Adults and children working together at a salvage depot.<br />Image: IWM (D 14061)</figcaption>
                     </figure>
                   </div>
                   <div>
@@ -486,23 +511,13 @@ As dustbins mean to me"
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-6">
-                    {/* ADD YOUR IMAGES HERE */}
                     <figure>
                       <img 
-                        src="/topics/junior-salvage-stewards/[YOUR-IMAGE-5].jpg"
-                        alt="[YOUR IMAGE 5 DESCRIPTION]"
+                        src="/topics/junior-salvage-stewards/IWM (D 14066).jpg"
+                        alt="Junior Salvage Steward showing her cog badge"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">[YOUR IMAGE 5 CAPTION/COPYRIGHT]</figcaption>
-                    </figure>
-                    
-                    <figure>
-                      <img 
-                        src="/topics/junior-salvage-stewards/[YOUR-IMAGE-6].jpg"
-                        alt="[YOUR IMAGE 6 DESCRIPTION]"
-                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
-                      />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">[YOUR IMAGE 6 CAPTION/COPYRIGHT]</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">A Junior Salvage Steward showing her cog badge to a friend.<br />Image: IWM (D 14066)</figcaption>
                     </figure>
                   </div>
                   <div>
