@@ -8,11 +8,17 @@
   overflow: hidden;
 }
 
+/* New wrapper to animate height */
+.carousel-outer {
+  height: auto; /* will be animated via JS */
+  transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .carousel-container {
   position: relative;
   display: flex;
-  flex-direction: column;
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), padding-right 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-direction: row; /* switch to row to put questions in-flow */
+  align-items: stretch;
 }
 
 .carousel-container.centered {
@@ -23,13 +29,6 @@
   transform: scale(1);
 }
 
-.carousel-container.expanded {
-  padding-right: 40%;
-}
-
-.carousel-container.collapsed {
-  padding-right: 0;
-}
 
 .carousel-container img,
 .carousel-container video {
@@ -67,6 +66,7 @@
   flex-direction: column;
   flex: 1;
   overflow: hidden;
+  background: #f8fafc; /* ensure consistent grey behind media and buttons */
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -89,35 +89,43 @@
   padding-bottom: calc(1.5rem + 100px);
   width: calc(100% + 200px);
   box-sizing: border-box;
-  transform: translateY(0) scale(0.9);
+  transform: translateY(0);
   opacity: 1;
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease-in-out;
 }
 
 .carousel-container.expanded .button-section {
-  transform: translateY(-100%) scale(1);
+  transform: translateY(-12px);
   opacity: 0;
   pointer-events: none;
 }
 
-/* Questions panel styling */
-.questions-panel {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40%;
-  height: 100%;
-  background: #f8fafc;
-  padding: 1.5rem;
+/* Questions track: in-flow width, inner content slides */
+.questions-track {
+  --qw: 0%; /* width when collapsed */
+  flex: 0 0 auto;              /* keep grow/shrink at 0 */
+  flex-basis: var(--qw);       /* animate this explicitly */
+  min-width: 0;                /* allow track to shrink to 0 */
+  transition: flex-basis 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   border-left: 1px solid #e5e7eb;
-  overflow-y: auto;
+  background: #f8fafc;
+  overflow: hidden;            /* avoid content showing before width grows */
+}
+
+.carousel-container.expanded .questions-track { --qw: 40%; }
+
+.questions-inner {
+  position: relative;           /* anchor close button inside panel */
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 1.5rem;
   transform: translateX(100%);
   opacity: 0;
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease-in-out 0.2s;
-  z-index: 2;
 }
 
-.carousel-container.expanded .questions-panel {
+.carousel-container.expanded .questions-inner {
   transform: translateX(0);
   opacity: 1;
 }
@@ -528,29 +536,20 @@
     max-width: none;
   }
   
-  .carousel-container.expanded {
-    padding-right: 0;
+  .carousel-container {
     flex-direction: column;
   }
-  
-  .questions-panel {
-    position: relative;
-    top: auto;
-    bottom: auto;
-    right: auto;
-    left: auto;
-    width: 100%;
-    height: auto;
+
+  .questions-track {
+    --qw: 100%;
     border-left: none;
     border-top: 1px solid #e5e7eb;
-    transform: none;
-    max-height: none;
-    opacity: 1;
   }
-  
-  .carousel-container.expanded .questions-panel {
+
+  .questions-inner {
     transform: none;
     opacity: 1;
+    padding: 1rem;
   }
   
   .carousel-container img,
