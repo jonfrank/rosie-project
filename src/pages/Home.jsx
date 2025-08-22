@@ -76,7 +76,7 @@ const Home = () => {
                   {topic.description}
                 </p>
                 
-                {topic.id === 1 || topic.id === 2 ? (
+                {topic.id === 1 || topic.id === 2 || topic.id === 3 ? (
                   <div className="flex flex-col sm:flex-row gap-3 mt-auto">
                     <Link 
                       to={`/topic/${topic.slug}/classroom`}

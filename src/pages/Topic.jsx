@@ -19,7 +19,7 @@ const Topic = () => {
 
   // Topic metadata - now using Investigation numbers for classroom pages
   const topicTitles = {
-    'scouts': 'Scouts Movement',
+    'scouts': 'Scouts',
     'womens-land-army': 'Women\'s Land Army',
     'junior-salvage-stewards': 'Junior Salvage Stewards'
   }
