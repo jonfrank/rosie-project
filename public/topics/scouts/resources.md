@@ -1,4 +1,4 @@
-# Scouts Movement Teacher Guide
+# Scouts Teacher Guide
 
 ## Session aims
 
