@@ -48,7 +48,11 @@ const Topic = () => {
         'shrapnel.mov'                         // Fifth item - Shrapnel video
       ],
       'scouts': [
-        'BP Fireman Scout Badge.jpeg'
+        'arp-helmet.mov',                 // First item - ARP helmet video
+        'Scout ARP.webp',                 // Second item - Scout ARP image
+        'scout-badge.mp4',                // Third item - Scout badge video
+        'fire-bucket.mov',                // Fourth item - Fire bucket video
+        'first-aid-armband.mov'           // Fifth item - First aid armband video
       ],
       'womens-land-army': [
         'Ration Book.mov',         // First item - Ration Book
