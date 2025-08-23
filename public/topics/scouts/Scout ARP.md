@@ -9,7 +9,7 @@ This child isn’t working alone - can you spot the others in the background? So
 
 The children in this photo are painting white lines along the edge of the road. We have white lines down the middle of our roads today, but not usually along the edges.
 
-3. Why do you think white lines were painted along the edges of roads in Britain during WW2? 
+3. Why do you think white lines were painted along the edges of roads in Britain during World War Two? 
 
 During the war, there were blackouts during the evenings. This meant that lights, including car headlamps and streetlights, were dimmed or turned off. White lines were painted on the edges of roads to help pedestrians and drivers see where they were going and avoid accidents.
 

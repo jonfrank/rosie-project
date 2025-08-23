@@ -91,5 +91,5 @@ To make the session more tactile and sensory friendly, you could source some of 
 
 - [A Look at Salvage and Recycling on the Home Front](https://www.thehistoricalfictioncompany.com/post/there-ll-always-be-a-dustbin-a-look-at-salvage-and-recycling-on-the-home-front-by-susanna-bavin) - An easy-to-read article about the salvage campaigns during World War Two.
 
-- [We Want Everybody’s Salvage!’: Recycling, Voluntarism, and the People’s War](https://eprints.leedsbeckett.ac.uk/id/eprint/5488/1/WeWantEverybodysSalvageAM-IRVING.pdf) - An academic article examining the role of volunteers in the British government’s salvage campaign.
+- ['We Want Everybody’s Salvage!': Recycling, Voluntarism, and the People’s War](https://eprints.leedsbeckett.ac.uk/id/eprint/5488/1/WeWantEverybodysSalvageAM-IRVING.pdf) - An academic article examining the role of volunteers in the British government’s salvage campaign.
 ---
