@@ -28,7 +28,7 @@ const LearnMore = () => {
 
   // Topic metadata
   const topicTitles = {
-    'scouts': 'Scouts Movement',
+    'scouts': 'Scouts',
     'womens-land-army': 'Women\'s Land Army',
     'junior-salvage-stewards': 'Junior Salvage Stewards'
   }
