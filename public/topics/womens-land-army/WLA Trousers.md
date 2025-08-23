@@ -1,7 +1,13 @@
 ## Questions
 
 1. What is this object? See if you can spot anything interesting or unusual about it.
+
+This is a pair of trousers, also known as breeches. Did you spot the lace up cuffs or the very short legs?
+
 2. Look at the lace up cuffs. Why might somebody need the bottom of their trouser leg to be tight?
+
+Having a tight cuff on your trouser leg helps to keep them out of the way. It also stops cold air coming in, and keeps dirt out. A lace up cuff is practical if you're doing physical, outdoor work.
+
 3. Does the material look delicate or durable? Why might someone need trousers made from this type of fabric?
 
 These trousers are made out of sturdy corduroy, which is long-lasting and warm. This fabric was worn by farm workers throughout the 20th Century.

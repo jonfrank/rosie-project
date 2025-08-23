@@ -1,7 +1,13 @@
 ## Questions
 
 1. What can you see in this poster? Think about the words, colours, and images.
+
+When men joined the army, there was a shortage of farm workers. Britain’s food supplies were already a concern (think back to the ration book we saw earlier), so women were encouraged to join the Women’s Land Army. They prepared the land, grew and harvested crops and looked after animals, as well as lots of other jobs to keep the farms running. 
+
 2. Think about all the different things you can see in the poster. Does joining the Women's Land Army look like a positive or negative experience?
+
+This poster makes life in the Women's Land Army look positive. Maybe you noticed the woman looking happy and content, the beautiful weather, or the positive words.
+
 3. Do you think that work in the Women's Land Army was as happy and peaceful as the poster makes it look?
 
 Work in the Women’s Land Army wasn't always fun. It was hard, manual work, often in the cold and rain, and the hours were long. 
