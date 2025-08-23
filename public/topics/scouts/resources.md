@@ -22,7 +22,7 @@
 
 Use this printable guide during the object investigation for additional information and prompts. It's likely that you won't cover every point for every object, but the points here should ensure you are equipped to respond to most points that your students raise.
 
-[Download Object Guide](scouts-object-guide)
+[Download Object Guide](scouts-object-guide.pdf)
 
 ## Activity
 
