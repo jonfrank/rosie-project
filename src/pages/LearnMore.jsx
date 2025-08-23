@@ -101,7 +101,7 @@ const LearnMore = () => {
           <div>
             {/* Page Title */}
             <div className="prose prose-lg max-w-none mb-6">
-              <h1>Learn More About {topicTitle}</h1>
+              <h1>Learn More About The {topicTitle}</h1>
             </div>
             
             {/* Summary Section - Two Column Layout like Grace introduction */}
@@ -344,7 +344,7 @@ const LearnMore = () => {
           <div>
             {/* Page Title */}
             <div className="prose prose-lg max-w-none mb-6">
-              <h1>Learn More About Junior Salvage Stewards</h1>
+              <h1>Learn More About The Junior Salvage Stewards</h1>
             </div>
             
             {/* Summary Section - Two Column Layout like Grace introduction */}
@@ -556,7 +556,7 @@ As dustbins mean to me"
             </div>
             
             <div className="prose prose-lg max-w-none">
-              <h1>Learn More About {topicTitle}</h1>
+              <h1>Learn More About The {topicTitle}</h1>
               <p>This page will contain additional information about {topicTitle}.</p>
               <p>Content coming soon...</p>
             </div>
