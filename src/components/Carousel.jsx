@@ -245,6 +245,9 @@ const Carousel = ({ items }) => {
           src={mediaUrl} 
           alt={currentItem.title}
           controls
+          autoPlay
+          loop
+          muted
           className="carousel-media"
         >
           Your browser does not support the video tag.
