@@ -16,7 +16,7 @@ const Topic = () => {
   const [portalActivated, setPortalActivated] = useState(false)
   const [objectsAppearing, setObjectsAppearing] = useState(false)
   const [openSection, setOpenSection] = useState(0) // Default to first section open
-  const [carouselLoading, setCarouselLoading] = useState(false)
+  const [carouselLoading, setCarouselLoading] = useState(true)
 
   // Topic metadata - now using Investigation numbers for classroom pages
   const topicTitles = {
