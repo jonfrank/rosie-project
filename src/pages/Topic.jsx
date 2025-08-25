@@ -15,6 +15,7 @@ const Topic = () => {
   const [carouselDescriptions, setCarouselDescriptions] = useState({})
   const [portalActivated, setPortalActivated] = useState(false)
   const [objectsAppearing, setObjectsAppearing] = useState(false)
+  const [carouselLoading, setCarouselLoading] = useState(true)
   const [openSection, setOpenSection] = useState(0) // Default to first section open
   const [carouselLoading, setCarouselLoading] = useState(false)
 
@@ -129,6 +130,15 @@ const Topic = () => {
         const text = await response.text()
         setContent(text)
         
+        // Auto-discover carousel items for classroom pages
+        if (type === 'classroom') {
+          const items = await discoverMediaFiles()
+          setCarouselItems(items)
+          setCarouselLoading(false)
+        } else {
+          // Not a classroom page, so no carousel loading needed
+          setCarouselLoading(false)
+        }        
         setError(null)
       } catch (err) {
         setError(err.message)
@@ -450,8 +460,8 @@ const Topic = () => {
       {type === 'classroom' ? (
         <TimePortal onActivated={() => {
           setPortalActivated(true)
-          // Start object appearing animation after a brief delay
-          setTimeout(() => setObjectsAppearing(true), 500)
+          // Set objects appearing immediately to avoid double animation
+          setObjectsAppearing(true)
         }} />
       ) : null}
 
