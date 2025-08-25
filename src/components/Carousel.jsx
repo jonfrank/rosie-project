@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from 'react'
+import React, { useState, useRef, useLayoutEffect, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { useNavigate, useParams } from 'react-router-dom'
 import { X } from 'lucide-react'
@@ -284,11 +284,46 @@ const Carousel = ({ items }) => {
     return 'Continue'
   }
 
+  // Pre-loading component for adjacent media items
+  const PreloadMedia = ({ itemIndex, priority = "low" }) => {
+    if (itemIndex < 0 || itemIndex >= items.length || itemIndex === currentIndex) return null
+    
+    const item = items[itemIndex]
+    const mediaUrl = item.image || item.video || item.media
+    
+    if (isVideo(mediaUrl)) {
+      return (
+        <video 
+          src={mediaUrl}
+          preload="metadata"
+          style={{ display: 'none' }}
+          muted
+          key={`preload-video-${itemIndex}`}
+        />
+      )
+    } else {
+      return (
+        <img 
+          src={mediaUrl}
+          alt={`Preload ${item.title}`}
+          style={{ display: 'none' }}
+          loading={priority === "high" ? "eager" : "lazy"}
+          key={`preload-img-${itemIndex}`}
+        />
+      )
+    }
+  }
+
   // Animate vertical growth/shrink of the carousel wrapper when layout/content changes
   useAnimatedHeight(outerRef, [isExpanded, currentIndex, currentQuestionIndex, currentPhase])
 
   return (
     <div className="carousel">
+      {/* Hidden preload elements for adjacent media - handle circular navigation */}
+      <PreloadMedia itemIndex={(currentIndex + 1) % items.length} priority="high" />
+      <PreloadMedia itemIndex={(currentIndex - 1 + items.length) % items.length} priority="low" />
+      <PreloadMedia itemIndex={(currentIndex + 2) % items.length} priority="low" />
+      
       <div className="carousel-outer" ref={outerRef}>
         <div className={`carousel-container ${isExpanded ? 'expanded' : 'collapsed'} ${isAnimating ? 'animating' : ''}`}>
           <div className="media-section">
