@@ -16,6 +16,7 @@ const Topic = () => {
   const [portalActivated, setPortalActivated] = useState(false)
   const [objectsAppearing, setObjectsAppearing] = useState(false)
   const [openSection, setOpenSection] = useState(0) // Default to first section open
+  const [carouselLoading, setCarouselLoading] = useState(false)
 
   // Topic metadata - now using Investigation numbers for classroom pages
   const topicTitles = {
@@ -128,12 +129,6 @@ const Topic = () => {
         const text = await response.text()
         setContent(text)
         
-        // Auto-discover carousel items for classroom pages
-        if (type === 'classroom') {
-          const items = await discoverMediaFiles()
-          setCarouselItems(items)
-        }
-        
         setError(null)
       } catch (err) {
         setError(err.message)
@@ -143,6 +138,24 @@ const Topic = () => {
     }
 
     fetchContent()
+  }, [slug, type])
+
+  // Load carousel items asynchronously for classroom pages
+  useEffect(() => {
+    if (type === 'classroom') {
+      const loadCarouselItems = async () => {
+        setCarouselLoading(true)
+        try {
+          const items = await discoverMediaFiles()
+          setCarouselItems(items)
+        } catch (err) {
+          console.error('Failed to load carousel items:', err)
+        } finally {
+          setCarouselLoading(false)
+        }
+      }
+      loadCarouselItems()
+    }
   }, [slug, type])
 
   if (loading) {
@@ -442,9 +455,37 @@ const Topic = () => {
         }} />
       ) : null}
 
-      {/* Auto-discovered Carousel - only show when portal is activated for classroom pages */}
-      {carouselItems.length > 0 && (type !== 'classroom' || portalActivated) ? (
+      {/* Auto-discovered Carousel - show when portal is activated for classroom pages */}
+      {type === 'classroom' && portalActivated ? (
         <div className={`mt-8 ${objectsAppearing ? 'objects-materializing' : ''}`}>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Time to Investigate</h2>
+          <div className="objects-container">
+            {carouselLoading ? (
+              // Show spinner while carousel items are loading
+              <div className="bg-white rounded-lg shadow-sm p-12 text-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                <p className="text-gray-600">Loading historical artifacts...</p>
+              </div>
+            ) : carouselItems.length > 0 ? (
+              // Show carousel when items are loaded
+              <Carousel 
+                items={carouselItems.map((item, index) => ({
+                  ...item,
+                  image: `/topics/${slug}/${item.image}`,
+                  animationDelay: index * 0.3 // Stagger the animations
+                }))}
+              />
+            ) : (
+              // Show message if no items found
+              <div className="bg-white rounded-lg shadow-sm p-12 text-center">
+                <p className="text-gray-600">No artifacts found for this investigation.</p>
+              </div>
+            )}
+          </div>
+        </div>
+      ) : carouselItems.length > 0 && type !== 'classroom' ? (
+        // Show carousel immediately for non-classroom pages
+        <div className="mt-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Time to Investigate</h2>
           <div className="objects-container">
             <Carousel 
