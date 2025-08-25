@@ -17,6 +17,7 @@ const Topic = () => {
   const [objectsAppearing, setObjectsAppearing] = useState(false)
   const [carouselLoading, setCarouselLoading] = useState(true)
   const [openSection, setOpenSection] = useState(0) // Default to first section open
+  const [carouselLoading, setCarouselLoading] = useState(false)
 
   // Topic metadata - now using Investigation numbers for classroom pages
   const topicTitles = {
@@ -137,8 +138,7 @@ const Topic = () => {
         } else {
           // Not a classroom page, so no carousel loading needed
           setCarouselLoading(false)
-        }
-        
+        }        
         setError(null)
       } catch (err) {
         setError(err.message)
@@ -148,6 +148,24 @@ const Topic = () => {
     }
 
     fetchContent()
+  }, [slug, type])
+
+  // Load carousel items asynchronously for classroom pages
+  useEffect(() => {
+    if (type === 'classroom') {
+      const loadCarouselItems = async () => {
+        setCarouselLoading(true)
+        try {
+          const items = await discoverMediaFiles()
+          setCarouselItems(items)
+        } catch (err) {
+          console.error('Failed to load carousel items:', err)
+        } finally {
+          setCarouselLoading(false)
+        }
+      }
+      loadCarouselItems()
+    }
   }, [slug, type])
 
   if (loading) {
@@ -449,9 +467,9 @@ const Topic = () => {
 
       {/* Auto-discovered Carousel - show when portal is activated for classroom pages */}
       {type === 'classroom' && portalActivated ? (
-        <div className="mt-8">
+        <div className={`mt-8 ${objectsAppearing ? 'objects-materializing' : ''}`}>
           <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Time to Investigate</h2>
-          <div>
+          <div className="objects-container">
             {carouselLoading ? (
               // Show spinner while carousel items are loading
               <div className="bg-white rounded-lg shadow-sm p-12 text-center">
@@ -479,7 +497,7 @@ const Topic = () => {
         // Show carousel immediately for non-classroom pages
         <div className="mt-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Time to Investigate</h2>
-          <div>
+          <div className="objects-container">
             <Carousel 
               items={carouselItems.map((item, index) => ({
                 ...item,
