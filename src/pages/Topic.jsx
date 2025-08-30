@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm'
 import Carousel from '../components/Carousel'
 import TimePortal from '../components/TimePortal'
 import CollapsibleSection from '../components/CollapsibleSection'
+import MarkdownWithCollapsibles from '../components/MarkdownWithCollapsibles'
 import '../components/TimePortal.css'
 
 const Topic = () => {
@@ -224,6 +225,7 @@ const Topic = () => {
     return sections
   }
 
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Breadcrumb */}
@@ -392,39 +394,16 @@ const Topic = () => {
                 onToggle={handleSectionToggle}
                 sectionId={index}
               >
-                <ReactMarkdown 
-                  remarkPlugins={[remarkGfm]}
-                  components={{
-                    ul: ({node, ...props}) => <ul {...props} style={{marginTop: '0.25rem', marginBottom: '1rem'}} />,
-                    img: ({node, ...props}) => {
-                      const basePath = ''
-                      const src = props.src?.startsWith('http') 
-                        ? props.src 
-                        : `${basePath}/topics/${slug}/${props.src}`
-                      return <img {...props} src={src} className="rounded-lg shadow-sm" />
-                    },
-                    a: ({node, ...props}) => {
-                      const isExternal = props.href?.startsWith('http')
-                      const isFile = props.href?.endsWith('.pdf') || props.href?.endsWith('.mp4') || props.href?.endsWith('.mp3')
-                      
-                      if (isFile) {
-                        const basePath = ''
-                        const href = isExternal 
-                          ? props.href 
-                          : `${basePath}/topics/${slug}/${props.href}`
-                        return <a {...props} href={href} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline" />
-                      }
-                      
-                      if (isExternal) {
-                        return <a {...props} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline" />
-                      }
-                      
-                      return <a {...props} className="text-blue-600 hover:text-blue-800 underline" />
-                    }
-                  }}
-                >
-                  {section.content.join('\n')}
-                </ReactMarkdown>
+                <div className="prose prose-lg max-w-none">
+                  <MarkdownWithCollapsibles 
+                    content={section.content.join('\n')}
+                    slug={slug}
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                      ul: ({node, ...props}) => <ul {...props} style={{marginTop: '0.25rem', marginBottom: '1rem'}} />
+                    }}
+                  />
+                </div>
               </CollapsibleSection>
             ))}
             
