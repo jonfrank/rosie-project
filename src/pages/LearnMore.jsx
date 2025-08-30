@@ -340,6 +340,290 @@ const LearnMore = () => {
               </CollapsibleSection>
             </div>
           </div>
+        ) : slug === 'scouts' ? (
+          <div>
+            {/* Page Title */}
+            <div className="prose prose-lg max-w-none mb-6">
+              <h1>Learn More About The Scouts</h1>
+            </div>
+            
+            {/* Summary Section - Two Column Layout like Grace introduction */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              {/* Left Column - Grace Image */}
+              <div className="md:col-span-1 flex justify-center">
+                <img 
+                  src="/assets/character-image.png"
+                  alt="Grace"
+                  className="w-56 h-56 object-cover rounded-lg"
+                />
+              </div>
+              
+              {/* Right Column - Summary Text */}
+              <div className="md:col-span-2">
+                <div className="prose prose-lg">
+                  <div className="text-lg leading-relaxed space-y-4">
+                    {/* ADD YOUR INTRO TEXT HERE - Replace the placeholders below */}
+                    <p>We've learnt so much from those objects! Thanks for helping me to investigate 😊.</p>
+                    <p>Have a look through the sections below to learn more about the Scouts during World War Two.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Collapsible Content Sections */}
+            <div className="space-y-6">
+              {/* History of the Scouts Section */}
+              <CollapsibleSection 
+                title="History of the Scouts" 
+                isOpen={openSection === 'history'}
+                onToggle={handleSectionToggle}
+                sectionId="history"
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div className="space-y-6">
+                    <figure>
+                      <img 
+                        src="/topics/scouts/Image IWM (Q 108579).jpg"
+                        alt="A Scout Troop during World War One"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">
+                        A Scout Troop during World War One<br />
+                        Image: IWM (Q 108579)
+                      </figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/scouts/girl-guides-1918.jpg"
+                        alt="Girl Guides in 1918"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">Girl Guides in 1918</figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/scouts/Image IWM (Q 30598).jpg"
+                        alt="Boy Scouts working on a farm during World War One"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">
+                        Boy Scouts working on a farm during World War One<br />
+                        Image: IWM (Q 30598)
+                      </figcaption>
+                    </figure>
+                  </div>
+                  <div>
+                    <p>The Scouts began in 1908. Originally boys and girls aged 11-18 could join the Scouts, but in 1910 the Girl Guides were founded and girls were no longer allowed to join the Scouts. A few years later, in 1916, the Wolf Cubs (now Cub Scouts) were formed for children under 11.</p>
+                    
+                    <p>The Scout motto is 'Be Prepared', and they learn practical skills and help out in their communities. This was the purpose of the Scouts in World War Two and it's still what they do today.</p>
+                    
+                    <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4">
+                      "We were encouraged to wear scout uniforms as often as possible so as to become recognised as one who would help on any occasion."
+                      <footer className="text-sm mt-2">— Frank Vivian, <a href="https://www.bbc.co.uk/history/ww2peopleswar/stories/95/a5771595.shtml" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">BBC WW2 People's War Archive</a></footer>
+                    </blockquote>
+                    
+                    <p>During World War One, lots of Scouts helped on the Home Front with farm work, fundraised for ambulances, and worked as messengers. This legacy carried on into their work on the Home Front during World War Two.</p>
+                    
+                    <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4">
+                      "I was proud that my Scout training was being put to use in helping defend my country"
+                      <footer className="text-sm mt-2">— Ed Dowty, <a href="https://www.bbc.co.uk/history/ww2peopleswar/stories/14/a1124614.shtml" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">BBC WW2 People's War Archive</a></footer>
+                    </blockquote>
+                  </div>
+                </div>
+              </CollapsibleSection>
+
+              {/* Dangerous Work Section */}
+              <CollapsibleSection 
+                title="Dangerous Work" 
+                isOpen={openSection === 'dangerous-work'}
+                onToggle={handleSectionToggle}
+                sectionId="dangerous-work"
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div className="space-y-6">
+                    {/* ADD YOUR IMAGES HERE - Replace the placeholder images below */}
+                    <figure>
+                      <img 
+                        src="/topics/scouts/placeholder-image-3.jpg"
+                        alt="Placeholder for dangerous Scout work image"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">[Add your image caption here]</figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/scouts/placeholder-image-4.jpg"
+                        alt="Placeholder for dangerous Scout work image"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">[Add your image caption here]</figcaption>
+                    </figure>
+                  </div>
+                  <div>
+                    <p>During air raids, there were lots of fires caused by bombs. Lots of Scouts volunteered as fire watchers, and would work through the night to keep a look out. Sometimes they would alert the authorities to the fires, sometimes they would smother nearby fires with sandbags, and on occasion they would even start putting out fires with water and a stirrup pump until the fire brigade arrived.</p>
+                    
+                    <p>Fire watching was vital because incendiary bombs were common and could spread fires rapidly. Some of these bombs didn't explode when they hit the ground, and they could be extremely dangerous if somebody stumbled across one unexpectedly. Some Scouts were sent to locate these unexploded incendiary bombs, which would then be safely smothered with sand and detonated by officials.</p>
+                    
+                    <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4">
+                      "We would be sent out, this was at the tender age of 16 or so, to locate reported unexploded bombs… when I look back, it was pretty fraught and really they shouldn't have been doing that with young people, but it was quite exciting."
+                      <footer className="text-sm mt-2">— John William Fowles, <a href="https://www.iwm.org.uk/collections/item/object/80017666" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">IWM (18202)</a>, 03:25-03:45</footer>
+                    </blockquote>
+                    
+                    <p>Lots of Scouts volunteered as messengers, including younger Scouts aged 11 or 12. The phone lines often stopped working because of the bombings, so young people would cycle between ARP (Air Raid Precautions) posts to deliver important messages.</p>
+                    
+                    <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4">
+                      "Anybody that had a cycle, we used to take messages from one ARP post to another ARP post. We were given a tin hat, and you had your [Scout] uniform on, and you used to cycle like mad. Normally this took place when there wasn't a raid on, but I have known cases for lads to actually go from ARP post to ARP post while a raid was actually in progress."
+                      <footer className="text-sm mt-2">— Leonard Alfred Spicer, <a href="https://www.iwm.org.uk/collections/item/object/80028324" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">IWM (29566)</a>, Reel 2: 01:55-02:28</footer>
+                    </blockquote>
+                    
+                    <p>Scouts were also involved in first aid during the war. Some volunteered as stretcher bearers, carrying injured people into ambulances or into hospital. Scouts were often trained in first aid and were able to help their local community in emergencies - one Scout troop ran a First Aid Post every night for the first year and a half of the war:</p>
+                    
+                    <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4">
+                      "They have, since the first day of war, maintained sole charge of a First Aid Post each day from 5pm until 8:15am next morning. The Scout National Service Pennant - the third to date - has been awarded to this Troop"
+                      <footer className="text-sm mt-2">— <a href="https://www.britishnewspaperarchive.co.uk/viewer/bl/0001758/19410314/116/0007" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">Blaydon Courier, Friday 14 March 1941, p.7</a></footer>
+                    </blockquote>
+                  </div>
+                </div>
+              </CollapsibleSection>
+
+              {/* Work in the Community Section */}
+              <CollapsibleSection 
+                title="Work in the Community" 
+                isOpen={openSection === 'community-work'}
+                onToggle={handleSectionToggle}
+                sectionId="community-work"
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div className="space-y-6">
+                    <figure>
+                      <img 
+                        src="/topics/scouts/Image IWM (MOD 394).jpg"
+                        alt="A Morrison Shelter ready to be slept in"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">
+                        A Morrison Shelter ready to be slept in<br />
+                        Image: IWM (MOD 394)
+                      </figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/scouts/Image IWM (Q(HS) 99).jpg"
+                        alt="A Morrison Shelter being used as a table tennis table"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">
+                        A Morrison Shelter being used as a table tennis table<br />
+                        Image: IWM (Q(HS) 99)
+                      </figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/scouts/Image IWM (D 2593).jpg"
+                        alt="Children being evacuated to the countryside"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">
+                        Children being evacuated to the countryside<br />
+                        Image: IWM (D 2593)
+                      </figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/scouts/Image IWM (D 16206).jpg"
+                        alt="Scouts helping with the fruit harvest"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">
+                        Scouts helping with the fruit harvest<br />
+                        Image: IWM (D 16206)
+                      </figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/scouts/Image IWM (TR 2135).jpg"
+                        alt="Scouts loading their salvage cart with scraps"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">
+                        Scouts loading their salvage cart with scraps<br />
+                        Image: IWM (TR 2135)
+                      </figcaption>
+                    </figure>
+                  </div>
+                  <div>
+                    <p>Scouts also helped people to prepare for air raids. While lots of people went to community shelters during raids, others had their own shelters within their homes, and Scouts helped to build these. Anderson shelters were dug into gardens, while Morrison shelters were built within houses. Both types were extremely popular, and over one million Morrison shelters had been installed by the end of the war in 1945 (many of these built by Scouts!).</p>
+                    
+                    <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4">
+                      "Erecting the shelters was a dirty, heavy job which carried a guarantee of a crushed finger nail, cut arm or bruised something."
+                      <footer className="text-sm mt-2">— James Franks, <a href="https://www.bbc.co.uk/history/ww2peopleswar/stories/64/a2427464.shtml" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">BBC WW2 People's War Archive</a></footer>
+                    </blockquote>
+                    
+                    <p>Lots of Scouts were evacuated to the countryside, where they would be away from the bombing raids that were being launched on big cities. Scouts who already lived in the countryside helped welcome children to their towns and carried luggage.</p>
+                    
+                    <p>One of the most famous government campaigns of World War Two was the 'Dig For Victory' campaign. More food needed to be grown in Britain to fill shortages caused by the war, so citizens were encouraged to grow as much food as possible in their gardens. Scout helped to look after community plots of land and grow food, and they also harvested crops.</p>
+                    
+                    <p>Younger Scouts and Cubs didn't do the dangerous work during air raids, but they were still involved in the war effort. They contributed as Junior Salvage Stewards by collecting scrap materials from their neighbourhood, and often worked with other members of their Scout group.</p>
+                    
+                    <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4">
+                      "Scout troops and their associated cub packs had groups out with their trek carts collecting waste paper on established rounds. As a cub, I regularly went out with a group of scouts from the early days of 1940. When our cart was full, we would trundle off to a collection depot in Wallington where the paper was weighed"
+                      <footer className="text-sm mt-2">— Mr Blackberry, <a href="https://www.bbc.co.uk/history/ww2peopleswar/stories/58/a8636358.shtml" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">BBC WW2 People's War Archive</a></footer>
+                    </blockquote>
+                  </div>
+                </div>
+              </CollapsibleSection>
+
+              {/* Girl Guides Section */}
+              <CollapsibleSection 
+                title="Girl Guides" 
+                isOpen={openSection === 'girl-guides'}
+                onToggle={handleSectionToggle}
+                sectionId="girl-guides"
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div className="space-y-6">
+                    {/* ADD YOUR IMAGES HERE - Replace the placeholder images below */}
+                    <figure>
+                      <img 
+                        src="/topics/scouts/placeholder-image-7.jpg"
+                        alt="Placeholder for Girl Guides image"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">[Add your image caption here]</figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/scouts/placeholder-image-8.jpg"
+                        alt="Placeholder for Girl Guides image"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">[Add your image caption here]</figcaption>
+                    </figure>
+                  </div>
+                  <div>
+                    {/* ADD YOUR TEXT CONTENT HERE */}
+                    <p>[Add your text about Girl Guides here]</p>
+                    
+                    <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4">
+                      "[Add your quote here]"
+                      <footer className="text-sm mt-2">[Add quote source here]</footer>
+                    </blockquote>
+                    
+                    <p>[Add more text content here]</p>
+                  </div>
+                </div>
+              </CollapsibleSection>
+              
+            </div>
+          </div>
         ) : slug === 'junior-salvage-stewards' ? (
           <div>
             {/* Page Title */}

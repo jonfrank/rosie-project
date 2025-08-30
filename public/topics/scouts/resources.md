@@ -59,12 +59,14 @@ There are two template options for this activity. One contains simple circles wh
 If you have the resources, you could source a badge making kit to make badges that students can pin on and wear. Alternatively, you could use fabric, fabric pens and safety pins to achieve a similar, more authentic outcome.
 
 ## Alternative Activity Suggestions
-
-<!-- Content to be added -->
+- To tie the session into your English lessons, students could **produce a persuasive piece of writing encouraging others to join the Scouts during World War Two**. This could be a letter to a friend, a poster to be displayed in a school, or even a newspaper article. Encourage students to think about their audience: who are they writing to, and what information should they include to persuade that person or group?
+- For a more active and time consuming task, students could **create short sketches or plays showing one of the jobs undertaken by Scouts during the war**. You could let them choose the role that they find the most interesting, or allocate one topic to each group to ensure there is some variety. Once they've created the sketches, get them to perform to the rest of the class.
 
 ## Session Adaptations
-
-<!-- Content to be added -->
+There are various things you could obtain to make the investigation element more tactile for your students:
+- World War Two metal helmets are quite common, but they’re not cheap to source. Instead, ask your local museum whether they have any in their handling collection that you could borrow. Lots of museums have themed loan boxes which you can book out, and you may be able to loan a helmet along with other related objects. For an example see [IWM North’s Second World War Loan Boxes](https://www.iwm.org.uk/visits/iwm-north/groups/schools/Second-World-war-loan-boxes).
+- Scout badges: sometimes you can get your hands on scout badges from ww2 pretty cheaply (see [here](https://www.brittonsbadges.co.uk/en-GB/boys-scouting-badges/prodcat_1129) for one example). It’s also worth asking local Scout Troops whether they have any badges that you can borrow - if you can get your hands on modern Scout badges, students can compare them to the World War Two badge that they see in the video. 
+- Fires were put out using both sand and water. If you’re up for a bit of mess in the classroom, you could have a cup or bucket of each material for students to feel and compare the weight. 
 
 ## Further Resources
 
