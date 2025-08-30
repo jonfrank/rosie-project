@@ -51,4 +51,14 @@
   .prose > *:not(ul) + ul {
     margin-top: 0.25rem !important;
   }
+  
+  /* Ensure links in prose sections are blue */
+  .prose a {
+    color: #2563eb !important; /* blue-600 */
+    text-decoration: underline !important;
+  }
+  
+  .prose a:hover {
+    color: #1d4ed8 !important; /* blue-800 */
+  }
 }
