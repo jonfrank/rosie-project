@@ -136,6 +136,9 @@ const Carousel = ({ items }) => {
     } else if (currentPhase === 'question' && currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1)
       setCurrentPhase('question')
+    } else if (currentPhase === 'question' && currentQuestionIndex === 0) {
+      // On first question, close the expanded view
+      toggleExpanded()
     } else if (currentPhase === 'summary') {
       const currentItem = items[currentIndex]
       const { questions, explanations } = extractStructuredContent(currentItem.description)
@@ -413,13 +416,13 @@ const Carousel = ({ items }) => {
                             </button>
                             
                             {(currentPhase === 'explanation' || 
-                              (currentPhase === 'question' && currentQuestionIndex > 0) ||
+                              currentPhase === 'question' ||
                               currentPhase === 'summary') && (
                               <button 
                                 onClick={handlePreviousStep}
                                 className="previous-question-button"
                               >
-                                Previous Question
+                                Back
                               </button>
                             )}
                           </div>
