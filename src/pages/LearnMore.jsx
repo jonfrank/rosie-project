@@ -679,7 +679,7 @@ const LearnMore = () => {
                   <div>
                     <p>The Guides have existed for almost as long as the Scouts, and they also played their part in the war effort.</p>
                     
-                    <p>During World War One, Guides were recruited to be messengers for MI5, Britain's Security Service. They had to be aged 14-16, and 'of good standing, quick, cheerful and willing'. Originally, the plan had been to use the Scouts in this role, but lots of the boys talked too much and didn't keep the secrets that they were trusted with!</p>
+                    <p>During World War One, Guides were recruited to be messengers for MI5, Britain's Security Service. They had to be aged 14-16, and <a href="https://www.mi5.gov.uk/news/defending-the-realm" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">'of good standing, quick, cheerful and willing'</a>. Originally, the plan had been to use the Scouts in this role, but lots of the boys talked too much and didn't keep the secrets that they were trusted with!</p>
                     
                     <p>Girl Guides didn't work as spies during World War Two, but they did other important things to help on the Home Front. Just like the Scouts, Guides had lots of useful skills which they had learned before the war. Many of them had their Air Mechanic, Carpenter, First-Aid, Child Nurse or Needlewoman Badges, which were all important skills in a country at war.</p>
                     
