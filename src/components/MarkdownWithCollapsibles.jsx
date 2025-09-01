@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import InlineCollapsible from './InlineCollapsible'
 
-const MarkdownWithCollapsibles = ({ content, slug, ...markdownProps }) => {
+const MarkdownWithCollapsibles = ({ content, slug, components: _, ...markdownProps }) => {
   // State to track which nested collapsible is open (accordion behavior)
   const [openCollapsibleIndex, setOpenCollapsibleIndex] = useState(null)
 
