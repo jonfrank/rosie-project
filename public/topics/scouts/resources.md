@@ -70,6 +70,72 @@ There are various things you could obtain to make the investigation element more
 
 ## Further Resources
 
-<!-- Content to be added -->
+### Main Resources
+
+- [Scouting on the Home Front - Scouts](https://www.scouts.org.uk/about-us/our-history/our-online-exhibitions/scouting-during-the-second-world-war/scouting-on-the-home-front-they-were-prepared/) - A UK Scouts page on the Scouts in Britain during World War Two. This page contains lots of photos as well as further information about Scouts on the Home Front.
+
+- [Scouting for Girls - Scouts](https://www.scouts.org.uk/about-us/our-history/our-online-exhibitions/the-early-days-of-scouting/scouting-for-girls/) - A history of girls in the Scouts.
+
+- [A Brief History of Scouting - Weald Scouts](https://www.wealdscouts.uk/spage-about_us-a_brief_history_of_scouting.html) - A useful timeline of Scouting milestones from 1907 to 2014.
+
+- [Men of Tomorrow - A Ministry of Information film](https://youtu.be/u_IHu51e5W4?si=eDi4NXDhFnFjtBHn) - A 10 minute propaganda film produced by the British Government's Ministry of Information in 1942, which shows some of the jobs undertaken by Scouts during the war. If you want to go into more detail with your students, this is worth a look as it contains footage of the Scouts doing many of the roles discussed in the investigation.
+
+- [4lb Incendiary Bomb - RAF Museum](https://www.rafmuseum.org.uk/about-us/media-vault/videos/4lb-incendiary-bomb/) - A short video explaining incendiary bombs. 
+
+- [8 Objects Used by Air Raid Wardens During The Blitz - Imperial War Museums](https://www.iwm.org.uk/history/8-objects-used-by-air-raid-wardens-during-the-blitz) - Information about the equipment that was used during the Blitz, linked to objects within IWM's collections.
+
+- [Firefighters of the Second World War - London Fire Brigade](https://www.london-fire.gov.uk/museum/london-fire-brigade-history-and-stories/the-second-world-war/firefighters-of-the-second-world-war/) - A summary of the work of the Auxilliary Fire Service in World War Two.
+
+- [Interview with John William Fowles - Imperial War Museums](https://www.iwm.org.uk/collections/item/object/80017666) - An oral history interview. Reel 1 includes recollections of being a Scout in wartime and locating unexploded bombs on Hackney Marsh. 
+
+- [Interview with Leonard Alfred Spicer - Imperial War Museums](https://www.iwm.org.uk/collections/item/object/80028324) - An oral history interview. Reel 2 contains Leonard's account of his time as a Scout acting as a messenger for the ARP.
+
+- [Interview with Albert Shippen - Imperial War Museums](https://www.iwm.org.uk/collections/item/object/80014579) - An oral history interview. Reel 1 focuses on Albert's experiences as a child in wartime in the Cubs and then the Scouts. 
+
+- [Memories of World War Two in a Cotswold Village: Len C.G. Francis, BBC WW2 People's War Archive](https://www.bbc.co.uk/history/ww2peopleswar/stories/44/a3513944.shtml) - Len's memories of his life as a teenager during World War Two, including being a founding member of his local Scout troop. 
+
+- [The Boy Scout Blitz Volunteers: Denis Perry, BBC WW2 People's War Archive](https://www.bbc.co.uk/history/ww2peopleswar/stories/52/a2077652.shtml) - Denis's memories of being a Scout during World War Two, helping as a fire watcher, messenger and stretcher bearer.
+
+- [A Boy Scout at War: Alan Sandall, BBC WW2 People's War Archive](https://www.bbc.co.uk/history/ww2peopleswar/stories/95/a8067495.shtml) - Alan's experiences as a Scout collecting waste paper and volunteering as a messenger and fire watcher.
+
+- [Boy Scouts and Beyond: Bill Williams, BBC People's War Archive](https://www.bbc.co.uk/history/ww2peopleswar/stories/70/a5773070.shtml) - Bill's recollections of his time as an ARP messenger and then a fire watcher, including his memories of an incendiary bomb explosion. Bill later served in the London Fire Brigade.
+
+- [A Scout's War: Frank Vivian, BBC WW2 People's War Archive](https://www.bbc.co.uk/history/ww2peopleswar/stories/95/a5724795.shtml) - Frank's memories of Scouting on the Home Front, including helping with the arrival of evacuees.
+
+- [Hitler V Brighton Boy: James Franks, BBC WW2 People's War Archive](https://www.bbc.co.uk/history/ww2peopleswar/stories/64/a2427464.shtml) - James's experiences as a Scout in wartime Britain.
+
+- [Supporting the War Effort - Recycling and Saving: Mr Blackberry, BBC WW2 People's War Archive](https://www.bbc.co.uk/history/ww2peopleswar/stories/58/a8636358.shtml) - Recollections as a Cub and Scout collecting waste paper and earning the Scouts' National Service Badge.
+
+- [War Issue Scout Badges, 1939-1945, ScoutCollecting.co.uk](https://www.scoutcollecting.co.uk/ssshop4-badges-scouts-skills__amp__proficiency_493-war_issue_1939_to_1945859.html) - this page gives images and details of many different Scout badges from World War Two. The page contains information about how most of the badges could earned.
+
+- [Guess the Scout badge activity - Scouts](https://www.scouts.org.uk/activities/guess-the-badge-from-the-past/) - A Scouts activity where students can guess the names of World War Two Scout badges. 
+
+- [Scouts on Home Front 1914-1918 - Scouts](https://www.scouts.org.uk/about-us/our-history/our-online-exhibitions/scouting-in-the-first-world-war/scouting-on-home-front-1914-1918/) - UK Scouts article about the history of the Scouts in World War One. This is a good one to show your students if they want to know more about the early days of the Scouts.
+
+- [A History of the Red Cross Emblem - British Red Cross](https://www.redcross.org.uk/about-us/what-we-do/protecting-people-in-armed-conflict/the-emblem) - This British Red Cross article gives more information about the Red Cross emblem, its history and its current usage. There is also a two minute video explaining this, which is clear and appropriate for children, but not patronising.
+
+- [Modern Scouts Fire Safety Badge - Scouts](https://www.scouts.org.uk/scouts/activity-badges/fire-safety/) - Explains how Scouts today can earn their Fire Safety badge.
+
+### Girl Guides Information
+
+- *How the Girl Guides Won the War*, Janie Hampton (HarperPress, 2010) - The only book exclusively focusing on the work of the Guides during World War Two. The book is based on oral history interviews with women who were Guides during the war, giving a remarkable insight into the lives, thoughts and experiences of these girls during the 1940s. 
+
+- [When the Guides secretly worked with MI5 - Girlguiding](https://www.girlguiding.org.uk/what-we-do/blog/royal-british-legion-badges/) - An article about the work of guides as secret messengers during World War One. The article was written for girls in the Guides to read, so it's a good one to show to students if they're interested in knowing more.
+
+- [How Girlguiding members helped during the second world war - Girlguiding](https://www.girlguiding.org.uk/what-we-do/blog/how-girlguiding-members-helped-during-the-second-world-war/) - An article about the 1941 cotton reel appeal. Again, this was written for Guides so it's one to show to your class if they want more information.
+
+- [How the Girl Guides knitted, nursed and dug for victory - BBC News](https://www.bbc.co.uk/news/magazine-11005064) - Article from 2010 which contains the stories of two World War Two Guides in their own words.
+
+### Baden-Powell Debates
+
+- [*Scouting for Boys*, Robert Baden-Powell, 1908](https://www.gutenberg.org/files/65993/65993-h/65993-h.htm#part1) - The original Scout handbook. It gives an interesting insight into the original intentions for the Scouts, but has elements which are certainly problemetic today, especially the section on 'Patriotism and Loyalty' which gives guidance on how Scouts can help to maintain the British Empire.
+
+- [Robert Baden-Powell - Oxford Dictionary of National Biography](https://www.oxforddnb.com/display/10.1093/ref:odnb/9780198614128.001.0001/odnb-9780198614128-e-30520?rskey=0SIXDX&result=1) - The most comprehensive but accessible biography of Robert Baden-Powell, founder of the Scouts. This article is behind a paywall but you may be able to access through your local library.
+
+- [*The Character Factory: Baden-Powell and the origins of the Boy Scout Movement*, Michael Rosenthal (Pantheon Books, 1986)](https://archive.org/details/characterfactory00mich) - One of the more critical accounts of Baden-Powell and his motivations for establishing the Scout Movement.
+
+- [*The Boy-Man: The Life of Lord Baden-Powell*, Tim Jeal (Morrow, 1990)](https://archive.org/details/boymanlifeoflord0000jeal) - A more balanced account of the life of Baden-Powell.
+
+- [The Conversation: Scouts Australia and the legacy of Baden-Powell](https://theconversation.com/by-reviewing-the-name-of-the-baden-powell-award-scouts-australia-is-grappling-with-its-colonial-past-216172) - This article from The Conversation from 2023 demonstrates the contemporary debates surrounding the colonial legacy of Baden Powell.
 
 ---

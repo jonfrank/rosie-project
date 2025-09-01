@@ -76,6 +76,8 @@ To make the session more tactile and sensory friendly, there are several items t
 
 - [What was the Women’s Land Army? - Imperial War Museums](https://www.iwm.org.uk/history/what-was-the-womens-land-army) - A good introduction containing 10 surprising facts about the work of the Women's Land Army. Each fact links to a digitised object from the museums’s collections, so you can explore more primary source material.
 
+- *They Fought in the Fields: The Women's Land Army, The Story of a Forgotten Victory*, Nichola Tyrer (Tempus Publishing, 2007) - A thorough account of the work of the Women's Land Army during World War Two, told using many first-hand accounts. One of the few well researched and in-depth books about the Land Army. 
+
 - [In Pictures: The Land Girls of the Women’s Land Army - The National Archives](https://www.nationalarchives.gov.uk/explore-the-collection/explore-by-topic/military-and-war/the-womens-land-army/) - A variety of images relating to the Women's Land Army during World War 1 and World War Two, including posters, photos and a couple of documents.
 
 - [Museum of English Rural Life: The Land Girls](https://merl.reading.ac.uk/explore/online-exhibitions/land-girls-womens-land-army-history/) - An online exhibition containing several personal stories of being in the Women's Land Army, as well as lots of photographs.
