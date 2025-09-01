@@ -44,7 +44,7 @@ const MainNav = () => {
       title: 'Investigation 3: Scouts',
       shortTitle: 'Scouts',
       description: 'Discover scouts\' contributions to the war effort',
-      available: false
+      available: true
     }
   ]
 
