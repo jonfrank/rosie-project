@@ -101,10 +101,17 @@ const Topic = () => {
             console.log(`No description file found for ${filename}`)
           }
           
+          // Add attribution for specific items
+          let attribution = null
+          if (slug === 'scouts' && filename === 'Scout ARP.webp') {
+            attribution = 'The Scouts (UK) Heritage Service'
+          }
+          
           items.push({
             image: filename,
             title: title,
-            description: description
+            description: description,
+            attribution: attribution
           })
         }
       } catch (err) {

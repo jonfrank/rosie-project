@@ -239,29 +239,39 @@ const Carousel = ({ items }) => {
     const currentItem = items[currentIndex]
     const mediaUrl = currentItem.image || currentItem.video || currentItem.media
     
-    if (isVideo(mediaUrl)) {
-      return (
-        <video 
-          src={mediaUrl} 
-          alt={currentItem.title}
-          controls
-          autoPlay
-          loop
-          muted
-          className="carousel-media"
-        >
-          Your browser does not support the video tag.
-        </video>
-      )
-    } else {
-      return (
-        <img 
-          src={mediaUrl} 
-          alt={currentItem.title}
-          className="carousel-media"
-        />
-      )
-    }
+    const mediaElement = isVideo(mediaUrl) ? (
+      <video 
+        src={mediaUrl} 
+        alt={currentItem.title}
+        controls
+        autoPlay
+        loop
+        muted
+        className="carousel-media"
+      >
+        Your browser does not support the video tag.
+      </video>
+    ) : (
+      <img 
+        src={mediaUrl} 
+        alt={currentItem.title}
+        className="carousel-media"
+      />
+    )
+    
+    return (
+      <div className="media-with-attribution">
+        {mediaElement}
+        {/* Attribution text directly below the image/video */}
+        {currentItem.attribution && (
+          <div className="media-attribution">
+            <p className="text-xs text-gray-400 text-center mt-1 mb-0">
+              {currentItem.attribution}
+            </p>
+          </div>
+        )}
+      </div>
+    )
   }
 
   const isLastItem = () => {
