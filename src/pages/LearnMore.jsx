@@ -48,7 +48,17 @@ const LearnMore = () => {
         </ul>
       </div>
     ),
-    'scouts': <p>Activity prompt for Scouts will be added here</p>,
+    'scouts': (
+      <div>
+        <p><strong>Design a badge for a job that the Scouts did during World War Two.</strong></p>
+        <p className="mt-3">Think about:</p>
+        <ul className="mt-2 ml-4 list-disc space-y-2">
+          <li>Is there a job that you would like to have done if you were a Scout during World War Two?</li>
+          <li>Will your design work as a badge? Will you keep it simple or make it detailed?</li>
+        </ul>
+        <p className="mt-3">You could also design a badge for the Guides, or one that shows a role done by both the Scouts and Guides.</p>
+      </div>
+    ),
     'junior-salvage-stewards': (
       <div>
         <p><strong>Write a postcard to a friend encouraging them to join the Junior Salvage Stewards.</strong></p>
