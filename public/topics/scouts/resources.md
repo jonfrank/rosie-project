@@ -70,8 +70,7 @@ There are various things you could obtain to make the investigation element more
 
 ## Further Resources
 
-### Main Resources
-
++++[Resources - Boy Scouts]
 - [Scouting on the Home Front - Scouts](https://www.scouts.org.uk/about-us/our-history/our-online-exhibitions/scouting-during-the-second-world-war/scouting-on-the-home-front-they-were-prepared/) - A UK Scouts page on the Scouts in Britain during World War Two. This page contains lots of photos as well as further information about Scouts on the Home Front.
 
 - [Scouting for Girls - Scouts](https://www.scouts.org.uk/about-us/our-history/our-online-exhibitions/the-early-days-of-scouting/scouting-for-girls/) - A history of girls in the Scouts.
@@ -115,9 +114,9 @@ There are various things you could obtain to make the investigation element more
 - [A History of the Red Cross Emblem - British Red Cross](https://www.redcross.org.uk/about-us/what-we-do/protecting-people-in-armed-conflict/the-emblem) - This British Red Cross article gives more information about the Red Cross emblem, its history and its current usage. There is also a two minute video explaining this, which is clear and appropriate for children, but not patronising.
 
 - [Modern Scouts Fire Safety Badge - Scouts](https://www.scouts.org.uk/scouts/activity-badges/fire-safety/) - Explains how Scouts today can earn their Fire Safety badge.
++++
 
-### Girl Guides Information
-
++++[Resources - Girl Guides]
 - *How the Girl Guides Won the War*, Janie Hampton (HarperPress, 2010) - The only book exclusively focusing on the work of the Guides during World War Two. The book is based on oral history interviews with women who were Guides during the war, giving a remarkable insight into the lives, thoughts and experiences of these girls during the 1940s. 
 
 - [When the Guides secretly worked with MI5 - Girlguiding](https://www.girlguiding.org.uk/what-we-do/blog/royal-british-legion-badges/) - An article about the work of guides as secret messengers during World War One. The article was written for girls in the Guides to read, so it's a good one to show to students if they're interested in knowing more.
@@ -125,9 +124,9 @@ There are various things you could obtain to make the investigation element more
 - [How Girlguiding members helped during the second world war - Girlguiding](https://www.girlguiding.org.uk/what-we-do/blog/how-girlguiding-members-helped-during-the-second-world-war/) - An article about the 1941 cotton reel appeal. Again, this was written for Guides so it's one to show to your class if they want more information.
 
 - [How the Girl Guides knitted, nursed and dug for victory - BBC News](https://www.bbc.co.uk/news/magazine-11005064) - Article from 2010 which contains the stories of two World War Two Guides in their own words.
++++
 
-### Baden-Powell Debates
-
++++[Resources - Baden-Powell Debates]
 - [*Scouting for Boys*, Robert Baden-Powell, 1908](https://www.gutenberg.org/files/65993/65993-h/65993-h.htm#part1) - The original Scout handbook. It gives an interesting insight into the original intentions for the Scouts, but has elements which are certainly problemetic today, especially the section on 'Patriotism and Loyalty' which gives guidance on how Scouts can help to maintain the British Empire.
 
 - [Robert Baden-Powell - Oxford Dictionary of National Biography](https://www.oxforddnb.com/display/10.1093/ref:odnb/9780198614128.001.0001/odnb-9780198614128-e-30520?rskey=0SIXDX&result=1) - The most comprehensive but accessible biography of Robert Baden-Powell, founder of the Scouts. This article is behind a paywall but you may be able to access through your local library.
@@ -136,6 +135,7 @@ There are various things you could obtain to make the investigation element more
 
 - [*The Boy-Man: The Life of Lord Baden-Powell*, Tim Jeal (Morrow, 1990)](https://archive.org/details/boymanlifeoflord0000jeal) - A more balanced account of the life of Baden-Powell.
 
-- [The Conversation: Scouts Australia and the legacy of Baden-Powell](https://theconversation.com/by-reviewing-the-name-of-the-baden-powell-award-scouts-australia-is-grappling-with-its-colonial-past-216172) - This article from The Conversation from 2023 demonstrates the contemporary debates surrounding the colonial legacy of Baden Powell.
+- [The Conversation: Scouts Australia and the legacy of Baden-Powell](https://theconversation.com/by-reviewing-the-name-of-the-baden-powell-award-scouts-australia-is-grapgling-with-its-colonial-past-216172) - This article from The Conversation from 2023 demonstrates the contemporary debates surrounding the colonial legacy of Baden Powell.
++++
 
 ---

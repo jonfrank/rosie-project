@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import InlineCollapsible from './InlineCollapsible'
 
 const MarkdownWithCollapsibles = ({ content, slug, ...markdownProps }) => {
+  // State to track which nested collapsible is open (accordion behavior)
+  const [openCollapsibleIndex, setOpenCollapsibleIndex] = useState(null)
+
   // Process the content to extract collapsibles
   const processContent = (content) => {
     const collapsibleRegex = /\+\+\+\[([^\]]+)\]\n([\s\S]*?)\n\+\+\+/g
@@ -29,7 +32,8 @@ const MarkdownWithCollapsibles = ({ content, slug, ...markdownProps }) => {
         type: 'collapsible',
         buttonText: match[1],
         content: match[2].trim(),
-        key: `collapsible-${parts.length}`
+        key: `collapsible-${parts.length}`,
+        index: parts.filter(p => p.type === 'collapsible').length // Track collapsible index
       })
 
       lastIndex = match.index + match[0].length
@@ -61,12 +65,24 @@ const MarkdownWithCollapsibles = ({ content, slug, ...markdownProps }) => {
 
   const parts = processContent(content)
 
+  // Handle collapsible toggle with accordion behavior
+  const handleCollapsibleToggle = (index) => {
+    // If clicking the same one that's open, close it. Otherwise, open the new one.
+    setOpenCollapsibleIndex(openCollapsibleIndex === index ? null : index)
+  }
+
   return (
     <div>
       {parts.map((part) => {
         if (part.type === 'collapsible') {
           return (
-            <InlineCollapsible key={part.key} buttonText={part.buttonText}>
+            <InlineCollapsible 
+              key={part.key} 
+              buttonText={part.buttonText}
+              isOpen={openCollapsibleIndex === part.index}
+              onToggle={handleCollapsibleToggle}
+              index={part.index}
+            >
               <ReactMarkdown 
                 remarkPlugins={[remarkGfm]}
                 components={{
