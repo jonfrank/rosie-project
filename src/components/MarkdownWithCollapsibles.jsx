@@ -107,7 +107,18 @@ const MarkdownWithCollapsibles = ({ content, slug, ...markdownProps }) => {
                       const href = isExternal 
                         ? props.href 
                         : `${basePath}/topics/${slug}/${props.href}`
-                      return <a {...props} href={href} target="_blank" rel="noopener noreferrer" style={linkStyle} />
+                      return (
+                        <a 
+                          {...props} 
+                          href={href} 
+                          style={linkStyle}
+                          onClick={(e) => {
+                            e.preventDefault()
+                            // Force full page navigation to PDF (bypasses React Router)
+                            window.location.href = href
+                          }}
+                        />
+                      )
                     }
                     
                     if (isExternal) {

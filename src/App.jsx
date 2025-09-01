@@ -20,6 +20,7 @@ function App() {
           <Route path="/how-to-use" element={<HowToUse />} />
           <Route path="/topic/:slug/learn-more" element={<LearnMore />} />
           <Route path="/topic/:slug/:type" element={<Topic />} />
+          {/* Note: Static files like PDFs should be served directly by Vite, not by React Router */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
