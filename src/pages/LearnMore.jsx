@@ -415,7 +415,7 @@ const LearnMore = () => {
                     </figure>
                   </div>
                   <div>
-                    <p>The Scouts began in 1908. Originally boys and girls aged 11-18 could join the Scouts, but in 1910 the Girl Guides were founded and girls were no longer allowed to join the Scouts. A few years later, in 1916, the Wolf Cubs (now Cub Scouts) were formed for children under 11.</p>
+                    <p>The Scouts began in 1908. Originally boys and girls aged 11-18 could join the Scouts, and girls even formed their own unofficial troops, but in 1910 the Girl Guides were founded and girls were no longer allowed to join the Scouts. A few years later, in 1916, the Wolf Cubs (now Cub Scouts) were formed for children under 11.</p>
                     
                     <p>The Scout motto is 'Be Prepared', and they learn practical skills and help out in their communities. This was the purpose of the Scouts in World War Two and it's still what they do today.</p>
                     
@@ -443,23 +443,63 @@ const LearnMore = () => {
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-6">
-                    {/* ADD YOUR IMAGES HERE - Replace the placeholder images below */}
                     <figure>
                       <img 
-                        src="/topics/scouts/placeholder-image-3.jpg"
-                        alt="Placeholder for dangerous Scout work image"
+                        src="/topics/scouts/Image IWM (FEQ 418).jpg"
+                        alt="A fire bucket, stirrup pump and hose which were used to fight fires during World War Two"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">[Add your image caption here]</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">
+                        A fire bucket, stirrup pump and hose which were used to fight fires during World War Two.<br />
+                        Image: IWM (FEQ 418)
+                      </figcaption>
                     </figure>
                     
                     <figure>
                       <img 
-                        src="/topics/scouts/placeholder-image-4.jpg"
-                        alt="Placeholder for dangerous Scout work image"
+                        src="/topics/scouts/Image IWM (D 2625).jpg"
+                        alt="Two ARP Wardens working as fire watchers. This is one of the jobs that Scouts helped with"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">[Add your image caption here]</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">
+                        Two ARP Wardens working as fire watchers. This is one of the jobs that Scouts helped with.<br />
+                        Image: IWM (D 2625)
+                      </figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/scouts/Image IWM (D 2650).jpg"
+                        alt="Two men from the Fire Service attempt to put out a fire. Scouts would have made sure that they didn't run out of water"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">
+                        Two men from the Fire Service attempt to put out a fire. Scouts would have made sure that they didn't run out of water.<br />
+                        Image: IWM (D 2650)
+                      </figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/scouts/scout-messenger.jpg"
+                        alt="ARP volunteers attend a mock incident for training. You can see a child, probably a Scout, acting as a messenger on the right in the photograph"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">
+                        ARP volunteers attend a mock incident for training. You can see a child, probably a Scout, acting as a messenger on the right in the photograph.
+                      </figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/scouts/Image IWM (D 21246).jpg"
+                        alt="A team of volunteers carry an injured person to an ambulance"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">
+                        A team of volunteers carry an injured person to an ambulance.<br />
+                        Image: IWM (D 21246)
+                      </figcaption>
                     </figure>
                   </div>
                   <div>
@@ -589,35 +629,65 @@ const LearnMore = () => {
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-6">
-                    {/* ADD YOUR IMAGES HERE - Replace the placeholder images below */}
                     <figure>
                       <img 
-                        src="/topics/scouts/placeholder-image-7.jpg"
-                        alt="Placeholder for Girl Guides image"
+                        src="/topics/scouts/guides-ww1.jpg"
+                        alt="Guides in World War One"
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">[Add your image caption here]</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">
+                        Guides in World War One<br />
+                        Image: IWM (Q 30969)
+                      </figcaption>
                     </figure>
                     
                     <figure>
                       <img 
-                        src="/topics/scouts/placeholder-image-8.jpg"
-                        alt="Placeholder for Girl Guides image"
+                        src="/topics/scouts/girl-guide-uniform.jpg"
+                        alt="Children during World War Two. Three of the girls near the front are in their Guide uniform."
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
-                      <figcaption className="text-center mt-2 text-sm text-gray-500">[Add your image caption here]</figcaption>
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">
+                        Children during World War Two. Three of the girls near the front are in their Guide uniform.<br />
+                        Image: IWM (D 22058)
+                      </figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/scouts/girl-guides-playground.jpg"
+                        alt="Four girls in the school playground. The girl second from the right is wearing her Guide badge."
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">
+                        Four girls in the school playground. The girl second from the right is wearing her Guide badge.<br />
+                        Image: IWM (D 3160)
+                      </figcaption>
+                    </figure>
+                    
+                    <figure>
+                      <img 
+                        src="/topics/scouts/cotton-reel.jpg"
+                        alt="This is a cotton reel like the ones that the Guides collected in 1941"
+                        className="w-full h-64 object-contain rounded-lg bg-gray-50"
+                      />
+                      <figcaption className="text-center mt-2 text-sm text-gray-500">
+                        This is a cotton reel like the ones that the Guides collected in 1941.
+                      </figcaption>
                     </figure>
                   </div>
                   <div>
-                    {/* ADD YOUR TEXT CONTENT HERE */}
-                    <p>[Add your text about Girl Guides here]</p>
+                    <p>The Guides have existed for almost as long as the Scouts, and they also played their part in the war effort.</p>
                     
-                    <blockquote className="border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4">
-                      "[Add your quote here]"
-                      <footer className="text-sm mt-2">[Add quote source here]</footer>
-                    </blockquote>
+                    <p>During World War One, Guides were recruited to be messengers for MI5, Britain's Security Service. They had to be aged 14-16, and 'of good standing, quick, cheerful and willing'. Originally, the plan had been to use the Scouts in this role, but lots of the boys talked too much and didn't keep the secrets that they were trusted with!</p>
                     
-                    <p>[Add more text content here]</p>
+                    <p>Girl Guides didn't work as spies during World War Two, but they did other important things to help on the Home Front. Just like the Scouts, Guides had lots of useful skills which they had learned before the war. Many of them had their Air Mechanic, Carpenter, First-Aid, Child Nurse or Needlewoman Badges, which were all important skills in a country at war.</p>
+                    
+                    <p>Guides handed out gas masks and helped to make sure they fitted correctly, dug bomb shelters in public parks, worked as messengers, and helped look after evacuees. They also painted kerbs white, organised sing-songs in bomb shelters, grew food, and worked with the ARP wardens, the Red Cross and the Home Guard to respond to emergencies.</p>
+                    
+                    <p>In 1941, the Guides were given a mission by the RAF - to collect 11,000 cotton reels. They weren't told why they were needed, but managed to collect over 42,000 within a week! We now know that these reels were used by British intelligence services to send secret messages and equipment to soldiers and spies on the front lines of the war. Some of them were even used to send tiny silk maps and German money.</p>
+                    
+                    <p>Guides and Scouts continued to earn badges throughout World War Two, and their contributions to the war effort have been recognised by future generations. The Girlguiding Remembrance Badge in 2022 was all about the cotton reel collection in 1941, introducing a whole new generation of girls to the work of the Guides in World War Two.</p>
                   </div>
                 </div>
               </CollapsibleSection>
