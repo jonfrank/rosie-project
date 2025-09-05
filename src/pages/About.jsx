@@ -12,7 +12,7 @@ const About = () => {
 
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">About this Project</h2>
           <p className="text-gray-600 mb-6">
-            This project was created as part of the MA in Public History at Royal Holloway, University of London. It aims to be an easy-to-use resource for teachers, equipping non-specialists with everything they need to deliver engaging, content rich history lessons.
+            This project was created as a final project for the MA in Public History at Royal Holloway, University of London. It aims to be an easy-to-use resource for teachers, equipping non-specialists with everything they need to deliver engaging, content rich history lessons.
           </p>
           
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">About the Objects</h2>
