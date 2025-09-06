@@ -60,7 +60,7 @@ If they need something to start them off, you can download and print out the wor
 - Plant your own crops: You could do this in many different ways. If you want to go relatively mess-free you could choose to grow cress in egg boxes and cotton wool, or for a more involved option use plant pots and soil, or even a vegetable patch if your school has one.
 - Stretch and challenge activity: The contribution of the Women's Land Army to the war effort wasn't acknowledged by the British Government until 2008. Have a class or small group discussion about the possible reasons that the Women's Land Army were overlooked and forgotten. In groups or individually, students could **write and deliver a speech to 'Parliament' (the rest of the class) explaining why the women who served in the Land Army were so important and why their contribution should not be forgotten**.
 
-## Session Adaptations
+## SEN Adaptations
 
 To make the session more tactile and sensory friendly, there are several items that you can pick up cheaply:
 - Replica ration books are easy to source online, this is one example: https://rafmuseumshop.com/products/ration-book-march-14 

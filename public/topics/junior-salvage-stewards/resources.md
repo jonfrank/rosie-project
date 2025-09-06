@@ -67,7 +67,7 @@ If you are printing on paper, print out [this single postcard template](postcard
 - Design a badge for recycling champions at your school, using the Cogs’ badge as inspiration. You could do this on paper, fabric, or even use air-drying clay to sculpt them!
 - Have a salvage competition: using either recycling collected from other classes in the school or things collected from home, split your students into teams and challenge them to make the most useful thing out of the 'salvage'. A bit like junk modelling, but with a focus on creating something with purpose. You could even get students to pitch their creations to the rest of the class, and have a vote on the most useful. This is great if you want to challenge their creativity and develop their public speaking skills. 
 
-## Session Adaptations
+## SEN Adaptations
 
 To make the session more tactile and sensory friendly, you could source some of these objects to use alongside the investigation videos:
 - Replica gas mask boxes are cheap and easy to get hold of, and will give your students something tactile when looking at the gas masks. See one example here: https://www.therationroom.co.uk/product/ww2-childs-gas-mask-box-air-raid-prop-with-london-borough-id-label 
