@@ -127,7 +127,7 @@ There are various things you could obtain to make the investigation element more
 +++
 
 +++[Resources - Baden-Powell Debates]
-- [*Scouting for Boys*, Robert Baden-Powell, 1908](https://www.gutenberg.org/files/65993/65993-h/65993-h.htm#part1) - The original Scout handbook. It gives an interesting insight into the original intentions for the Scouts, but has elements which are certainly problemetic today, especially the section on 'Patriotism and Loyalty' which gives guidance on how Scouts can help to maintain the British Empire.
+- [*Scouting for Boys*, Robert Baden-Powell, 1908](https://www.gutenberg.org/files/65993/65993-h/65993-h.htm#part1) - The original Scout handbook. It gives an interesting insight into the original intentions for the Scouts, but has elements which are certainly problematic today, especially the section on 'Patriotism and Loyalty' which gives guidance on how Scouts can help to maintain the British Empire.
 
 - [Robert Baden-Powell - Oxford Dictionary of National Biography](https://www.oxforddnb.com/display/10.1093/ref:odnb/9780198614128.001.0001/odnb-9780198614128-e-30520?rskey=0SIXDX&result=1) - The most comprehensive but accessible biography of Robert Baden-Powell, founder of the Scouts. This article is behind a paywall but you may be able to access through your local library.
 
