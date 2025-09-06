@@ -3,7 +3,7 @@
 ## Session aims
 
 - Students will learn about the role of children as Junior Salvage Stewards during World War Two through active investigation of primary source materials.
-- They will use the investigation questions to think in depth about each object before seeing further information, developing their critical thinking skills.
+- They will use the investigation questions to think in depth about each object **before** seeing further information, developing their critical thinking skills.
 - Students will bring their learning together by completing the activity at the end of the session.
 
 ## Topic Introduction

@@ -603,7 +603,7 @@ const LearnMore = () => {
                         className="w-full h-64 object-contain rounded-lg bg-gray-50"
                       />
                       <figcaption className="text-center mt-2 text-sm text-gray-500">
-                        Scouts loading their salvage cart with scraps<br />
+                        Scouts loading their salvage cart with scraps. This photo really was taken in colour during World War Two.<br />
                         Image: IWM (TR 2135)
                       </figcaption>
                     </figure>

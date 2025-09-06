@@ -3,7 +3,7 @@
 ## Session aims
 
 - Students will learn about the Scouts during World War Two through active investigation of primary source materials. 
-- They will use the investigation questions to think in depth about each object before seeing further information, developing their critical thinking skills.
+- They will use the investigation questions to think in depth about each object **before** seeing further information, developing their critical thinking skills.
 - Students will bring their learning together by completing the activity at the end of the session.
 
 ## Topic Introduction
@@ -85,11 +85,13 @@ There are various things you could obtain to make the investigation element more
 
 - [Firefighters of the Second World War - London Fire Brigade](https://www.london-fire.gov.uk/museum/london-fire-brigade-history-and-stories/the-second-world-war/firefighters-of-the-second-world-war/) - A summary of the work of the Auxilliary Fire Service in World War Two.
 
+- [Guess the Scout badge activity - Scouts](https://www.scouts.org.uk/activities/guess-the-badge-from-the-past/) - A Scouts activity where students can guess the names of World War Two Scout badges. 
+
 - [Interview with John William Fowles - Imperial War Museums](https://www.iwm.org.uk/collections/item/object/80017666) - An oral history interview. Reel 1 includes recollections of being a Scout in wartime and locating unexploded bombs on Hackney Marsh. 
 
 - [Interview with Leonard Alfred Spicer - Imperial War Museums](https://www.iwm.org.uk/collections/item/object/80028324) - An oral history interview. Reel 2 contains Leonard's account of his time as a Scout acting as a messenger for the ARP.
 
-- [Interview with Albert Shippen - Imperial War Museums](https://www.iwm.org.uk/collections/item/object/80014579) - An oral history interview. Reel 1 focuses on Albert's experiences as a child in wartime in the Cubs and then the Scouts. 
+- [Interview with Albert Shippen - Imperial War Museums](https://www.iwm.org.uk/collections/item/object/80014579) - An oral history interview. Reel 1 includes Albert's experiences as a child in wartime in the Cubs and then the Scouts. 
 
 - [Memories of World War Two in a Cotswold Village: Len C.G. Francis, BBC WW2 People's War Archive](https://www.bbc.co.uk/history/ww2peopleswar/stories/44/a3513944.shtml) - Len's memories of his life as a teenager during World War Two, including being a founding member of his local Scout troop. 
 
@@ -106,8 +108,6 @@ There are various things you could obtain to make the investigation element more
 - [Supporting the War Effort - Recycling and Saving: Mr Blackberry, BBC WW2 People's War Archive](https://www.bbc.co.uk/history/ww2peopleswar/stories/58/a8636358.shtml) - Recollections as a Cub and Scout collecting waste paper and earning the Scouts' National Service Badge.
 
 - [War Issue Scout Badges, 1939-1945, ScoutCollecting.co.uk](https://www.scoutcollecting.co.uk/ssshop4-badges-scouts-skills__amp__proficiency_493-war_issue_1939_to_1945859.html) - this page gives images and details of many different Scout badges from World War Two. The page contains information about how most of the badges could be earned.
-
-- [Guess the Scout badge activity - Scouts](https://www.scouts.org.uk/activities/guess-the-badge-from-the-past/) - A Scouts activity where students can guess the names of World War Two Scout badges. 
 
 - [Scouts on Home Front 1914-1918 - Scouts](https://www.scouts.org.uk/about-us/our-history/our-online-exhibitions/scouting-in-the-first-world-war/scouting-on-home-front-1914-1918/) - UK Scouts article about the history of the Scouts in World War One. This is a good one to show your students if they want to know more about the early days of the Scouts.
 
