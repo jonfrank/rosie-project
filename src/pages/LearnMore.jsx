@@ -885,7 +885,7 @@ As dustbins mean to me"
                     </figure>
                   </div>
                   <div>
-                    <p>After six weeks of working as a Junior Salvage Steward, children were awarded a Cog badge. Over 190,000 of these badges were handed out over the course of the war. Sometimes these badges were presented to children by the local mayor, and the names of those being rewarded for their efforts were often listed in the local newspaper.</p>
+                    <p>After six weeks of working as a Junior Salvage Steward, children were awarded a Cog badge. Over 190,000 of these badges were handed out over the course of the war. Sometimes these badges were presented to children by the local mayor, and the names of those being rewarded for their efforts were often listed in the local newspaper. Click <a href="https://www.sallybosleysbadgeshop.com/shop.php?code=63914" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">here</a> to see what the badges looked like.</p>
                     
                     <p>Competitions were held in some towns and cities, and prizes were given to the Cogs who collected the most salvage. In one town in Lancashire, a Cog was awarded a prize for collecting 110 tyres, and in Ashbourne the Cogs in local boroughs competed to collect the most salvage.</p>
                     
